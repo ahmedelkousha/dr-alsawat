@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Cairo } from "next/font/google";
 import "./globals.css";
 import TopUtilityBar from "@/components/TopUtilityBar";
 import Header from "@/components/Header";
@@ -7,13 +6,6 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import WhatsAppFloatingBtn from "@/components/WhatsAppFloatingBtn";
 import { doctorData } from "@/data/doctorData";
-
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-cairo",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -65,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${cairo.variable}`}>
+    <html lang="ar" dir="rtl">
       <body className="font-cairo min-h-screen flex flex-col justify-between bg-slate-50 text-slate-800 antialiased">
         <div>
           <TopUtilityBar />
