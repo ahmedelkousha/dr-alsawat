@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "gold" | "whatsapp" | "emergency";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "gold" | "whatsapp" | "emergency" | "navy";
   size?: "sm" | "md" | "lg";
   href?: string;
   target?: string;
@@ -58,6 +58,8 @@ export default function Button({
       "bg-accent-whatsapp hover:bg-accent-whatsappDark text-white shadow-md active:scale-[0.98]",
     emergency:
       "bg-rose-600 hover:bg-rose-700 text-white shadow-md active:scale-[0.98]",
+    navy:
+      "bg-[#070e2e] hover:bg-[#0c184d] text-brand shadow-md active:scale-[0.98]"
   };
 
   const combinedClasses = twMerge(
