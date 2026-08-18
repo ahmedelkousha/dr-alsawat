@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Metadata } from "next";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Metadata } from 'next';
 import {
   Award,
   CheckCircle2,
@@ -16,17 +16,22 @@ import {
   Activity,
   UserCheck,
   LucideIcon,
-} from "lucide-react";
-import { doctorData } from "@/data/doctorData";
-import { achievementsData, mediaAppearancesData, awardsData } from "@/data/achievements";
-import { medicalFeatures } from "@/data/services";
-import ServiceCard from "@/components/ServiceCard";
-import ContactForm from "@/components/ContactForm";
-import MapEmbed from "@/components/MapEmbed";
+} from 'lucide-react';
+import { doctorData } from '@/data/doctorData';
+import {
+  achievementsData,
+  mediaAppearancesData,
+  awardsData,
+} from '@/data/achievements';
+import { medicalFeatures } from '@/data/services';
+import ServiceCard from '@/components/ServiceCard';
+import ContactForm from '@/components/ContactForm';
+import MapEmbed from '@/components/MapEmbed';
 
 export const metadata: Metadata = {
-  title: "نبذة تعريفية | د. عبدالله الصواط",
-  description: "المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، أستاذ الجراحة المساعد بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.",
+  title: 'نبذة تعريفية | د. عبدالله الصواط',
+  description:
+    'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، أستاذ الجراحة المساعد بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
 };
 
 const pillarIcons: Record<string, LucideIcon> = {
@@ -45,7 +50,9 @@ export default function AboutPage() {
           <span className="inline-block bg-accent-gold/20 text-accent-gold text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full border border-accent-gold/30">
             نبذة شخصية ومؤهلات
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white!">{doctorData.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white!">
+            {doctorData.name}
+          </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
             {doctorData.subtitle}
           </p>
@@ -78,7 +85,10 @@ export default function AboutPage() {
 
             <ul className="space-y-3.5">
               {doctorData.credentials.map((cred, index) => (
-                <li key={index} className="flex items-start gap-3 text-slate-700 text-base md:text-lg font-medium">
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-slate-700 text-base md:text-lg font-medium"
+                >
                   <CheckCircle2 className="w-6 h-6 text-brand flex-shrink-0 mt-0.5" />
                   <span>{cred}</span>
                 </li>
@@ -94,20 +104,32 @@ export default function AboutPage() {
         {/* 4 Value Pillars Cards */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">ركائز وقيم الرعاية الطبية</h2>
-            <p className="text-sm text-slate-600">نلتزم بالمعايير الأخلاقية والمهنية العالية لضمان راحة وسلامة كل مريض.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              ركائز وقيم الرعاية الطبية
+            </h2>
+            <p className="text-sm text-slate-600">
+              نلتزم بالمعايير الأخلاقية والمهنية العالية لضمان راحة وسلامة كل
+              مريض.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {doctorData.valuePillars.map((pillar, idx) => {
               const IconComp = pillarIcons[pillar.icon] || ShieldCheck;
               return (
-                <div key={idx} className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 space-y-3 hover:shadow-card-hover transition-all">
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 space-y-3 hover:shadow-card-hover transition-all"
+                >
                   <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand flex items-center justify-center">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-slate-900 text-lg">{pillar.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{pillar.description}</p>
+                  <h3 className="font-bold text-slate-900 text-lg">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
               );
             })}
@@ -119,27 +141,43 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Award className="w-6 h-6 text-brand-600" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">الإنجازات والنشريات الصحفية</h2>
+              <h2 className="text-2xl font-bold text-slate-900">
+                الإنجازات والنشريات الصحفية
+              </h2>
             </div>
-            <span className="text-xs text-slate-500 font-medium">مشاركات وتغطيات</span>
+            <span className="text-xs text-slate-500 font-medium">
+              مشاركات وتغطيات
+            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {achievementsData.map((item) => (
-              <div key={item.id} className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-4 flex flex-col justify-between hover:shadow-card-hover transition-all">
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-4 flex flex-col justify-between hover:shadow-card-hover transition-all"
+              >
                 <div className="space-y-3">
                   <div className="relative w-full h-40 rounded-xl overflow-hidden bg-slate-800">
-                    <Image src={item.imageUrl || "/images/logo-dark.jpg"} alt={item.title} fill className="object-cover" />
+                    <Image
+                      src={item.imageUrl || '/images/logo-dark.jpg'}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <span className="text-[11px] font-bold bg-brand-50 text-brand px-2.5 py-1 rounded-md">
                     {item.publisher} {item.date && `• ${item.date}`}
                   </span>
-                  <h3 className="font-bold text-slate-900 text-base leading-snug">{item.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{item.summary}</p>
+                  <h3 className="font-bold text-slate-900 text-base leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {item.summary}
+                  </p>
                 </div>
 
                 <a
-                  href={item.articleUrl || "#"}
+                  href={item.articleUrl || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand/80 pt-2 border-t border-slate-100"
@@ -157,14 +195,21 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Video className="w-6 h-6 text-brand-600" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">اللقاءات والمشاركات التلفزيونية</h2>
+              <h2 className="text-2xl font-bold text-slate-900">
+                اللقاءات والمشاركات التلفزيونية
+              </h2>
             </div>
-            <span className="text-xs text-slate-500 font-medium">ميديا وفيديو</span>
+            <span className="text-xs text-slate-500 font-medium">
+              ميديا وفيديو
+            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {mediaAppearancesData.map((media) => (
-              <div key={media.id} className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 space-y-4">
+              <div
+                key={media.id}
+                className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 space-y-4"
+              >
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-md">
                   {media.embedUrl ? (
                     <iframe
@@ -185,7 +230,9 @@ export default function AboutPage() {
                     <span>{media.event}</span>
                     <span>{media.year}</span>
                   </div>
-                  <h3 className="font-bold text-slate-900 text-lg">{media.title}</h3>
+                  <h3 className="font-bold text-slate-900 text-lg">
+                    {media.title}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -197,18 +244,32 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Sparkles className="w-6 h-6 text-accent-gold" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">التكريم وشهادات التميز</h2>
+              <h2 className="text-2xl font-bold text-slate-900">
+                التكريم وشهادات التميز
+              </h2>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {awardsData.map((award) => (
-              <div key={award.id} className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-3 text-center">
+              <div
+                key={award.id}
+                className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-3 text-center"
+              >
                 <div className="relative w-full h-48 rounded-xl overflow-hidden bg-slate-900">
-                  <Image src={award.imageUrl} alt={award.title} fill className="object-cover" />
+                  <Image
+                    src={award.imageUrl}
+                    alt={award.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-bold text-slate-900 text-base">{award.title}</h3>
-                <p className="text-xs text-brand font-semibold">{award.organization} – {award.year}</p>
+                <h3 className="font-bold text-slate-900 text-base">
+                  {award.title}
+                </h3>
+                <p className="text-xs text-brand font-semibold">
+                  {award.organization} – {award.year}
+                </p>
               </div>
             ))}
           </div>
@@ -217,8 +278,12 @@ export default function AboutPage() {
         {/* 6-Tile Medical Services Repeat */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">مجموعة واسعة من الخدمات الطبية</h2>
-            <p className="text-sm text-slate-600">نضمن توفير أفضل التسهيلات والمرافق للمرضى.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              مجموعة واسعة من الخدمات الطبية
+            </h2>
+            <p className="text-sm text-slate-600">
+              نضمن توفير أفضل التسهيلات والمرافق للمرضى.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -236,13 +301,17 @@ export default function AboutPage() {
 
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-navy-950/95 text-white rounded-2xl p-6 shadow-card space-y-4">
-              <h3 className="text-white! text-xl font-bold border-r-4 border-accent-gold pr-3">معلومات الاتصال المباشر</h3>
+              <h3 className="text-white! text-xl font-bold border-r-4 border-accent-gold pr-3">
+                معلومات الاتصال المباشر
+              </h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-accent-gold flex-shrink-0 mt-1" />
                   <div>
                     <span className="font-bold block">العنوان:</span>
-                    <span className="text-slate-300 text-xs">{doctorData.clinicAddress}</span>
+                    <span className="text-slate-300 text-xs">
+                      {doctorData.clinicAddress}
+                    </span>
                   </div>
                 </div>
 
@@ -250,7 +319,10 @@ export default function AboutPage() {
                   <Phone className="w-5 h-5 text-accent-gold flex-shrink-0 mt-1" />
                   <div>
                     <span className="font-bold block">الهاتف للحجز:</span>
-                    <a href={`tel:${doctorData.phoneRaw}`} className="text-slate-300 text-xs dir-ltr block text-right hover:text-accent-gold">
+                    <a
+                      href={`tel:${doctorData.phoneRaw}`}
+                      className="text-slate-300 text-xs dir-ltr block text-right hover:text-accent-gold"
+                    >
                       {doctorData.phoneDisplay}
                     </a>
                   </div>
@@ -260,7 +332,10 @@ export default function AboutPage() {
                   <Mail className="w-5 h-5 text-accent-gold flex-shrink-0 mt-1" />
                   <div>
                     <span className="font-bold block">البريد الإلكتروني:</span>
-                    <a href={`mailto:${doctorData.email}`} className="text-slate-300 text-xs hover:text-accent-gold">
+                    <a
+                      href={`mailto:${doctorData.email}`}
+                      className="text-slate-300 text-xs hover:text-accent-gold"
+                    >
                       {doctorData.email}
                     </a>
                   </div>

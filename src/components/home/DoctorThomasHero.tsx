@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpLeft, Menu, X } from "lucide-react";
-import { doctorData } from "@/data/doctorData";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpLeft, Menu, X } from 'lucide-react';
+import { doctorData } from '@/data/doctorData';
 
 export default function DoctorThomasHero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,16 +23,28 @@ export default function DoctorThomasHero() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-[#3b5766]">
-            <Link href="/" className="text-[#1e323e] font-extrabold hover:text-[#1e323e]">
+            <Link
+              href="/"
+              className="text-[#1e323e] font-extrabold hover:text-[#1e323e]"
+            >
               الرئيسية
             </Link>
-            <Link href="/about" className="hover:text-[#1e323e] transition-colors">
+            <Link
+              href="/about"
+              className="hover:text-[#1e323e] transition-colors"
+            >
               نبذة عن الدكتور
             </Link>
-            <Link href="/colon-rectal-surgery" className="hover:text-[#1e323e] transition-colors">
+            <Link
+              href="/colon-rectal-surgery"
+              className="hover:text-[#1e323e] transition-colors"
+            >
               الخدمات والجراحات
             </Link>
-            <Link href="/contact" className="hover:text-[#1e323e] transition-colors">
+            <Link
+              href="/contact"
+              className="hover:text-[#1e323e] transition-colors"
+            >
               تواصل معنا
             </Link>
           </nav>
@@ -56,24 +68,47 @@ export default function DoctorThomasHero() {
             className="md:hidden p-2 text-[#2d4552]"
             aria-label="القائمة"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-3 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-slate-200 shadow-xl space-y-3 font-bold text-[#2d4552]">
-            <Link href="/" className="block py-2 px-3 hover:bg-slate-100 rounded-lg">الرئيسية</Link>
-            <Link href="/about" className="block py-2 px-3 hover:bg-slate-100 rounded-lg">نبذة عن الدكتور</Link>
-            <Link href="/colon-rectal-surgery" className="block py-2 px-3 hover:bg-slate-100 rounded-lg">الخدمات والجراحات</Link>
-            <Link href="/contact" className="block py-2 px-3 hover:bg-slate-100 rounded-lg">تواصل معنا</Link>
+            <Link
+              href="/"
+              className="block py-2 px-3 hover:bg-slate-100 rounded-lg"
+            >
+              الرئيسية
+            </Link>
+            <Link
+              href="/about"
+              className="block py-2 px-3 hover:bg-slate-100 rounded-lg"
+            >
+              نبذة عن الدكتور
+            </Link>
+            <Link
+              href="/colon-rectal-surgery"
+              className="block py-2 px-3 hover:bg-slate-100 rounded-lg"
+            >
+              الخدمات والجراحات
+            </Link>
+            <Link
+              href="/contact"
+              className="block py-2 px-3 hover:bg-slate-100 rounded-lg"
+            >
+              تواصل معنا
+            </Link>
           </div>
         )}
       </header>
 
       {/* 2. Main Hero Layout matching reference screenshot visual composition */}
       <section className="relative min-h-[500px] md:min-h-[580px] flex items-center justify-center px-6 py-12 md:py-16 overflow-hidden">
-        
         {/* Giant Translucent Watermark Background Text: "د. عبدالله الصواط" */}
         <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0">
           <span className="text-[75px] sm:text-[130px] md:text-[170px] lg:text-[210px] font-black text-[#3b5766]/15 tracking-tighter whitespace-nowrap leading-none">
@@ -82,7 +117,6 @@ export default function DoctorThomasHero() {
         </div>
 
         <div className="max-w-7xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
           {/* Right Column in RTL: Book Appointment Button */}
           <div className="lg:col-span-3 text-right order-2 lg:order-1 flex lg:flex-col justify-start items-start gap-4">
             <Link
@@ -112,8 +146,12 @@ export default function DoctorThomasHero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1e323e]/50 via-transparent to-transparent" />
                 <div className="absolute bottom-3 right-3 left-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-slate-100 text-center">
-                  <p className="font-extrabold text-sm text-[#1e323e]">{doctorData.name}</p>
-                  <p className="text-[11px] text-[#5b7a8a] font-bold">{doctorData.title}</p>
+                  <p className="font-extrabold text-sm text-[#1e323e]">
+                    {doctorData.name}
+                  </p>
+                  <p className="text-[11px] text-[#5b7a8a] font-bold">
+                    {doctorData.title}
+                  </p>
                 </div>
               </div>
             </div>
@@ -155,7 +193,6 @@ export default function DoctorThomasHero() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </div>

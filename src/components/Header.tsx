@@ -47,11 +47,11 @@ export default function Header() {
   const isAnalActive = pathname.startsWith('/anal-surgery');
 
   return (
-    <div className="max-w-[90%] fixed top-5 md:top-8 left-[5%] right-[5%] z-20">
+    <div className="fixed top-5 md:top-8 inset-x-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-50">
       {/* Sticky Navigation Header Bar */}
-      <header className="rounded-[20px] z-40 bg-white/95 backdrop-blur-md shadow-sm">
+      <header className="rounded-xl z-40 bg-white/95 backdrop-blur-md shadow-sm">
         <div className="max-w-[110rem] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 md:py-1.5">
-          <div className="flex items-center justify-between">
+          <div className="flex xl:flex-row flex-row-reverse items-center justify-between">
             {/* Logo */}
             <Link href="/" className="focus:outline-none inline-block">
               <div className="relative w-40 sm:w-46 md:w-57.5 h-10 sm:h-12 md:h-16 overflow-hidden scale-105">
@@ -128,7 +128,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-4 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-all ${
+                    className={`px-3 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-all ${
                       pathname === item.href
                         ? 'text-brand bg-brand/10 font-bold border-b-2 border-brand'
                         : 'text-slate-700 hover:text-brand hover:bg-slate-50'
@@ -140,7 +140,7 @@ export default function Header() {
               })}
             </nav>
 
-            <div className='flex flex-row gap-3'>
+            <div className='flex flex-row-reverse xl:flex-row gap-3'>
               {/* Header Action Button (Desktop) */}
               <div className="flex items-center gap-3">
                 <Button
@@ -204,17 +204,17 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 280 }}
-              className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl z-50 flex flex-col justify-between overflow-y-auto"
+              className="fixed inset-y-0 right-0 w-[70vw] sm:w-[40vw] bg-white shadow-2xl z-50 flex flex-col justify-between overflow-y-auto"
             >
               <div>
                 {/* Drawer Header */}
-                <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-navy-950 text-white">
+                <div className="p-4 border-b border-slate-100 flex flex-row-reverse items-center justify-between bg-navy-950 text-white">
                   <div className="relative w-44 h-12">
                     <Image
                       src="/images/logo.png"
                       alt={doctorData.name}
                       fill
-                      className="object-contain object-right"
+                      className="object-contain object-left"
                     />
                   </div>
                   <button

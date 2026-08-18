@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { doctorData } from "@/data/doctorData";
-import Button from "@/components/Button";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { doctorData } from '@/data/doctorData';
+import Button from '@/components/Button';
 
 export default function DoctorSelectorSection() {
   return (
@@ -13,7 +13,9 @@ export default function DoctorSelectorSection() {
         <span className="text-xs font-bold text-brand uppercase tracking-widest bg-brand/10 px-3 py-1 rounded-full">
           الرعاية الجراحية الموثوقة
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">اختر طبيبك الجراح</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+          اختر طبيبك الجراح
+        </h2>
         <p className="text-sm text-slate-600">
           عيادتنا متخصصة وتدار بإشراف مباشر من استشاري الجراحة الأكاديمي.
         </p>
@@ -31,14 +33,19 @@ export default function DoctorSelectorSection() {
 
         <div className="flex-1 space-y-2 text-center md:text-right">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-            <h3 className="text-xl font-bold text-slate-900">{doctorData.name}</h3>
+            <h3 className="text-xl font-bold text-slate-900">
+              {doctorData.name}
+            </h3>
             <span className="text-xs bg-brand/10 text-brand font-bold px-3 py-1 rounded-full w-max mx-auto md:mx-0">
               خبرة استشارية وأكاديمية
             </span>
           </div>
-          <p className="text-sm text-brand font-semibold">{doctorData.subtitle}</p>
+          <p className="text-sm text-brand font-semibold">
+            {doctorData.subtitle}
+          </p>
           <p className="text-xs text-slate-600 leading-relaxed">
-            الزمالة الكورية لجراحات القولون والمستقيم بالمنظار والروبوت، والبورد السعودي والأردني بالجراحة العامة.
+            الزمالة الكورية لجراحات القولون والمستقيم بالمنظار والروبوت، والبورد
+            السعودي والأردني بالجراحة العامة.
           </p>
         </div>
 

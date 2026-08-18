@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { doctorData } from "@/data/doctorData";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { doctorData } from '@/data/doctorData';
 
 export default function DoctorBioStripSection() {
   return (
