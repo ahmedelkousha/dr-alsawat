@@ -27,6 +27,7 @@ import { medicalFeatures } from '@/data/services';
 import ServiceCard from '@/components/ServiceCard';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
+import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
   title: 'نبذة تعريفية | د. عبدالله الصواط',
@@ -45,19 +46,7 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
       {/* Hero Strip */}
-      <section className="bg-navy-950/95 text-white py-14 md:py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-right space-y-4">
-          <span className="inline-block bg-accent-gold/20 text-accent-gold text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full border border-accent-gold/30">
-            نبذة شخصية ومؤهلات
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white!">
-            {doctorData.name}
-          </h1>
-          <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            {doctorData.subtitle}
-          </p>
-        </div>
-      </section>
+      <PageHero title={doctorData.name} subtitle={doctorData.subtitle} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
         {/* Credentials List & Portrait */}
@@ -65,7 +54,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-64 md:w-80 aspect-[3/4] rounded-3xl overflow-hidden shadow-xl border border-brand">
               <Image
-                src="/images/doctor-portrait.png"
+                src="/images/alsawat-pic.png"
                 alt={doctorData.name}
                 fill
                 className="object-cover object-top"
@@ -78,7 +67,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold text-brand uppercase tracking-widest bg-brand-50">
                 المؤهلات والشهادات العلمية
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900 mt-2">
                 سيرة علمية ومهنية حافلة
               </h2>
             </div>
@@ -104,12 +93,11 @@ export default function AboutPage() {
         {/* 4 Value Pillars Cards */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-              ركائز وقيم الرعاية الطبية
+            <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+              ركائز وقيم رعايتي الطبية
             </h2>
             <p className="text-sm text-slate-600">
-              نلتزم بالمعايير الأخلاقية والمهنية العالية لضمان راحة وسلامة كل
-              مريض.
+              ألتزم بأعلى المعايير الأخلاقية والمهنية لضمان راحة وسلامة كل مريض.
             </p>
           </div>
 
@@ -141,7 +129,7 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Award className="w-6 h-6 text-brand-600" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
                 الإنجازات والنشريات الصحفية
               </h2>
             </div>
@@ -195,7 +183,7 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Video className="w-6 h-6 text-brand-600" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
                 اللقاءات والمشاركات التلفزيونية
               </h2>
             </div>
@@ -244,7 +232,7 @@ export default function AboutPage() {
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
             <div className="flex items-center gap-2">
               {/* <Sparkles className="w-6 h-6 text-accent-gold" /> */}
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
                 التكريم وشهادات التميز
               </h2>
             </div>
@@ -278,11 +266,11 @@ export default function AboutPage() {
         {/* 6-Tile Medical Services Repeat */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-              مجموعة واسعة من الخدمات الطبية
+            <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+              الخدمات الطبية التي أقدمها
             </h2>
             <p className="text-sm text-slate-600">
-              نضمن توفير أفضل التسهيلات والمرافق للمرضى.
+              أوفر أفضل التسهيلات والمرافق لمرضاي.
             </p>
           </div>
 
@@ -300,7 +288,7 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-navy-950/95 text-white rounded-2xl p-6 shadow-card space-y-4">
+            <div className="bg-navy/95 text-white rounded-2xl p-6 shadow-card space-y-4">
               <h3 className="text-white! text-xl font-bold border-r-4 border-accent-gold pr-3">
                 معلومات الاتصال المباشر
               </h3>

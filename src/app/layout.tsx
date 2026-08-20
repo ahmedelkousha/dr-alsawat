@@ -4,7 +4,7 @@ import TopUtilityBar from '@/components/TopUtilityBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
-import WhatsAppFloatingBtn from '@/components/WhatsAppFloatingBtn';
+import FloatingHelpWidget from '@/components/FloatingHelpWidget';
 import { doctorData } from '@/data/doctorData';
 
 export const viewport: Viewport = {
@@ -58,16 +58,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="font-cairo min-h-screen flex flex-col justify-between bg-slate-50 text-slate-800 antialiased">
+      <body className="font-cairo flex flex-col justify-between bg-slate-50 text-slate-800 antialiased">
         <div className="rounded-full">
-          {/* <TopUtilityBar /> */}
           <Header />
 
           <main>{children}</main>
         </div>
         <Footer />
         <BackToTop />
-        <WhatsAppFloatingBtn />
+        <FloatingHelpWidget />
       </body>
     </html>
   );

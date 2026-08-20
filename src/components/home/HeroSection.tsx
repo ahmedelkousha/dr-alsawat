@@ -17,7 +17,7 @@ import { doctorData } from '@/data/doctorData';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-navy-950/95 text-white overflow-hidden pt-8 pb-16 md:py-24 max-w-[110rem]">
+    <section className="relative bg-navy/95 text-white overflow-hidden pt-8 pb-16 md:py-24 max-w-[110rem]">
       {/* Decorative backdrop elements */}
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl pointer-events-none" /> */}
@@ -26,7 +26,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center px-4 sm:px-6 lg:px-8 py-2.5 md:py-1.5">
           {/* Right in RTL: Doctor Info & Intro */}
           <div className="lg:col-span-7 space-y-6 text-right order-2 lg:order-1">
-            <div className="hidden items-center gap-2 bg-navy-900 border border-brand/30 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-semibold text-accent-gold backdrop-blur-md lg:inline-flex">
+            <div className="hidden items-center gap-2 bg-navy border border-brand/30 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-semibold text-accent-gold backdrop-blur-md lg:inline-flex">
               <Award className="w-4 h-4" />
               <span>مجمع تداوي الجراحي الطبي بالطائف</span>
             </div>
@@ -73,7 +73,7 @@ export default function HeroSection() {
                 className="object-cover object-center"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 right-4 left-4 bg-white/90 backdrop-blur-md p-3 rounded-lg border border-white/40 shadow-lg text-slate-900 text-center">
                 <p className="font-bold text-sm text-slate-900">
                   {doctorData.name}

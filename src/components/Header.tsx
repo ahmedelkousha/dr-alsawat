@@ -8,6 +8,7 @@ import { ChevronDown, Menu, X, Calendar, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { doctorData } from '@/data/doctorData';
 import Button from '@/components/Button';
+import TopUtilityBar from './TopUtilityBar';
 
 export interface NavItem {
   title: string;
@@ -30,7 +31,7 @@ export const navItems: NavItem[] = [
     ],
   },
   { title: 'المواعيد', href: '/appointments' },
-  { title: 'اتصل بنا', href: '/contact' },
+  { title: 'تواصل معنا', href: '/contact' },
 ];
 
 export default function Header() {
@@ -45,11 +46,13 @@ export default function Header() {
   }, [pathname]);
 
   const isAnalActive = pathname.startsWith('/anal-surgery');
+  const isHomePage = pathname === '/';
 
   return (
     <div className="fixed top-5 md:top-8 inset-x-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-50">
+      {isHomePage && <TopUtilityBar />}
       {/* Sticky Navigation Header Bar */}
-      <header className="rounded-xl z-40 bg-white/95 backdrop-blur-md shadow-sm">
+      <header className={`z-40 bg-white/95 backdrop-blur-md shadow-sm ${isHomePage ? 'rounded-b-[12px]' : 'rounded-xl'}`}>
         <div className="max-w-[110rem] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 md:py-1.5">
           <div className="flex xl:flex-row flex-row-reverse items-center justify-between">
             {/* Logo */}
@@ -78,15 +81,26 @@ export default function Header() {
                     >
                       <button
                         type="button"
-                        className={`flex items-center gap-1 px-4 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-all ${
+                        className={`relative flex items-center gap-1 px-2 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-colors ${
                           isAnalActive
-                            ? 'text-brand bg-brand/10 font-bold border-b-2 border-brand'
-                            : 'text-slate-700 hover:text-brand hover:bg-slate-50'
+                            ? 'text-brand font-bold'
+                            : 'text-slate-700 hover:text-brand hover:bg-slate-50/60'
                         }`}
                       >
-                        <span>{item.title}</span>
+                        {isAnalActive && (
+                          <motion.div
+                            layoutId="activeHeaderNav"
+                            className="absolute inset-0 bg-brand/10 rounded-lg border-b-2 border-brand"
+                            transition={{
+                              type: 'spring',
+                              stiffness: 380,
+                              damping: 30,
+                            }}
+                          />
+                        )}
+                        <span className="relative z-10">{item.title}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
+                          className={`relative z-10 w-4 h-4 transition-transform duration-200 ${
                             analDropdownOpen ? 'rotate-180 text-brand' : ''
                           }`}
                         />
@@ -124,27 +138,40 @@ export default function Header() {
                   );
                 }
 
+                const isActive = pathname === item.href;
+
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-3 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-all ${
-                      pathname === item.href
-                        ? 'text-brand bg-brand/10 font-bold border-b-2 border-brand'
-                        : 'text-slate-700 hover:text-brand hover:bg-slate-50'
+                    className={`relative px-2 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-colors ${
+                      isActive
+                        ? 'text-brand font-bold'
+                        : 'text-slate-700 hover:text-brand hover:bg-slate-50/60'
                     }`}
                   >
-                    {item.title}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeHeaderNav"
+                        className="absolute inset-0 bg-brand/10 rounded-lg border-b-2 border-brand"
+                        transition={{
+                          type: 'spring',
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10">{item.title}</span>
                   </Link>
                 );
               })}
             </nav>
 
-            <div className='flex flex-row-reverse xl:flex-row gap-3'>
+            <div className="flex flex-row-reverse xl:flex-row gap-3">
               {/* Header Action Button (Desktop) */}
               <div className="flex items-center gap-3">
                 <Button
-                  className="2xl:text-sm text-xs hidden sm:inline-flex"
+                  className="2xl:text-sm text-xs hidden sm:inline-flex bg-[#09153f]"
                   href="/appointments"
                   variant="navy"
                   size="md"
@@ -178,7 +205,6 @@ export default function Header() {
                   )}
                 </button>
               </div>
-              
             </div>
           </div>
         </div>
@@ -194,7 +220,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-navy-950/70 backdrop-blur-sm"
+              className="fixed inset-0 bg-navy/70 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             />
 
@@ -208,7 +234,7 @@ export default function Header() {
             >
               <div>
                 {/* Drawer Header */}
-                <div className="p-4 border-b border-slate-100 flex flex-row-reverse items-center justify-between bg-navy-950 text-white">
+                <div className="p-4 border-b border-slate-100 flex flex-row-reverse items-center justify-between bg-navy text-white">
                   <div className="relative w-44 h-12">
                     <Image
                       src="/images/logo.png"
@@ -295,7 +321,7 @@ export default function Header() {
                   href="/appointments"
                   variant="navy"
                   fullWidth
-                  icon={<Calendar className="w-4 h-4 text-slate-900" />}
+                  icon={<Calendar className="w-4 h-4 text-brand" />}
                 >
                   حجز موعد عيادة
                 </Button>
@@ -305,7 +331,7 @@ export default function Header() {
                   fullWidth
                   target="_blank"
                 >
-                  استشارة واتساب عاجلة
+                  استشارة عبر الواتساب
                 </Button>
               </div>
             </motion.div>

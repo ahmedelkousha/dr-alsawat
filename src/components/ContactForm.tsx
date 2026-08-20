@@ -11,7 +11,7 @@ interface ContactFormProps {
 
 export default function ContactForm({
   title = "ارسل لنا رسالتك",
-  subtitle = "تواصل مباشر مع عيادة د. عبدالله الصواط وسيقوم فريقنا بالرد عليك بأسرع وقت.",
+  subtitle = "تواصل مباشر مع عيادة د. عبدالله الصواط وسأرد عليك بأسرع وقت.",
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",

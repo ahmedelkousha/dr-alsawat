@@ -36,7 +36,7 @@ export const mediaAppearancesData: MediaAppearance[] = [
     title: "لقاء تلفزيوني: الوقاية والأعراض المبكرة لأمراض القولون والمستقيم",
     event: "برنامج صحتك أولاً",
     year: "2024",
-    embedUrl: "https://www.youtube.com/embed/-drCfrHNd8M?si=jcy3LR8cDoNn3kva", // Placeholder embedded video
+    embedUrl: "https://www.youtube.com/embed/-drCfrHNd8M?si=jcy3LR8cDoNn3kva",
     thumbnailUrl: "/images/doctor-portrait.png",
   },
   {
@@ -44,7 +44,7 @@ export const mediaAppearancesData: MediaAppearance[] = [
     title: "محاضرة علمية: التقنيات الروبوتية في الجراحة العامة بجامعة الطائف",
     event: "الملتقى الطبي السنوي",
     year: "2023",
-    embedUrl: "https://www.youtube.com/embed/-drCfrHNd8M?si=jcy3LR8cDoNn3kva",
+    embedUrl: "https://www.youtube.com/embed/9M0kLoRZNls?si=NQp5zgQQalt5FTaY",
     thumbnailUrl: "/images/doctor-portrait.png",
   },
 ];

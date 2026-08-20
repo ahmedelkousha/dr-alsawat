@@ -4,18 +4,18 @@ import { doctorData } from '@/data/doctorData';
 
 export default function DoctorThomasHero() {
   return (
-    <section className="w-full h-svh xl:h-dvh bg-[url('/images/bg-hero.jpeg')] bg-cover bg-left sm:bg-fixed bg-no-repeat text-[#2d4552] overflow-hidden font-cairo relative flex items-center justify-center pt-28 pb-6 xl:pt-0 xl:pb-0">
+    <section className="w-full h-svh xl:h-dvh bg-[url('/images/bg-hero.jpeg')] bg-cover bg-left sm:bg-fixed bg-no-repeat text-[#2d4552] overflow-hidden font-cairo relative flex items-center justify-center pt-[150px] pb-6 xl:pt-0 xl:pb-0">
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 w-full h-full mx-auto relative z-10 flex flex-col xl:grid xl:grid-cols-12 gap-8 xl:gap-8 items-center justify-center">
         {/* Center Doctor Quote Section */}
-        <div className="w-full xl:col-span-4 basis-[70%] flex flex-col justify-start sm:justify-center xl:justify-end items-center sm:items-start sm:text-right xl:items-start order-2 xl:order-2 text-center xl:text-right">
+        <div className="w-full xl:col-span-4 basis-[80%] flex flex-col justify-start sm:justify-center xl:justify-end items-center sm:items-start sm:text-right xl:items-start order-2 xl:order-2 text-center xl:text-right">
           <div className="flex flex-col justify-end xl:text-nowrap">
-            <span className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl xl:text-7xl text-primary font-bold tracking-wide leading-snug xl:leading-relaxed">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary font-bold tracking-wide leading-snug xl:leading-relaxed">
              "الجراحة تصنع القادة،
             </span>
-            <span className="text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-5xl text-white font-bold tracking-wide leading-snug xl:leading-relaxed mb-4 sm:mb-6 xl:mb-10">
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-white font-bold tracking-wide leading-snug xl:leading-relaxed mb-4 sm:mb-6 xl:mb-10">
               والقادة تصنع جيلاً من الجراحين"
             </span>
-            <span className="text-base sm:text-sm md:text-xl lg:text-3xl xl:text-2xl 2xl:text-3xl  text-white/90 font-medium tracking-wide flex justify-center gap-0.5">
+            <span className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-3xl  text-white/90 font-medium tracking-wide flex sm:justify-start justify-center gap-0.5">
             د.
               <span className="text-white font-medium">عبدالله الصواط</span>
             </span>
@@ -30,7 +30,7 @@ export default function DoctorThomasHero() {
               alt={doctorData.name}
               width={2113}
             height={3661}
-            className="w-auto sm:w-[360px] md:w-[440px] lg:w-[480px] sm:h-[75vh] lg:h-[80vh] xl:h-[95vh] h-[65vh] object-contain object-bottom"
+            className="w-auto sm:w-[360px] md:w-[400px] lg:w-[480px] sm:h-[75vh] lg:h-[80vh] xl:h-[95vh] h-[60vh] object-contain object-bottom"
               priority
             />
           </div>

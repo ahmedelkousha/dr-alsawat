@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-cairo: "Cairo", system-ui, -apple-system, sans-serif;
+  --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
 
   /* Hex Color Values defined 100% in globals.css */
   --color-brand: #f3b844;
@@ -11,10 +11,7 @@
   --color-secondary: #0f1520;
   --color-secondary-dark: #080c14;
 
-  --color-navy-800: #181f2a;
-  --color-navy-900: #0f1520;
-  --color-navy-950: #080c14;
-  --color-navy:#070e2e;
+  --color-navy: #060f2e;
 
   --color-accent-gold: #d4af37;
   --color-accent-goldHover: #c5a059;
@@ -32,14 +29,18 @@
 }
 
 html {
-  scroll-behavior: smooth;
   direction: rtl;
+  scroll-behavior: smooth !important;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: "Cairo", system-ui, -apple-system, sans-serif;
+  font-family:
+    'Cairo',
+    system-ui,
+    -apple-system,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,7 +49,12 @@ body {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.025em;

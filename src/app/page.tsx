@@ -20,7 +20,7 @@ export default function HomePage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
         {/* 2. Emergency Booking Banner */}
-        <EmergencyBanner />
+        {/* <EmergencyBanner /> */}
 
         {/* 3. Doctor Selector Strip */}
         <DoctorSelectorSection />
@@ -35,16 +35,16 @@ export default function HomePage() {
         <MedicalFeaturesSection />
 
         {/* 7. Working Hours Widget */}
-        <WorkingHoursWidgetSection />
+        {/* <WorkingHoursWidgetSection /> */}
 
         {/* 8. WhatsApp Consultation CTA Banner */}
         <WhatsAppBanner />
 
         {/* 9. Doctor Bio Strip */}
-        <DoctorBioStripSection />
+        {/* <DoctorBioStripSection /> */}
 
         {/* 10. Medical News Section */}
-        <MedicalNewsSection />
+        {/* <MedicalNewsSection /> */}
 
         {/* 11. Patient Testimonials */}
         <PatientTestimonialsSection />
