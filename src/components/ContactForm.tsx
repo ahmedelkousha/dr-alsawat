@@ -78,10 +78,10 @@ export default function ContactForm({
   return (
     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-slate-100">
       <div className="mb-6 space-y-2">
-        <h3 className="text-xl md:text-2xl font-bold text-slate-900 border-r-4 border-brand pr-3">
+        <h3 className="text-lg sm:text-2xl font-bold text-slate-900 border-r-4 border-brand pr-3">
           {title}
         </h3>
-        {subtitle && <p className="text-sm text-slate-600">{subtitle}</p>}
+        {subtitle && <p className="text-xs sm:text-sm text-slate-600">{subtitle}</p>}
       </div>
 
       {status && (
@@ -174,7 +174,7 @@ export default function ContactForm({
         <Button
           type="submit"
           variant="primary"
-          size="lg"
+          size="md"
           fullWidth
           loading={loading}
           icon={<Send className="w-4 h-4 scale-x-[-1]" />}

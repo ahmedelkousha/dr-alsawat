@@ -16,10 +16,15 @@ import {
   ExternalLink,
   Globe,
 } from 'lucide-react';
+import Button from '@/components/Button';
 import { doctorData } from '@/data/doctorData';
 import MapEmbed from '@/components/MapEmbed';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import PageHero from '@/components/PageHero';
+
+import AppointmentQuickCard, {
+  AppointmentQuickCardProps,
+} from '@/components/AppointmentQuickCard';
 
 export default function AppointmentsPage() {
   const [formData, setFormData] = useState({
@@ -44,100 +49,63 @@ export default function AppointmentsPage() {
     }, 1000);
   };
 
+  const quickCardsData: AppointmentQuickCardProps[] = [
+    {
+      icon: <Clock className="w-6 h-6 text-accent-gold" />,
+      title: 'أوقات العمل المتاحة',
+      description:
+        'نستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي كل أحد وثلاثاء من الساعة 6-8 مساءً.',
+      buttonText: 'موقع العيادة',
+      buttonHref: doctorData.clinicLocationURL,
+      buttonIcon: <MapPin className="w-4 h-4 text-slate-900" />,
+    },
+    {
+      icon: <Phone className="w-6 h-6 text-accent-gold" />,
+      title: 'الاتصال المباشر للحجز',
+      description:
+        'اتصل بالمجمع هاتفياً خلال ساعات الدوام للإجابة عن تساؤلاتك وتأكيد حجزك.',
+      buttonText: 'اتصل للحجز',
+      buttonHref: `tel:${doctorData.phoneRaw}`,
+      buttonIcon: <Phone className="w-4 h-4 text-slate-900" />,
+    },
+    {
+      icon: <WhatsAppIcon className="w-6 h-6 text-accent-whatsapp" />,
+      title: 'حجز فوري عبر الواتساب',
+      description:
+        'تواصل مباشر مع مجمع تداوي الجراحي لاختيار موعدك المناسب للحجز.',
+      buttonText: 'تواصل عبر الواتساب',
+      buttonHref: doctorData.whatsappUrl,
+      buttonIcon: <WhatsAppIcon className="w-4 h-4 text-accent-whatsapp" />,
+      containerClassName:
+        'bg-emerald-700/85 text-white rounded-3xl p-4 shadow-sm border border-brand/10 flex flex-col justify-between space-y-4',
+      descriptionClassName: 'text-xs text-slate-200 leading-relaxed',
+      buttonClassName: 'bg-white/85 hover:bg-emerald-200',
+    },
+    {
+      icon: <Globe className="w-6 h-6 text-accent-gold" />,
+      title: 'حجز إلكتروني مباشر',
+      description:
+        'حجز موعدك مباشرة عبر البوابة الإلكترونية المعتمدة لمجمع تداوي الجراحي الطبي.',
+      buttonText: 'الحجز من خلال موقع مجمع',
+      buttonHref: doctorData.bookingUrl,
+      buttonIcon: <ExternalLink className="w-4 h-4" />,
+    },
+  ];
+
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
       {/* Page Hero Banner */}
       <PageHero
         title="حجز موعد بالعيادة"
-        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة عبر الواتساب المباشر، الاتصال، أو النموذج الإلكتروني.`}
+        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل مع مجمع تداوي الجراحي في الطائف عبر الواتساب، الاتصال، موقع المجمع الرسمي أو زيارة العيادة بالمجمع.`}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         {/* Working Hours & Quick Action Cards */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Card 1: Direct Online Booking Portal */}
-          <div className="bg-gradient-to-br from-brand-700 to-navy text-white rounded-3xl p-6 shadow-card space-y-4 flex flex-col justify-between border border-brand/30">
-            <div className="space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
-                <Globe className="w-6 h-6 text-accent-gold" />
-              </div>
-              <h3 className="font-bold text-lg text-white">حجز إلكتروني مباشر</h3>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                حجز موعدك مباشرة عبر البوابة الإلكترونية المعتمدة لمجمع تداوي الجراحي الطبي.
-              </p>
-            </div>
-            <a
-              href={doctorData.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-accent-gold hover:bg-brand text-slate-900 hover:text-white font-bold text-sm py-3 rounded-xl shadow transition-all text-center inline-flex items-center justify-center gap-2"
-            >
-              <span>موقع مجمع تداوي الطبي</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Card 2: Working Hours */}
-          <div className="bg-white rounded-3xl p-6 shadow-card border border-slate-100 space-y-3 flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
-                <Clock className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold text-slate-900 text-lg">
-                أوقات العمل المتاحة
-              </h3>
-              <p className="text-brand-700 font-bold text-base">
-                {doctorData.workingHours}
-              </p>
-            </div>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              أستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي الطبي بالطائف.
-            </p>
-          </div>
-
-          {/* Card 3: WhatsApp Quick Booking CTA */}
-          <div className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white rounded-3xl p-6 shadow-card space-y-4 flex flex-col justify-between">
-            <div className="space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                <WhatsAppIcon className="w-6 h-6 text-accent-whatsapp" />
-              </div>
-              <h3 className="font-bold text-lg">حجز فوري عبر الواتساب</h3>
-              <p className="text-xs text-emerald-100 leading-relaxed">
-                تواصل مباشر لاختيار أنسب وقت وتأكيد موعدك فوراً.
-              </p>
-            </div>
-            <a
-              href={doctorData.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-white text-emerald-900 hover:bg-emerald-50 font-bold text-sm py-3 rounded-xl shadow transition-colors text-center inline-flex items-center justify-center gap-2"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-accent-whatsapp" />
-              <span>احجز عبر الواتساب الان</span>
-            </a>
-          </div>
-
-          {/* Card 4: Click-to-Call */}
-          <div className="bg-navy/95 text-white rounded-3xl p-6 shadow-card space-y-4 flex flex-col justify-between">
-            <div className="space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
-                <Phone className="w-6 h-6 text-accent-gold" />
-              </div>
-              <h3 className="text-white! font-bold text-lg">
-                الاتصال المباشر للحجز
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                اتصل بنا هاتفياً خلال ساعات الدوام للإجابة عن تساؤلاتك وتأكيد حجزك.
-              </p>
-            </div>
-            <a
-              href={`tel:${doctorData.phoneRaw}`}
-              className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm py-3 rounded-xl shadow transition-colors text-center inline-flex items-center justify-center gap-2 dir-ltr border border-slate-700"
-            >
-              <Phone className="w-4 h-4 text-accent-gold" />
-              <span>للحجز: {doctorData.phoneDisplay}</span>
-            </a>
-          </div>
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
+          {quickCardsData.map((card, idx) => (
+            <AppointmentQuickCard key={idx} {...card} />
+          ))}
         </section>
 
         {/* Appointment Form & Reassurance Box */}
@@ -273,7 +241,7 @@ export default function AppointmentsPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-base py-3.5 rounded-xl shadow transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-accent-gold hover:bg-accent-goldHover text-slate-900 font-bold text-base py-3.5 rounded-xl shadow transition-all flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
@@ -283,7 +251,7 @@ export default function AppointmentsPage() {
                   ) : (
                     <>
                       <span>تأكيد طلب الموعد</span>
-                      <Send className="w-4 h-4 rotate-180" />
+                      <Send className="w-4 h-4 -rotate-90" />
                     </>
                   )}
                 </button>
@@ -291,10 +259,9 @@ export default function AppointmentsPage() {
             )}
           </div>
 
-          {/* Reassurance Copy & Map */}
+          
           <div className="lg:col-span-5 space-y-6">
-            {/* Emergency Reassurance */}
-            <div className="bg-rose-50 border border-rose-200 rounded-3xl p-6 space-y-3">
+            {/* <div className="bg-rose-50 border border-rose-200 rounded-3xl p-6 space-y-3">
               <div className="flex items-center gap-2 text-rose-800 font-bold text-base">
                 <AlertTriangle className="w-5 h-5 text-rose-600" />
                 <span>حالات الطوارئ والآلام الحادة</span>
@@ -310,10 +277,10 @@ export default function AppointmentsPage() {
               >
                 <span>اتصل بطوارئ العيادة: {doctorData.phoneDisplay}</span>
               </a>
-            </div>
+            </div> */}
 
             {/* Quality Reassurance */}
-            <div className="bg-white rounded-3xl p-6 shadow-card border border-slate-100 space-y-3">
+            {/* <div className="bg-white rounded-3xl p-6 shadow-card border border-slate-100 space-y-3">
               <div className="flex items-center gap-2 text-brand-700 font-bold">
                 <ShieldCheck className="w-5 h-5 text-brand-600" />
                 <span>خصوصية ورعاية فائقة</span>
@@ -322,7 +289,7 @@ export default function AppointmentsPage() {
                 جميع بياناتك ومعلوماتك الطبية تحظى بأعلى مستويات الخصوصية
                 والسرية التامة وفق المعايير الطبية المعتمدة.
               </p>
-            </div>
+            </div> */}
 
             <MapEmbed heightClass="h-[280px]" />
           </div>

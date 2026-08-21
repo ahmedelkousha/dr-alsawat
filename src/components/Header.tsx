@@ -30,7 +30,7 @@ export const navItems: NavItem[] = [
       { title: 'البواسير الشرجية', href: '/anal-surgery/hemorrhoids' },
     ],
   },
-  { title: 'المواعيد', href: '/appointments' },
+  { title: 'الحجز', href: '/appointments' },
   { title: 'تواصل معنا', href: '/contact' },
 ];
 
@@ -57,7 +57,7 @@ export default function Header() {
           <div className="flex xl:flex-row flex-row-reverse items-center justify-between">
             {/* Logo */}
             <Link href="/" className="focus:outline-none inline-block">
-              <div className="relative w-40 sm:w-46 md:w-57.5 h-10 sm:h-12 md:h-16 overflow-hidden scale-105">
+              <div className="relative w-34 sm:w-46 md:w-57.5 h-10 sm:h-12 md:h-16 overflow-hidden">
                 <Image
                   src="/images/logo.png"
                   alt={doctorData.name}
@@ -83,7 +83,7 @@ export default function Header() {
                         type="button"
                         className={`relative flex items-center gap-1 px-2 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-colors ${
                           isAnalActive
-                            ? 'text-brand font-bold'
+                            ? 'text-brand'
                             : 'text-slate-700 hover:text-brand hover:bg-slate-50/60'
                         }`}
                       >
@@ -123,7 +123,7 @@ export default function Header() {
                                   href={child.href}
                                   className={`block px-4 py-2.5 text-sm transition-colors ${
                                     pathname === child.href
-                                      ? 'bg-brand/10 text-brand font-bold border-r-4 border-brand'
+                                      ? 'bg-brand/10 text-brand border-r-4 border-brand'
                                       : 'text-slate-700 hover:bg-slate-50 hover:text-brand'
                                   }`}
                                 >
@@ -146,7 +146,7 @@ export default function Header() {
                     href={item.href}
                     className={`relative px-2 py-2 rounded-lg text-xs 2xl:text-sm font-semibold transition-colors ${
                       isActive
-                        ? 'text-brand font-bold'
+                        ? 'text-brand'
                         : 'text-slate-700 hover:text-brand hover:bg-slate-50/60'
                     }`}
                   >
@@ -259,9 +259,9 @@ export default function Header() {
                         <div key={item.href} className="space-y-1">
                           <button
                             onClick={() => setMobileAnalOpen(!mobileAnalOpen)}
-                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg font-semibold text-base text-slate-700 hover:bg-slate-50"
+                            className={`${isAnalActive ? 'bg-brand/10! text-brand!' : 'text-slate-600! hover:bg-slate-50! hover:text-brand!'} w-full flex items-center justify-between px-4 py-3 rounded-lg font-semibold text-base text-slate-700 hover:bg-slate-50`}
                           >
-                            <span>{item.title}</span>
+                            <span >{item.title}</span>
                             <ChevronDown
                               className={`w-5 h-5 transition-transform ${
                                 mobileAnalOpen ? 'rotate-180 text-brand' : ''
@@ -284,7 +284,7 @@ export default function Header() {
                                     href={child.href}
                                     className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${
                                       pathname === child.href
-                                        ? 'bg-brand/10 text-brand font-bold'
+                                        ? 'bg-brand/10 text-brand'
                                         : 'text-slate-600 hover:bg-slate-50 hover:text-brand'
                                     }`}
                                   >
@@ -304,7 +304,7 @@ export default function Header() {
                         href={item.href}
                         className={`block px-4 py-3 rounded-lg font-semibold text-base transition-colors ${
                           pathname === item.href
-                            ? 'bg-brand/10 text-brand font-bold'
+                            ? 'bg-brand/10 text-brand'
                             : 'text-slate-700 hover:bg-slate-50'
                         }`}
                       >

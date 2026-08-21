@@ -12,7 +12,7 @@
   --color-secondary-dark: #080c14;
 
   --color-navy: #060f2e;
-
+  --color-navy-secondary: #09153f;
   --color-accent-gold: #d4af37;
   --color-accent-goldHover: #c5a059;
   --color-accent-whatsapp: #25d366;
@@ -101,6 +101,9 @@ h6 {
   }
 }
 
+button {
+  cursor: pointer;
+}
 .animate-slide-right {
   animation: slideFromRight 0.3s ease-out forwards;
 }

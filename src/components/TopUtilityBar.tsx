@@ -7,7 +7,7 @@ import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function TopUtilityBar() {
   return (
-    <div className="bg-[#09153f] text-slate-200 text-xs md:text-sm py-2.5 px-4 block rounded-t-[12px]">
+    <div className="bg-navy-secondary text-slate-200 text-xs md:text-sm py-2.5 px-4 block rounded-t-[12px]">
       <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-3">
         {/* Right side in RTL: Working Hours & Clinic Name */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6">

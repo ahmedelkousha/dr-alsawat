@@ -2,18 +2,12 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import {
-  AlertCircle,
-  Clock,
-  Phone,
-  Stethoscope,
-  Calendar,
-  Sparkles,
-} from 'lucide-react';
+import { AlertCircle, Clock, Phone, Calendar } from 'lucide-react';
 import { analSurgeriesData } from '@/data/analSurgeries';
 import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
+import Button from '@/components/Button';
 import PageHero from '@/components/PageHero';
 
 interface PageProps {
@@ -71,14 +65,14 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         {/* Section 1: تعريف الحالة (What is this condition) */}
         <section className="bg-white rounded-3xl p-6 md:p-10 shadow-card border border-slate-100 space-y-4">
           <div className="border-r-4 border-brand pr-3">
-            <span className="text-xs font-bold text-brand uppercase tracking-widest">
+            {/* <span className="text-xs font-bold text-brand uppercase tracking-widest">
               التشخيص والفهم
-            </span>
+            </span> */}
             <h2 className="text-xl md:text-3xl font-bold text-slate-900 mt-1">
               تعريف حالة {data.title}
             </h2>
           </div>
-          <p className="text-base md:text-lg text-slate-700 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
             {data.whatIsIt}
           </p>
         </section>
@@ -87,13 +81,13 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Symptoms */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-slate-100 space-y-4">
-            <h3 className="text-xl font-bold text-slate-900 border-r-4 border-rose-500 pr-3">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 border-r-4 border-rose-500 pr-3">
               أبرز الأعراض المصاحبة
             </h3>
-            <ul className="space-y-3 text-sm text-slate-700">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
               {data.symptomsAndCauses.symptoms.map((symptom, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-rose-500 mt-2 flex-shrink-0 animate-pulse" />
                   <span className="font-semibold">{symptom}</span>
                 </li>
               ))}
@@ -102,13 +96,13 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
 
           {/* Causes */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-slate-100 space-y-4">
-            <h3 className="text-xl font-bold text-slate-900 border-r-4 border-amber-500 pr-3">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 border-r-4 border-amber-500 pr-3">
               الأسباب والعوامل المؤدية
             </h3>
-            <ul className="space-y-3 text-sm text-slate-700">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
               {data.symptomsAndCauses.causes.map((cause, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-amber-500 mt-2 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-500 mt-2 flex-shrink-0 animate-pulse" />
                   <span className="font-semibold">{cause}</span>
                 </li>
               ))}
@@ -119,9 +113,9 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         {/* Section 3: خيارات العلاج الجراحي (Surgical Treatment Options) */}
         <section className="bg-gradient-to-br from-navy to-navy text-white rounded-3xl p-6 md:p-10 shadow-xl space-y-6 border border-brand/20">
           <div className="space-y-2 border-r-4 border-accent-gold pr-3">
-            <span className="text-xs font-bold text-accent-gold uppercase tracking-wider">
+            {/* <span className="text-xs font-bold text-accent-gold uppercase tracking-wider">
               الخيارات والتقنيات المتاحة
-            </span>
+            </span> */}
             <h2 className="text-white! text-xl md:text-3xl font-bold">
               خيارات العلاج الجراحي لـ {data.title}
             </h2>
@@ -131,24 +125,27 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
             {data.treatmentOptions.map((opt, i) => (
               <div
                 key={i}
-                className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 flex items-start gap-3 text-sm font-semibold text-slate-100"
+                className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 flex items-start gap-3 text-xs sm:text-sm font-semibold text-slate-100"
               >
                 {/* <Stethoscope className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5" /> */}
-                <span>{opt}</span>
+                <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white flex items-center justify-center flex-shrink-0 font-extrabold">
+                  {i + 1}
+                </span>
+                <span className="text-xs sm:text-sm">{opt}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* Section 4: التعافي بعد الجراحة (Post-op Recovery) */}
-        <section className="bg-emerald-50 rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-3">
+        <section className="bg-emerald-50 rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-2">
           <div className="flex items-center gap-3">
-            <Clock className="w-6 h-6 text-emerald-700" />
-            <h3 className="text-xl font-bold text-emerald-950">
+            <Clock className="w-8 h-8 text-emerald-700" />
+            <h3 className="text-base sm:text-xl font-bold text-emerald-950">
               التعافي والرعاية بعد الجراحة
             </h3>
           </div>
-          <p className="text-sm md:text-base text-emerald-900 leading-relaxed pr-9 font-medium">
+          <p className="text-[0.7rem] sm:text-xs md:text-base text-emerald-900 leading-relaxed pr-11 font-medium">
             {data.postOpRecovery}
           </p>
         </section>
@@ -156,8 +153,8 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         {/* Section 5: متى تتصل بالطبيب (Warning Signs / When to call) */}
         <section className="bg-rose-50 rounded-3xl p-6 md:p-8 border border-rose-200 space-y-4">
           <div className="flex items-center gap-3 text-rose-900 border-b border-rose-200 pb-3">
-            <AlertCircle className="w-6 h-6 text-rose-600" />
-            <h3 className="text-xl font-bold">
+            <AlertCircle className="w-6 h-6 text-rose-600 animate-bounce" />
+            <h3 className="text-base sm:text-xl font-bold">
               متى تتصل بالطبيب؟ (علامات التحذير)
             </h3>
           </div>
@@ -165,7 +162,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
             {data.warningSigns.map((sign, idx) => (
               <li
                 key={idx}
-                className="bg-white p-3 rounded-xl border border-rose-100 font-semibold flex items-center gap-2"
+                className="bg-white p-3 text-xs sm:text-sm rounded-xl border border-rose-100 font-semibold flex items-center gap-2"
               >
                 <span className="w-2 h-2 rounded-full bg-rose-600 flex-shrink-0" />
                 <span>{sign}</span>
@@ -173,59 +170,58 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
             ))}
           </ul>
 
-          <div className="pt-2 text-center md:text-right">
-            <a
-              href={`tel:${doctorData.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              <span>للاستفسار الطارئ: {doctorData.phoneDisplay}</span>
-            </a>
-          </div>
+          <Button
+            size="sm"
+            className="bg-rose-600 hover:bg-rose-700 text-white"
+            href={`tel:${doctorData.phoneRaw}`}
+            icon={<Phone className="w-4 h-4" />}
+          >
+            استفسار طارئ؟ اتصل بنا
+          </Button>
         </section>
 
         {/* Navigation to other anal surgery pages */}
-        <section className="bg-slate-100 rounded-3xl p-6 border border-slate-200 space-y-4">
+        <section className="bg-white rounded-3xl p-6 border border-slate-200 space-y-4">
           <h4 className="font-bold text-slate-900 text-base">
             استكشف باقي جراحات المنطقة الشرجية:
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
             <Link
               href="/anal-surgery/pilonidal-sinus"
-              className={`p-3 rounded-xl border font-bold text-center transition-all ${
+              className={`border border-slate-300 p-3 rounded-xl font-bold text-center transition-all ${
                 slug === 'pilonidal-sinus'
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-700 hover:bg-brand/10'
+                  ? 'bg-accent-gold text-slate-900/70 border-brand'
+                  : 'bg-slate-50 text-slate-700 hover:bg-brand'
               }`}
             >
               الناسور العصعصي
             </Link>
             <Link
               href="/anal-surgery/anal-fissure"
-              className={`p-3 rounded-xl border font-bold text-center transition-all ${
+              className={`p-3 rounded-xl border border-slate-300 font-bold text-center transition-all ${
                 slug === 'anal-fissure'
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-700 hover:bg-brand/10'
+                  ? 'bg-brand text-slate-700 border-brand'
+                  : 'bg-slate-50 text-slate-700 hover:bg-brand'
               }`}
             >
               الشرخ الشرجي
             </Link>
             <Link
               href="/anal-surgery/anal-fistula"
-              className={`p-3 rounded-xl border font-bold text-center transition-all ${
+              className={`p-3 rounded-xl border border-slate-300 font-bold text-center transition-all ${
                 slug === 'anal-fistula'
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-700 hover:bg-brand/10'
+                  ? 'bg-brand text-slate-700 border-brand'
+                  : 'bg-slate-50 text-slate-700 hover:bg-brand'
               }`}
             >
               النواسير الشرجية
             </Link>
             <Link
               href="/anal-surgery/hemorrhoids"
-              className={`p-3 rounded-xl border font-bold text-center transition-all ${
+              className={`p-3 rounded-xl border border-slate-300 font-bold text-center transition-all ${
                 slug === 'hemorrhoids'
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-700 hover:bg-brand/10'
+                  ? 'bg-brand text-slate-700 border-brand'
+                  : 'bg-slate-50 text-slate-700 hover:bg-brand'
               }`}
             >
               البواسير الشرجية
@@ -238,26 +234,28 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
           <div className="lg:col-span-7">
             <ContactForm
               title={`ارسل استفسارك بخصوص ${data.title}`}
-              subtitle="سأتواصل معك بخصوص الخيارات العلاجية والجراحية المناسبة."
+              subtitle="سنتوصال معك بخصوص الخيارات العلاجية والجراحية المناسبة."
             />
           </div>
 
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-navy text-white rounded-2xl p-6 shadow-card space-y-3 border border-brand/20">
+            <div className="bg-white text-white rounded-2xl p-6 shadow-sm space-y-3">
               <h3 className="font-bold text-lg border-r-4 border-accent-gold pr-3">
-                حجز موعد عيادة جراحية
+                حجز موعد استشارة
               </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                أستقبل المراجعين: {doctorData.workingHours} بمجمع تداوي الجراحي
-                الطبي بالطائف.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                تستفبل العيادة المراجعين أيام {doctorData.workingHours} بمجمع
+                تداوي الجراحي الطبي بالطائف.
               </p>
-              <Link
+              <Button
                 href="/appointments"
-                className="w-full inline-flex items-center justify-center gap-2 bg-accent-gold hover:bg-brand text-slate-900 hover:text-white font-bold text-sm py-3 rounded-xl transition-colors"
+                size="sm"
+                fullWidth
+                className="text-slate-900"
+                icon={<Calendar className="w-4 h-4" />}
               >
-                <Calendar className="w-4 h-4" />
-                <span>حجز موعد بالعيادة</span>
-              </Link>
+                الانتقال لصفحة الحجز
+              </Button>
             </div>
 
             <MapEmbed heightClass="h-[280px]" />

@@ -43,7 +43,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className="bg-white rounded-2xl p-4 md:p-6 shadow-card hover:shadow-card-hover border border-slate-100 transition-all duration-300 group flex flex-col justify-between">
       <div className="space-y-4">
-        <div className="w-14 h-14 rounded-2xl text-brand group-hover:bg-brand group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+        <div className="bg-navy w-14 h-14 rounded-2xl text-brand group-hover:bg-brand group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
           <IconComponent className="w-7 h-7" />
         </div>
         <div className="space-y-2">

@@ -49,12 +49,12 @@ export default function FloatingHelpWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="absolute bottom-16 right-0 w-[80vw] max-h-[440px] md:max-h-[500px] sm:w-96 bg-white rounded-3xl shadow-2xl border border-brand overflow-hidden text-right"
+            className="absolute bottom-16 right-0 w-[80vw] max-h-[440px] md:max-h-[500px] sm:w-96 rounded-3xl shadow-2xl overflow-hidden text-right"
           >
             {/* Header */}
-            <div className="bg-navy text-white md:p-5 p-3 relative overflow-hidden flex items-center justify-between">
+            <div className="bg-navy-secondary text-white md:p-5 p-3 relative overflow-hidden flex items-center justify-between">
               <div className="flex items-center gap-3 z-10">
-                <div className="w-10 h-10 rounded-2xl bg-brand/20 border border-brand/40 text-accent-gold flex items-center justify-center">
+                <div className="w-10 h-10 rounded-2xl bg-brand/10 border border-brand/40 text-accent-gold flex items-center justify-center">
                   <HelpCircle className="w-6 h-6" />
                 </div>
                 <div>
@@ -77,7 +77,7 @@ export default function FloatingHelpWidget() {
             </div>
 
             {/* Communication Details Body */}
-            <div className="p-4 space-y-3 bg-slate-50/50">
+            <div className="p-4 space-y-3 bg-white">
               {/* Option 1: Direct Online Booking via Tadawi Portal */}
               <a
                 href={doctorData.bookingUrl}
@@ -177,20 +177,21 @@ export default function FloatingHelpWidget() {
       {/* Floating Action Button (FAB) Container with Ping Ring */}
       <div className="relative inline-block">
         {!isOpen && (
-          <span className="absolute inset-x-8 inset-y-1 rounded-full bg-brand/60 animate-ping opacity-75 pointer-events-none" />
+          <span className="sm:inset-x-8 inset-x-0 sm:inset-y-1 inset-y-0 rounded-full bg-brand/60 animate-ping opacity-75 pointer-events-none absolute" />
         )}
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="مركز المساعدة والتواصل"
-          className={`relative flex items-center gap-2 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border focus:outline-none ${
+          className={`relative flex items-center gap-2 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none cursor-pointer ${
             isOpen
-              ? 'bg-navy text-white border-brand/50'
-              : 'bg-brand hover:bg-brand-900 text-white border-accent-gold/40'
+              ? 'bg-navy-secondary text-white border-brand/50'
+              : 'bg-accent-gold hover:bg-accent-goldHover text-white'
           }`}
         >
           <div className="relative flex items-center justify-center">
-            <HelpCircle className={`${isOpen? 'text-brand':'text-white'} w-6 h-6`} />
-           
+            <HelpCircle
+              className={`${isOpen ? 'text-brand' : 'text-white'} w-6 h-6`}
+            />
           </div>
           <span className="text-white text-sm font-bold hidden sm:inline">
             {isOpen ? 'إغلاق المساعدة' : 'المساعدة والتواصل'}

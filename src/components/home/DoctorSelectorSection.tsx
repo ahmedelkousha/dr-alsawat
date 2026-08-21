@@ -31,23 +31,6 @@ export default function DoctorSelectorSection() {
                 className="aspect-4/5 object-cover object-top"
                 priority
               />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/5 to-transparent pointer-events-none" /> */}
-
-              {/* Doctor Name & Title overlay inside photo card */}
-              {/* <div className="absolute bottom-4 right-4 left-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/40 shadow-lg text-right space-y-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-extrabold text-base md:text-lg text-slate-900">
-                    {doctorData.name}
-                  </h3>
-                  <span className="inline-flex items-center gap-1 bg-brand/10 text-brand text-[11px] font-bold px-2.5 py-0.5 rounded-full">
-                    <Award className="w-3.5 h-3.5" />
-                    استشاري
-                  </span>
-                </div>
-                <p className="text-xs text-brand font-bold">
-                  {doctorData.universityTitle}
-                </p>
-              </div> */}
             </div>
           </div>
         </div>
@@ -80,13 +63,14 @@ export default function DoctorSelectorSection() {
               حجز موعد استشارة
             </Button>
 
-            <Link
+            <Button
               href="/about"
-              className="inline-flex items-center text-xs sm:text-sm font-bold text-slate-700 hover:text-brand bg-slate-100 hover:bg-brand/10 border border-slate-200 transition-all px-5 py-2.5 rounded-xl gap-2 sm:text-base"
+              size='sm'
+              icon={<ArrowLeft className="w-4 h-4" />}
+              className="text-slate-700 hover:bg-slate-200 flex-row-reverse bg-slate-100"
             >
-              <span>عرض السيرة الذاتية الكاملة</span>
-              <ArrowLeft className="w-4 h-4" />
-            </Link>
+             عرض السيرة الذاتية الكاملة
+            </Button>
           </div>
         </div>
       </div>

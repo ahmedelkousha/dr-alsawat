@@ -46,14 +46,14 @@ export default function Button({
     'inline-flex items-center justify-center font-bold transition-all duration-200 focus:outline-none disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer';
 
   const sizeStyles = {
-    sm: 'px-3.5 py-2 text-xs rounded-lg gap-1.5 text-xs sm:text-sm',
-    md: 'px-5 py-2.5 text-sm rounded-xl gap-2 text-sm sm:text-base',
+    sm: 'px-3.5 py-2.5 text-xs rounded-lg gap-1.5 sm:text-sm',
+    md: 'px-5 py-2.5 text-sm rounded-xl gap-2 sm:text-base',
     lg: 'px-7 py-3.5 md:py-4 text-base rounded-2xl gap-2.5 text-base sm:text-lg',
   };
 
   const variantStyles = {
     primary:
-      'bg-accent-gold hover:bg-accent-goldHover text-slate-900 shadow-md hover:shadow-brand/20 active:scale-[0.98]',
+      'bg-accent-gold hover:bg-accent-goldHover text-slate-900 shadow-md active:scale-[0.98]',
     secondary:
       'bg-navy hover:bg-navy text-white shadow-md border border-brand/20 active:scale-[0.98]',
     outline:

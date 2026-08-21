@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Column 2: "عنا" Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-brand! font-bold text-base border-r-4 border-accent-gold pr-3">
+            <h3 className="text-accent-gold! font-bold text-base border-r-4 border-accent-gold pr-3">
               عني
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -135,7 +135,7 @@ export default function Footer() {
 
           {/* Column 3: "الجراحات" Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-brand! font-bold text-base border-r-4 border-accent-gold pr-3">
+            <h3 className="text-accent-gold! font-bold text-base border-r-4 border-accent-gold pr-3">
               التخصصات والجراحات
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -184,7 +184,7 @@ export default function Footer() {
 
           {/* Column 4: Newsletter Signup + Contact Snippet */}
           <div className="space-y-4">
-            <h3 className="text-brand! font-bold text-base border-r-4 border-accent-gold pr-3">
+            <h3 className="text-accent-gold! font-bold text-base border-r-4 border-accent-gold pr-3">
               نشرتي الطبية
             </h3>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -209,7 +209,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-brand/90 hover:bg-accent-gold text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1"
+                  className="bg-accent-gold hover:bg-accent-goldHover text-slate-900 text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1 cursor-pointer"
                 >
                   <span>الإشتراك</span>
                   <Send className="w-3.5 h-3.5 scale-x-[-1]" />
