@@ -53,14 +53,14 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-accent-gold hover:bg-accent-goldHover text-slate-900 shadow-md active:scale-[0.98]',
+      'bg-brand hover:bg-brand/85 text-slate-900 shadow-md active:scale-[0.98]',
     secondary:
       'bg-navy hover:bg-navy text-white shadow-md border border-brand/20 active:scale-[0.98]',
     outline:
       'border border-brand/40 text-brand hover:bg-brand/10 hover:border-brand active:scale-[0.98]',
     ghost:
       'text-slate-700 hover:text-brand hover:bg-slate-100/80 active:scale-[0.98]',
-    gold: 'bg-accent-gold hover:bg-accent-goldHover text-slate-900 shadow-md font-bold active:scale-[0.98]',
+    gold: 'bg-brand hover:bg-brand/85 text-slate-900 shadow-md font-bold active:scale-[0.98]',
     whatsapp:
       'bg-accent-whatsapp hover:bg-accent-whatsappDark text-white shadow-md active:scale-[0.98]',
     emergency:

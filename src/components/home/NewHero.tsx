@@ -10,10 +10,10 @@ export default function DoctorThomasHero() {
         <div className="w-full xl:col-span-4 basis-[80%] flex flex-col justify-start sm:justify-center xl:justify-end items-center sm:items-start sm:text-right xl:items-start order-2 xl:order-2 text-center xl:text-right">
           <div className="flex flex-col justify-end xl:text-nowrap">
             <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary font-bold tracking-wide leading-snug xl:leading-relaxed">
-             "الجراحة تصنع القادة،
+             الجراحة تصنع القادة،
             </span>
             <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-white font-bold tracking-wide leading-snug xl:leading-relaxed mb-4 sm:mb-6 xl:mb-10">
-              والقادة تصنع جيلاً من الجراحين"
+              والقادة تصنع جيلاً من الجراحين
             </span>
             <span className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-3xl  text-white/90 font-medium tracking-wide flex sm:justify-start justify-center gap-0.5">
             د.
@@ -39,7 +39,7 @@ export default function DoctorThomasHero() {
         {/* Stats Column */}
         <div className="w-full h-full xl:col-span-3 basis-[30%] flex justify-center sm:justify-start xl:justify-end gap-8 sm:gap-12 items-end sm:items-center xl:items-end order-3 xl:order-3 xl:pb-25 pb-0 text-4xl pt-2 xl:pt-0">
           <div className="flex flex-col items-center xl:items-start gap-1 sm:bg-transparent sm:rounded-none sm:p-0 sm:shadow-none bg-navy/90 p-2 rounded-lg shadow-lg">
-            <span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-primary">
+            <span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-primary animate-bounce">
               +10
             </span>
             <span className="w-max 2xl:text-xl text-xs sm:text-sm lg:text-base text-white/90 font-bold drop-shadow-navy drop-shadow-sm">
@@ -47,7 +47,7 @@ export default function DoctorThomasHero() {
             </span>
           </div>
           <div className="flex flex-col items-center xl:items-start gap-1 sm:bg-transparent sm:rounded-none sm:p-0 sm:shadow-none bg-navy/90 p-2 rounded-lg shadow-lg">
-            <span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-primary">
+            <span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-primary animate-bounce">
               +3000
             </span>
             <span className="w-max 2xl:text-xl text-xs sm:text-sm lg:text-base text-white/90 font-bold drop-shadow-navy drop-shadow-sm">

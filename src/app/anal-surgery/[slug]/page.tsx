@@ -59,6 +59,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
           </span>
         }
         subtitle={data.description}
+        imgURL={data.img}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
@@ -68,7 +69,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
             {/* <span className="text-xs font-bold text-brand uppercase tracking-widest">
               التشخيص والفهم
             </span> */}
-            <h2 className="text-xl md:text-3xl font-bold text-slate-900 mt-1">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900 mt-1">
               تعريف حالة {data.title}
             </h2>
           </div>
@@ -81,7 +82,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Symptoms */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-slate-100 space-y-4">
-            <h3 className="text-lg sm:text-xl font-bold text-slate-900 border-r-4 border-rose-500 pr-3">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 border-r-4 border-rose-500 pr-3">
               أبرز الأعراض المصاحبة
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
@@ -96,7 +97,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
 
           {/* Causes */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-slate-100 space-y-4">
-            <h3 className="text-lg sm:text-xl font-bold text-slate-900 border-r-4 border-amber-500 pr-3">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 border-r-4 border-amber-500 pr-3">
               الأسباب والعوامل المؤدية
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
@@ -116,7 +117,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
             {/* <span className="text-xs font-bold text-accent-gold uppercase tracking-wider">
               الخيارات والتقنيات المتاحة
             </span> */}
-            <h2 className="text-white! text-xl md:text-3xl font-bold">
+            <h2 className="text-white! text-lg sm:text-xl md:text-3xl font-bold">
               خيارات العلاج الجراحي لـ {data.title}
             </h2>
           </div>
@@ -141,7 +142,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         <section className="bg-emerald-50 rounded-3xl p-6 md:p-8 border border-emerald-200 space-y-2">
           <div className="flex items-center gap-3">
             <Clock className="w-8 h-8 text-emerald-700" />
-            <h3 className="text-base sm:text-xl font-bold text-emerald-950">
+            <h3 className="text-[0.9rem] sm:text-xl font-bold text-emerald-950">
               التعافي والرعاية بعد الجراحة
             </h3>
           </div>
@@ -154,7 +155,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
         <section className="bg-rose-50 rounded-3xl p-6 md:p-8 border border-rose-200 space-y-4">
           <div className="flex items-center gap-3 text-rose-900 border-b border-rose-200 pb-3">
             <AlertCircle className="w-6 h-6 text-rose-600 animate-bounce" />
-            <h3 className="text-base sm:text-xl font-bold">
+            <h3 className="text-base sm:text-lg font-bold">
               متى تتصل بالطبيب؟ (علامات التحذير)
             </h3>
           </div>

@@ -26,8 +26,8 @@ export const doctorData = {
 
   socials: {
     whatsapp: "https://wa.me/966920008515",
-    twitter: "https://twitter.com",
-    instagram: "https://instagram.com",
+    twitter: "https://x.com/DrAlSawat",
+    instagram: "https://www.instagram.com/DRALSAWAT",
   },
 
   credentials: [

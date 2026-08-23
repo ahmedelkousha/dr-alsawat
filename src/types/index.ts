@@ -9,6 +9,8 @@ export interface AnalSurgeryCondition {
   slug: string;
   title: string;
   subtitle: string;
+      img?:string
+
   description: string;
   whatIsIt: string;
   symptomsAndCauses: {

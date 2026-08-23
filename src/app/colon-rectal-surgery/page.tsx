@@ -14,6 +14,7 @@ import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
 import Button from '@/components/Button';
+import { specialtyOverview } from '@/data/services';
 
 export const metadata: Metadata = {
   title: 'جراحات القولون والمستقيم | د. عبدالله الصواط',
@@ -28,13 +29,14 @@ export default function ColonRectalSurgeryPage() {
       <PageHero
         title={colonSurgeryData.hero.title}
         subtitle={colonSurgeryData.hero.subtitle}
+        imgURL={colonSurgeryData.hero.img}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-20">
         {/* Section 1: Indications (ما الحالات التي يجب فيها إجراء جراحة القولون والمستقيم؟) */}
         <section className="bg-white rounded-3xl p-6 md:p-10 shadow-card border border-slate-100 space-y-6">
           <div className=" space-y-2">
-            <h2 className="text-xl border-r-4 border-brand pr-3 md:text-3xl font-bold text-slate-900">
+            <h2 className="text-lg sm:text-xl md:text-3xl border-r-4 border-brand pr-3 font-bold text-slate-900">
               {colonSurgeryData.indicationsSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -46,7 +48,7 @@ export default function ColonRectalSurgeryPage() {
             {colonSurgeryData.indicationsSection.items.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
+                className="bg-slate-50 rounded-2xl py-3 px-2 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
               >
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0" />
@@ -65,7 +67,7 @@ export default function ColonRectalSurgeryPage() {
         {/* Section 2: Surgery Types (ما هي أنواع جراحات القولون والمستقيم؟) */}
         <section className="bg-navy text-white rounded-3xl p-6 md:p-10 shadow-xl space-y-6">
           <div className="space-y-2">
-            <h2 className="text-xl md:text-3xl font-bold text-white! border-r-4 border-accent-gold pr-3">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-white! border-r-4 border-accent-gold pr-3">
               {colonSurgeryData.typesSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-300">
@@ -77,7 +79,7 @@ export default function ColonRectalSurgeryPage() {
             {colonSurgeryData.typesSection.types.map((typeStr, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 flex items-center gap-3 text-sm font-medium text-slate-100"
+                className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl py-3 px-2 flex items-center gap-3 text-sm font-medium text-slate-100"
               >
                 <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white text-xs flex items-center justify-center flex-shrink-0 font-extrabold">
                   {index + 1}
@@ -91,7 +93,7 @@ export default function ColonRectalSurgeryPage() {
         {/* Section 3: What is Colectomy? (ما هو استئصال القولون؟) */}
         <section className="bg-white rounded-3xl p-6 md:p-10 shadow-card border border-slate-100 space-y-6">
           <div className="space-y-2">
-            <h2 className="text-xl md:text-3xl font-bold text-slate-900 border-r-4 border-brand pr-3">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900 border-r-4 border-brand pr-3">
               {colonSurgeryData.colectomySection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -103,7 +105,7 @@ export default function ColonRectalSurgeryPage() {
             {colonSurgeryData.colectomySection.subsections.map((sub, i) => (
               <div
                 key={i}
-                className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
+                className="bg-slate-50 rounded-2xl py-3 px-2 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
               >
                 <h3 className="inline-flex gap-2 font-bold text-slate-900 text-sm sm:text-base">
                   <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white flex items-center justify-center flex-shrink-0 font-extrabold">
@@ -121,8 +123,8 @@ export default function ColonRectalSurgeryPage() {
 
         {/* Section 4: What is Colostomy? (ما هو فغر القولون؟) */}
         <section className="bg-white rounded-3xl p-6 md:p-10 shadow-card border border-slate-100 space-y-6">
-          <div className="space-y-2 border-r-4 border-brand pr-3">
-            <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+          <div className="space-y-2">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900 pr-3 border-r-4 border-brand">
               {colonSurgeryData.colostomySection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -134,7 +136,7 @@ export default function ColonRectalSurgeryPage() {
             {colonSurgeryData.colostomySection.types.map((colType, i) => (
               <div
                 key={i}
-                className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
+                className="bg-slate-50 rounded-2xl py-3 px-2 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
               >
                 <h3 className="inline-flex gap-2 font-bold text-slate-900 text-sm sm:text-base">
                   <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white text-xs flex items-center justify-center flex-shrink-0 font-extrabold">
@@ -156,7 +158,7 @@ export default function ColonRectalSurgeryPage() {
             <Clock className="w-8 h-8 text-emerald-700" />
           </div>
           <div className="space-y-2 text-right">
-            <h2 className="text-[0.8rem] sm:text-xl font-bold text-emerald-950">
+            <h2 className="text-[0.9rem] sm:text-xl font-bold text-emerald-950">
               {colonSurgeryData.recoverySection.title}
             </h2>
             <p className="text-[0.6rem] sm:text-sm font-bold text-emerald-800">
@@ -173,7 +175,7 @@ export default function ColonRectalSurgeryPage() {
           <div className="flex items-center gap-3 text-amber-900 border-b border-amber-200 pb-4">
             <AlertTriangle className="w-8 h-8 text-amber-600 flex-shrink-0 animate-bounce" />
             <div className="space-y-2">
-              <h2 className="text-xl md:text-3xl font-bold">
+              <h2 className="text-lg sm:text-xl md:text-3xl font-bold">
                 {colonSurgeryData.warningSignsSection.title}
               </h2>
               <p className="text-xs sm:text-sm text-amber-800">
@@ -187,7 +189,7 @@ export default function ColonRectalSurgeryPage() {
             {colonSurgeryData.warningSignsSection.checklist.map((warn, i) => (
               <div
                 key={i}
-                className="bg-white/90 rounded-xl p-3.5 border border-amber-200 flex items-start gap-2.5 text-xs text-slate-800 font-semibold shadow-sm"
+                className="bg-white/90 rounded-xl py-3 px-2 border border-amber-200 flex items-start gap-2.5 text-xs text-slate-800 font-semibold shadow-sm"
               >
                 <span className="w-2 h-2 rounded-full bg-rose-600 mt-1.5 flex-shrink-0" />
                 <span>{warn}</span>
@@ -196,7 +198,7 @@ export default function ColonRectalSurgeryPage() {
           </div>
 
           {/* Emergency CTA */}
-          <div className="bg-white rounded-2xl p-5 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
+          <div className="bg-white rounded-2xl py-3 px-2 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
             <div className="space-y-1 text-center sm:text-right">
               {/* <span className="text-xs font-bold text-rose-600 uppercase">
                 حالة عاجلة؟
@@ -242,7 +244,7 @@ export default function ColonRectalSurgeryPage() {
                 className="text-slate-900"
                 icon={<Calendar className="w-4 h-4" />}
               >
-               الانتقال لصفحة الحجز
+                الانتقال لصفحة الحجز
               </Button>
             </div>
 

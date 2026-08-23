@@ -87,7 +87,7 @@ export default function Footer() {
           {/* Column 2: "عنا" Quick Links */}
           <div className="space-y-4">
             <h3 className="text-accent-gold! font-bold text-base border-r-4 border-accent-gold pr-3">
-              عني
+              عن {doctorData.name}
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>

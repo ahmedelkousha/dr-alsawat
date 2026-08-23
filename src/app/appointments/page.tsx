@@ -98,6 +98,7 @@ export default function AppointmentsPage() {
       <PageHero
         title="حجز موعد بالعيادة"
         subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل مع مجمع تداوي الجراحي في الطائف عبر الواتساب، الاتصال، موقع المجمع الرسمي أو زيارة العيادة بالمجمع.`}
+        imgURL='/images/appointments-hero.jpeg'
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
@@ -113,7 +114,7 @@ export default function AppointmentsPage() {
           {/* Form */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 md:p-8 shadow-card border border-slate-100 space-y-6">
             <div className="space-y-2 border-r-4 border-brand-500 pr-3">
-              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+              <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
                 نموذج طلب موعد إلكتروني
               </h2>
               <p className="text-xs text-slate-600">

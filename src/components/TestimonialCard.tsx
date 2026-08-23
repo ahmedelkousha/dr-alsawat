@@ -45,7 +45,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           </div>
         </div>
         {testimonial.procedure && (
-          <span className="text-[11px] font-semibold bg-brand/10 text-brand px-2.5 py-1 rounded-full border border-brand/20">
+          <span className="text-[11px] font-semibold bg-[#070e2e]/93 text-brand px-2.5 py-1 rounded-full border border-brand/20">
             {testimonial.procedure}
           </span>
         )}

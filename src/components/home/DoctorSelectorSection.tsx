@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { doctorData } from '@/data/doctorData';
 import Button from '@/components/Button';
+import TypingParagraph from '@/components/TypingParagraph';
 
 export default function DoctorSelectorSection() {
   return (
@@ -42,14 +43,12 @@ export default function DoctorSelectorSection() {
               تعرّف على <span className="text-brand">{doctorData.name}</span>
             </h2>
 
-            <p className="text-sm sm:text-base font-bold text-slate-700 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base font-bold text-slate-700 leading-relaxed">
               {doctorData.subtitle}
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            {doctorData.doctorBioSummary}
-          </p>
+          <TypingParagraph text={doctorData.doctorBioSummary} viewOffsetPx={90} />
 
           {/* Action CTAs */}
           <div className="pt-4 flex flex-wrap items-center gap-4">

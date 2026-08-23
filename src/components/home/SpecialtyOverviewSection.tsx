@@ -10,7 +10,7 @@ export default function SpecialtyOverviewSection() {
   return (
     <section id="services-overview" className="space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <h2 className="text-xl md:text-3xl font-bold text-slate-900 border-b-2 border-brand inline-block pb-2">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900 border-b-2 border-brand inline-block pb-2">
           تخصصاتي الجراحية الدقيقة
         </h2>
         <p className="text-xs sm:text-sm text-slate-600">
@@ -19,7 +19,7 @@ export default function SpecialtyOverviewSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {specialtyOverview.map((item) => (
+        {specialtyOverview.map((item, index) => (
           <div
             key={item.id}
             className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border border-slate-200 flex flex-col justify-between transition-all group hover:-translate-y-1 duration-300"
@@ -35,18 +35,14 @@ export default function SpecialtyOverviewSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                   <div className="absolute bottom-3 right-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md text-brand font-bold text-base flex items-center justify-center shadow-md">
-                    {item.id === 'colon-surgeries'
-                      ? '01'
-                      : item.id === 'rectal-surgeries'
-                        ? '02'
-                        : '03'}
+                    <span className='text-navy'>{index + 1}</span>{'0'}
                   </div>
                 </div>
               )}
 
               <div className="p-6 md:p-8 space-y-4">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 group-hover:text-brand transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1 group-hover:text-brand transition-colors">
                     {item.title}
                   </h3>
                 </div>

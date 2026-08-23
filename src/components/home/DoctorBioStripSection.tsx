@@ -22,7 +22,7 @@ export default function DoctorBioStripSection() {
         {/* <span className="text-xs font-bold text-brand bg-brand/10 px-3 py-1 rounded-full">
           عن الاستشاري
         </span> */}
-        <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
           {doctorData.name} – {doctorData.universityTitle}
         </h2>
         <p className="text-sm text-slate-700 leading-relaxed max-w-3xl">

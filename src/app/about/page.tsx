@@ -29,6 +29,7 @@ import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
+import TypingCredentialsList from '@/components/TypingCredentialsList';
 
 export const metadata: Metadata = {
   title: 'نبذة تعريفية | د. عبدالله الصواط',
@@ -47,16 +48,14 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
       {/* Hero Strip */}
-      <PageHero
+      {/* <PageHero
         title={doctorData.name}
         subtitle={doctorData.credentials[1] + ' و ' + doctorData.credentials[4]}
-      />
+      /> */}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
+      <div className="max-w-7xl mx-auto pt-24 md:pt-34 px-4 sm:px-6 lg:px-8 lg:py-34 space-y-16 md:space-y-24">
         {/* Credentials List & Portrait */}
-        <section className="bg-white rounded-3xl p-6 pb-10 md:p-10 lg:p-12 lg:pb-0 shadow-card border border-slate-100 overflow-hidden relative">
-          {/* Background Subtle Accent Glow */}
-
+        <section className="bg-white rounded-3xl pb-10 px-4 pt-4 lg:p-12 lg:py-14 shadow-card border border-slate-100 overflow-hidden relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Right in RTL: Doctor Portrait Photo Card */}
             <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
@@ -64,11 +63,11 @@ export default function AboutPage() {
                 <div className="relative overflow-hidden  bg-white">
                   <div className="lg:hidden absolute bottom-0 h-20 lg:h-24 w-full bg-gradient-to-b from-transparent via-white/10 to-white " />
                   <Image
-                    src="/images/alsawat-pic.png"
+                    src="/images/alsawat-pic1.jpeg"
                     alt={doctorData.name}
                     width={683}
                     height={941}
-                    className="aspect-4/5 object-cover object-top"
+                    className="aspect-4/5 object-cover object-top rounded-3xl"
                     priority
                   />
                 </div>
@@ -88,17 +87,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <ul className="space-y-3.5">
-                {doctorData.credentials.map((cred, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-slate-700 text-xs md:text-base font-medium"
-                  >
-                    <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0" />
-                    <span>{cred}</span>
-                  </li>
-                ))}
-              </ul>
+              <TypingCredentialsList credentials={doctorData.credentials}/>
 
               {/* <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {doctorData.doctorBioSummary}
@@ -119,10 +108,10 @@ export default function AboutPage() {
                 <Button
                   icon={<WhatsAppIcon className="w-4 h-4 text-emerald-400" />}
                   href={doctorData.whatsappUrl}
-                  size='sm'
+                  size="sm"
                   className="text-slate-100 bg-emerald-700 hover:bg-emerald-600"
                 >
-               الحجز عبر واتساب
+                  الحجز عبر واتساب
                 </Button>
               </div>
             </div>
@@ -224,60 +213,6 @@ export default function AboutPage() {
 
         <MedicalFeaturesSection />
 
-        {/* الإنجازات (Achievements / Press Mentions) */}
-        <section id="achievements" className="space-y-6">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-            <div className="flex items-center gap-2">
-              {/* <Award className="w-6 h-6 text-brand-600" /> */}
-              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
-                الإنجازات والنشرات الصحفية
-              </h2>
-            </div>
-            {/* <span className="text-xs text-slate-500 font-medium">
-              مشاركات وتغطيات
-            </span> */}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {achievementsData.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-4 flex flex-col justify-between hover:shadow-card-hover transition-all"
-              >
-                <div className="space-y-3">
-                  <div className="relative w-full h-40 rounded-xl overflow-hidden bg-slate-800">
-                    <Image
-                      src={item.imageUrl || '/images/logo-dark.jpg'}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <span className="text-[11px] font-bold bg-brand-50 text-brand px-2.5 py-1 rounded-md">
-                    {item.publisher} {item.date && `• ${item.date}`}
-                  </span>
-                  <h3 className="font-bold text-slate-900 text-base leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {item.summary}
-                  </p>
-                </div>
-
-                <a
-                  href={item.articleUrl || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand/80 pt-2 border-t border-slate-100"
-                >
-                  <span>لقراءة المقال اضغط هنا</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* اللقاءات (Media Appearances) */}
         <section id="media" className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
@@ -292,7 +227,7 @@ export default function AboutPage() {
             </span> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-navy px-5 md:py-16 py-14 rounded-3xl">
             {mediaAppearancesData.map((media) => (
               <div
                 key={media.id}
@@ -363,6 +298,60 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* الإنجازات (Achievements / Press Mentions) */}
+        <section id="achievements" className="space-y-6">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+            <div className="flex items-center gap-2">
+              {/* <Award className="w-6 h-6 text-brand-600" /> */}
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900">
+                الإنجازات والنشرات الصحفية
+              </h2>
+            </div>
+            {/* <span className="text-xs text-slate-500 font-medium">
+              مشاركات وتغطيات
+            </span> */}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {achievementsData.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-4 flex flex-col justify-between hover:shadow-card-hover transition-all"
+              >
+                <div className="space-y-3">
+                  <div className="relative w-full h-40 rounded-xl overflow-hidden bg-slate-800">
+                    <Image
+                      src={item.imageUrl || '/images/logo-dark.jpg'}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold bg-brand-50 text-brand px-2.5 py-1 rounded-md">
+                    {item.publisher} {item.date && `• ${item.date}`}
+                  </span>
+                  <h3 className="font-bold text-slate-900 text-base leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {item.summary}
+                  </p>
+                </div>
+
+                <a
+                  href={item.articleUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand/80 pt-2 border-t border-slate-100"
+                >
+                  <span>لقراءة المقال اضغط هنا</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Contact Form & Contact Cards */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
@@ -426,11 +415,7 @@ export default function AboutPage() {
             {doctorData.taglineContent}
           </h2>
           <div className="pt-2 flex justify-center gap-4">
-            <Button
-              href="/appointments"
-            >
-              حجز موعد استشارة
-            </Button>
+            <Button href="/appointments">حجز موعد استشارة</Button>
           </div>
         </section>
       </div>

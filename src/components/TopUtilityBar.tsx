@@ -12,11 +12,11 @@ export default function TopUtilityBar() {
         {/* Right side in RTL: Working Hours & Clinic Name */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6">
           <div className="flex items-center gap-1.5 text-slate-300 font-medium">
-            <Clock className="w-4 h-4 text-brand/80" />
+            <Clock className="w-4 h-4 text-primary" />
             <span className='sm:text-xs text-[0.65rem]'>{doctorData.workingHours}</span>
           </div>
           <div className="hidden xl:flex items-center gap-1.5 text-slate-300">
-            <MapPin className="w-4 h-4 text-brand/80" />
+            <MapPin className="w-4 h-4 text-primary" />
             <span>{doctorData.clinicName}</span>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function TopUtilityBar() {
             className="hidden items-center gap-1.5 hover:text-accent-gold transition-colors font-medium dir-ltr sm:flex"
             title="اتصل بنا للحجز"
           >
-            <Phone className="w-3.5 h-3.5 text-brand/80" />
+            <Phone className="w-3.5 h-3.5 text-primary" />
             <span>للحجز: {doctorData.phoneDisplay}</span>
           </a>
 
@@ -36,7 +36,7 @@ export default function TopUtilityBar() {
             href={`mailto:${doctorData.email}`}
             className="hidden md:flex items-center gap-1.5 hover:text-accent-gold transition-colors text-slate-300"
           >
-            <Mail className="w-3.5 h-3.5 text-brand/80" />
+            <Mail className="w-3.5 h-3.5 text-primary" />
             <span>{doctorData.email}</span>
           </a>
 
