@@ -7,8 +7,16 @@ import Button from '@/components/Button';
 
 export default function GeneralConsultationsSection() {
   return (
-    <section className="text-white bg-navy rounded-3xl p-6 sm:pt-20 sm:pb-20 md:p-8 md:pt-30 md:pb-30 shadow-xl border border-brand/20 relative">
-      <video autoPlay loop muted className='absolute inset-0 w-full h-full object-cover z-0 opacity-20 rounded-3xl' src="videos/colon-vid.mp4"></video>
+    <section className="text-white bg-navy rounded-3xl p-6 sm:pt-20 sm:pb-20 md:p-8 md:pt-30 md:pb-30 shadow-xl border border-brand/20 relative overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster='/poster.png'
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-20 rounded-3xl pointer-events-none"
+        src="/videos/colon-vid.mp4"
+      />
       <div className="space-y-4 relative z-10">
         {/* <div className="inline-flex items-center gap-2 bg-navy border border-brand/30 px-3.5 py-1 rounded-full text-xs font-semibold text-accent-gold">
           <BookOpen className="w-4 h-4" />
