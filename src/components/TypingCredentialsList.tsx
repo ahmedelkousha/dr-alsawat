@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, TextCursor } from 'lucide-react';
 import { useTypingEffect } from '@/hooks/useTypingEffect';
 
 interface TypingCredentialsListProps {
@@ -37,7 +37,7 @@ function SequentialCredentialItem({
 
   return (
     <li className="flex items-start gap-3 text-slate-700 text-xs md:text-base font-medium border-r-0 border-brand pr-0">
-      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0 mt-0.5 animate-in fade-in duration-300" />
+      <TextCursor className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0 mt-0.5 animate-spin duration-300" />
       <span ref={containerRef}>{displayedText}</span>
     </li>
   );
@@ -58,9 +58,9 @@ export default function TypingCredentialsList({
           return (
             <li
               key={index}
-              className="flex items-start gap-3 text-slate-700 text-xs md:text-base font-medium border-r-0 border-brand pr-0"
+              className="flex items-start gap-3 text-slate-700 text-xs md:text-base font-medium border-r-3 border-brand pr-2"
             >
-              <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0 mt-0.5" />
+              {/* <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-brand flex-shrink-0 mt-0.5" /> */}
               <span>{cred}</span>
             </li>
           );
