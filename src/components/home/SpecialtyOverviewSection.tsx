@@ -34,8 +34,8 @@ export default function SpecialtyOverviewSection() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-                  <div className="absolute bottom-3 right-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md text-brand font-bold text-base flex items-center justify-center shadow-md">
-                    <span className='text-navy'>{index + 1}</span>{'0'}
+                  <div className="absolute bottom-3 right-4 w-10 h-10 rounded-xl bg-navy backdrop-blur-md text-brand font-bold text-base flex items-center justify-center shadow-md">
+                    <span>{index + 1}</span>{'0'}
                   </div>
                 </div>
               )}

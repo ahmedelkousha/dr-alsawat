@@ -19,7 +19,8 @@ export interface NavItem {
 export const navItems: NavItem[] = [
   { title: 'الصفحة الرئيسية', href: '/' },
   { title: 'نبذة تعريفية', href: '/about' },
-  { title: 'جراحات القولون والمستقيم', href: '/colon-rectal-surgery' },
+  { title: 'جراحات القولون', href: '/colon-surgery' },
+  { title: 'جراحات المستقيم', href: '/rectal-surgery' },
   {
     title: 'جراحات المنطقة الشرجية',
     href: '/anal-surgery',
@@ -52,7 +53,9 @@ export default function Header() {
     <div className="fixed top-5 md:top-8 inset-x-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-50">
       {isHomePage && <TopUtilityBar />}
       {/* Sticky Navigation Header Bar */}
-      <header className={`z-40 bg-white/95 backdrop-blur-md shadow-sm ${isHomePage ? 'rounded-b-[12px]' : 'rounded-xl'}`}>
+      <header
+        className={`z-40 bg-white/95 backdrop-blur-md shadow-sm ${isHomePage ? 'rounded-b-[12px]' : 'rounded-xl'}`}
+      >
         <div className="max-w-[110rem] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 md:py-1.5">
           <div className="flex xl:flex-row flex-row-reverse items-center justify-between">
             {/* Logo */}
@@ -261,7 +264,7 @@ export default function Header() {
                             onClick={() => setMobileAnalOpen(!mobileAnalOpen)}
                             className={`${isAnalActive ? 'bg-brand/10! text-brand!' : 'text-slate-600! hover:bg-slate-50! hover:text-brand!'} w-full flex items-center justify-between px-4 py-3 rounded-lg font-semibold text-base text-slate-700 hover:bg-slate-50`}
                           >
-                            <span >{item.title}</span>
+                            <span>{item.title}</span>
                             <ChevronDown
                               className={`w-5 h-5 transition-transform ${
                                 mobileAnalOpen ? 'rotate-180 text-brand' : ''

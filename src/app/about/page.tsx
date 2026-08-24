@@ -30,11 +30,12 @@ import PageHero from '@/components/PageHero';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 import TypingCredentialsList from '@/components/TypingCredentialsList';
+import PatientTestimonialsSection from '@/components/home/PatientTestimonialsSection';
 
 export const metadata: Metadata = {
   title: 'نبذة تعريفية | د. عبدالله الصواط',
   description:
-    'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، أستاذ الجراحة المساعد بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
+    'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، رئيس قسم الجراحة بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
 };
 
 const pillarIcons: Record<string, LucideIcon> = {
@@ -87,7 +88,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <TypingCredentialsList credentials={doctorData.credentials}/>
+              <TypingCredentialsList credentials={doctorData.credentials} />
 
               {/* <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {doctorData.doctorBioSummary}
@@ -210,8 +211,6 @@ export default function AboutPage() {
             ))}
           </div>
         </section> */}
-
-        <MedicalFeaturesSection />
 
         {/* اللقاءات (Media Appearances) */}
         <section id="media" className="space-y-6">
@@ -351,6 +350,10 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+
+        <PatientTestimonialsSection />
+
+        <MedicalFeaturesSection />
 
         {/* Contact Form & Contact Cards */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

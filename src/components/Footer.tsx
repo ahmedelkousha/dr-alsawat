@@ -141,10 +141,18 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/colon-rectal-surgery"
+                  href="/colon-surgery"
                   className="hover:text-accent-gold transition-colors"
                 >
-                  جراحات القولون والمستقيم
+                  جراحات القولون
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/rectal-surgery"
+                  className="hover:text-accent-gold transition-colors"
+                >
+                  جراحات المستقيم
                 </Link>
               </li>
               <li>
@@ -188,8 +196,8 @@ export default function Footer() {
               نشرتي الطبية
             </h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              اشترك لتصلك أحدث نصائحي وتوعياتي الطبية حول صحة القولون
-              والجهاز الهضمي.
+              اشترك لتصلك أحدث نصائحي وتوعياتي الطبية حول صحة القولون والجهاز
+              الهضمي.
             </p>
 
             {subscribed ? (

@@ -109,3 +109,18 @@ button {
 .animate-slide-right {
   animation: slideFromRight 0.3s ease-out forwards;
 }
+
+/* Swiper Custom Styling for Testimonials Carousel */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: var(--color-brand, #f3b844);
+  opacity: 0.35;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--color-brand, #f3b844);
+  opacity: 1;
+  width: 22px;
+  border-radius: 9999px;
+}
+
