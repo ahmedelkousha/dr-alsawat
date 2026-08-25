@@ -1,50 +1,77 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { doctorData } from "@/data/doctorData";
-import Button from "@/components/Button";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  CheckCircle2,
+  Award,
+  ArrowLeft,
+  Calendar,
+  Sparkles,
+} from 'lucide-react';
+import { doctorData } from '@/data/doctorData';
+import Button from '@/components/Button';
+import TypingParagraph from '@/components/TypingParagraph';
 
 export default function DoctorSelectorSection() {
   return (
-    <section className="bg-white rounded-3xl p-6 md:p-10 shadow-card border border-slate-100">
-      <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-        <span className="text-xs font-bold text-brand uppercase tracking-widest bg-brand/10 px-3 py-1 rounded-full">
-          الرعاية الجراحية الموثوقة
-        </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">اختر طبيبك الجراح</h2>
-        <p className="text-sm text-slate-600">
-          عيادتنا متخصصة وتدار بإشراف مباشر من استشاري الجراحة الأكاديمي.
-        </p>
-      </div>
+    <section className="bg-white rounded-3xl p-6 pb-0 md:p-10 md:pb-0 lg:p-12 lg:pb-0 shadow-card border border-slate-100 overflow-hidden relative">
+      {/* Background Subtle Accent Glow */}
 
-      <div className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200/80 flex flex-col md:flex-row items-center gap-6">
-        <div className="relative w-28 h-28 rounded-2xl overflow-hidden border-2 border-brand flex-shrink-0 shadow-md">
-          <Image
-            src="/images/doctor-portrait.png"
-            alt={doctorData.name}
-            fill
-            className="object-cover object-top"
-          />
-        </div>
-
-        <div className="flex-1 space-y-2 text-center md:text-right">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-            <h3 className="text-xl font-bold text-slate-900">{doctorData.name}</h3>
-            <span className="text-xs bg-brand/10 text-brand font-bold px-3 py-1 rounded-full w-max mx-auto md:mx-0">
-              خبرة استشارية وأكاديمية
-            </span>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Right in RTL: Doctor Portrait Photo Card */}
+        <div className="lg:col-span-5 flex justify-center order-2 lg:order-2">
+          <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none">
+            <div className="relative overflow-hidden  bg-white">
+              <Image
+                src="/images/alsawat-pic.png"
+                alt={doctorData.name}
+                width={683}
+                height={941}
+                className="aspect-4/5 object-cover object-top"
+                priority
+              />
+            </div>
           </div>
-          <p className="text-sm text-brand font-semibold">{doctorData.subtitle}</p>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            الزمالة الكورية لجراحات القولون والمستقيم بالمنظار والروبوت، والبورد السعودي والأردني بالجراحة العامة.
-          </p>
         </div>
 
-        <Button href="/about" variant="primary" size="md">
-          عرض السيرة الذاتية
-        </Button>
+        {/* Left in RTL: Doctor Introduction Text Box */}
+        <div className="lg:col-span-7 space-y-6 text-right order-1 lg:order-1">
+          <div className="space-y-3">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+              تعرّف على <span className="text-brand">{doctorData.name}</span>
+            </h2>
+
+            <p className="text-xs sm:text-sm md:text-base font-bold text-slate-700 leading-relaxed">
+              {doctorData.subtitle}
+            </p>
+          </div>
+
+          <TypingParagraph text={doctorData.doctorBioSummary} viewOffsetPx={90} />
+
+          {/* Action CTAs */}
+          <div className="pt-4 flex flex-wrap items-center gap-4">
+            <Button
+              className="border border-brand"
+              href="/appointments"
+              variant="primary"
+              size="sm"
+              icon={<Calendar className="w-4 h-4" />}
+            >
+              حجز موعد استشارة
+            </Button>
+
+            <Button
+              href="/about"
+              size='sm'
+              icon={<ArrowLeft className="w-4 h-4" />}
+              className="text-slate-700 hover:bg-slate-200 flex-row-reverse bg-slate-100"
+            >
+             عرض السيرة الذاتية الكاملة
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

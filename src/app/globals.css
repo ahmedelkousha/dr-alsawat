@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-cairo: "Cairo", system-ui, -apple-system, sans-serif;
+  --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
 
   /* Hex Color Values defined 100% in globals.css */
-  --color-brand: #c5a059;
-  --color-primary: #c5a059;
+  --color-brand: #f3b844;
+  --color-primary: #f3b844;
 
   --color-secondary: #0f1520;
   --color-secondary-dark: #080c14;
 
-  --color-navy-800: #181f2a;
-  --color-navy-900: #0f1520;
-  --color-navy-950: #080c14;
-
-  --color-accent-gold: #d4af37;
-  --color-accent-goldHover: #c5a059;
+  --color-navy: #060f2e;
+  --color-navy-secondary: #09153f;
+  --color-accent-gold: #f3b844;
+  --color-accent-goldHover: #f5c260;
+  /* --color-accent-gold: #d4af37;
+  --color-accent-goldHover: #c5a059; */
   --color-accent-whatsapp: #25d366;
   --color-accent-whatsappDark: #128c7e;
 
@@ -31,14 +31,18 @@
 }
 
 html {
-  scroll-behavior: smooth;
   direction: rtl;
+  scroll-behavior: smooth !important;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: "Cairo", system-ui, -apple-system, sans-serif;
+  font-family:
+    'Cairo',
+    system-ui,
+    -apple-system,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -47,7 +51,12 @@ body {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.025em;
@@ -94,6 +103,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+button {
+  cursor: pointer;
+}
 .animate-slide-right {
   animation: slideFromRight 0.3s ease-out forwards;
 }
+
+/* Swiper Custom Styling for Testimonials Carousel */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: var(--color-brand, #f3b844);
+  opacity: 0.35;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--color-brand, #f3b844);
+  opacity: 1;
+  width: 22px;
+  border-radius: 9999px;
+}
+

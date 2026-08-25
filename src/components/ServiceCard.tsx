@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   Award,
   Stethoscope,
@@ -13,8 +13,10 @@ import {
   HeartHandshake,
   UserCheck,
   LucideIcon,
-} from "lucide-react";
-import { MedicalService } from "@/types";
+  Microscope,
+  ClipboardPlus
+} from 'lucide-react';
+import { MedicalService } from '@/types';
 
 const iconMap: Record<string, LucideIcon> = {
   Award,
@@ -27,6 +29,8 @@ const iconMap: Record<string, LucideIcon> = {
   ShieldCheck,
   HeartHandshake,
   UserCheck,
+  Microscope,
+  ClipboardPlus,
 };
 
 interface ServiceCardProps {
@@ -37,16 +41,16 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   const IconComponent = iconMap[service.iconName] || Stethoscope;
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover border border-slate-100 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+    <div className="bg-white rounded-2xl p-4 md:p-6 shadow-card hover:shadow-card-hover border border-slate-100 transition-all duration-300 group flex flex-col justify-between">
       <div className="space-y-4">
-        <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand group-hover:bg-brand group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+        <div className="bg-navy w-14 h-14 rounded-2xl text-brand group-hover:bg-brand group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
           <IconComponent className="w-7 h-7" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-lg font-bold text-slate-900 group-hover:text-brand transition-colors">
+          <h3 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-brand transition-colors">
             {service.title}
           </h3>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
             {service.description}
           </p>
         </div>

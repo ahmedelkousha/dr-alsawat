@@ -46,17 +46,17 @@ export function EmergencyBanner() {
 
 export function WhatsAppBanner() {
   return (
-    <div className=" bg-emerald-700 text-white rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden my-8">
+    <div className=" bg-navy text-white rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden my-8">
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-right">
-          <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
-            <WhatsAppIcon className="w-8 h-8 text-white" />
+          <div className="w-14 h-14 rounded-2xl bg-accent-whatsapp/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
+            <WhatsAppIcon className="w-8 h-8 text-accent-whatsapp" />
           </div>
           <div className="space-y-1">
-            <h3 className="text-xl md:text-2xl font-bold">
+            <h3 className="text-lg md:text-2xl font-bold text-slate-300!">
               {doctorData.whatsappBanner.title}
             </h3>
-            <p className="text-sm md:text-base text-emerald-100">
+            <p className="text-xs sm:text-sm md:text-base text-slate-300">
               {doctorData.whatsappBanner.subtitle}
             </p>
           </div>
@@ -67,10 +67,10 @@ export function WhatsAppBanner() {
             href={doctorData.whatsappUrl}
             target="_blank"
             variant="gold"
-            size="lg"
+            size="md"
             fullWidth
-            className="md:w-auto text-slate-900"
-            icon={<WhatsAppIcon className="w-5 h-5 text-accent-whatsapp" />}
+            className="md:w-auto text-slate-900 bg-accent-whatsapp hover:bg-accent-whatsapp/80"
+            icon={<WhatsAppIcon className="w-5 h-5" />}
             iconPosition="left"
           >
             <span className="flex items-center gap-2">

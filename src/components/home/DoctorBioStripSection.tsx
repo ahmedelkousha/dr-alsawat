@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { doctorData } from "@/data/doctorData";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { doctorData } from '@/data/doctorData';
 
 export default function DoctorBioStripSection() {
   return (
@@ -19,10 +19,10 @@ export default function DoctorBioStripSection() {
       </div>
 
       <div className="space-y-3 text-center md:text-right">
-        <span className="text-xs font-bold text-brand bg-brand/10 px-3 py-1 rounded-full">
+        {/* <span className="text-xs font-bold text-brand bg-brand/10 px-3 py-1 rounded-full">
           عن الاستشاري
-        </span>
-        <h2 className="text-2xl font-bold text-slate-900">
+        </span> */}
+        <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
           {doctorData.name} – {doctorData.universityTitle}
         </h2>
         <p className="text-sm text-slate-700 leading-relaxed max-w-3xl">

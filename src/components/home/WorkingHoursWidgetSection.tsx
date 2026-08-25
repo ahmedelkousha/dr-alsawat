@@ -13,7 +13,7 @@ export default function WorkingHoursWidgetSection() {
           <Clock className="w-7 h-7" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-900">ساعات العمل والعيادة</h3>
+          <h3 className="text-lg font-bold text-slate-900">مواعيد عيادتي</h3>
           <p className="text-sm text-brand font-bold">{doctorData.workingHours}</p>
           <p className="text-xs text-slate-500">{doctorData.clinicName}</p>
         </div>

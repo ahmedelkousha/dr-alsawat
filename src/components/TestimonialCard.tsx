@@ -10,7 +10,7 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 flex flex-col justify-between space-y-4 hover:shadow-card-hover transition-all relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-4 shadow-card border border-slate-100 flex flex-col justify-between space-y-4 transition-all relative overflow-hidden h-full">
       {/* Decorative Quote Icon */}
       <Quote className="absolute top-4 left-4 w-12 h-12 text-brand/10 -rotate-12 pointer-events-none" />
 
@@ -30,7 +30,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         </div>
 
         {/* Comment Quote */}
-        <p className="text-slate-700 text-sm md:text-base leading-relaxed italic">
+        <p className="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed italic">
           &quot;{testimonial.comment}&quot;
         </p>
       </div>
@@ -44,11 +44,11 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             <span>{testimonial.location}</span>
           </div>
         </div>
-        {testimonial.procedure && (
-          <span className="text-[11px] font-semibold bg-brand/10 text-brand px-2.5 py-1 rounded-full border border-brand/20">
+        {/* {testimonial.procedure && (
+          <span className="text-[11px] font-semibold bg-[#070e2e]/93 text-brand px-2.5 py-1 rounded-full border border-brand/20">
             {testimonial.procedure}
           </span>
-        )}
+        )} */}
       </div>
     </div>
   );
