@@ -31,7 +31,7 @@ export default function PatientTestimonialsSection() {
       <div className="flex items-center justify-between border-b border-slate-200 pb-4">
         <div className="flex items-center gap-2">
           <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
-            ماذا يقول المرضى
+           شهادات المرضى
           </h2>
         </div>
       </div>
