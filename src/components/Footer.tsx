@@ -29,13 +29,13 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-slate-300 pt-16 pb-8 border-t border-brand/20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-300/10">
           {/* Column 1: Logo & Short Intro Tagline */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-50 h-18 overflow-hidden transition-transform group-hover:scale-105">
+            <Link href="/" className="flex items-center gap-3 w-fit">
+              <div className="relative w-50 h-18">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-dark.png"
                   alt={doctorData.name}
                   fill
                   className="object-contain object-right"
@@ -244,10 +244,10 @@ export default function Footer() {
             © {new Date().getFullYear()} عيادة د. عبدالله الصواط. جميع الحقوق
             محفوظة.
           </p>
-          <p className="text-slate-400">
+          {/* <p className="text-slate-400">
             مجمع تداوي الجراحي الطبي بالطائف – استشاري الجراحة العامة والقولون
             والمستقيم
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

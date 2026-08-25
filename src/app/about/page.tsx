@@ -61,8 +61,8 @@ export default function AboutPage() {
             {/* Right in RTL: Doctor Portrait Photo Card */}
             <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
               <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none">
-                <div className="relative overflow-hidden  bg-white">
-                  <div className="lg:hidden absolute bottom-0 h-20 lg:h-24 w-full bg-gradient-to-b from-transparent via-white/10 to-white " />
+                <div className="relative overflow-hidden bg-white">
+                  <div className="lg:hidden absolute bottom-0 h-20 lg:h-24 w-full bg-gradient-to-b from-transparent via-white/10 to-white" />
                   <Image
                     src="/images/alsawat-pic1.jpeg"
                     alt={doctorData.name}
@@ -230,7 +230,7 @@ export default function AboutPage() {
             {mediaAppearancesData.map((media) => (
               <div
                 key={media.id}
-                className="bg-white rounded-2xl p-6 shadow-card border border-slate-100 space-y-4"
+                className="bg-white rounded-2xl p-5 shadow-card border border-slate-100 space-y-4"
               >
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-md">
                   {media.embedUrl ? (
@@ -297,6 +297,8 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <MedicalFeaturesSection />
+
         {/* الإنجازات (Achievements / Press Mentions) */}
         <section id="achievements" className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200 pb-4">
@@ -352,8 +354,6 @@ export default function AboutPage() {
         </section>
 
         <PatientTestimonialsSection />
-
-        <MedicalFeaturesSection />
 
         {/* Contact Form & Contact Cards */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

@@ -36,20 +36,20 @@ export const achievementsData: AchievementItem[] = [
 export const mediaAppearancesData: MediaAppearance[] = [
   {
     id: 'media-1',
-    title: 'لقاء تلفزيوني: الوقاية والأعراض المبكرة لأمراض القولون والمستقيم',
-    event: 'برنامج صحتك أولاً',
-    year: '2024',
+    title: 'تخصص الجراحة ودور الجراحين في رفع معانات المريض او حتى انقاذ حياته',
+    event: 'برنامج فلاش باك',
+    year: '2023',
     embedUrl: 'https://www.youtube.com/embed/-drCfrHNd8M?si=jcy3LR8cDoNn3kva',
     thumbnailUrl: '/images/doctor-portrait.png',
   },
-  {
-    id: 'media-2',
-    title: 'محاضرة علمية: التقنيات الروبوتية في الجراحة العامة بجامعة الطائف',
-    event: 'الملتقى الطبي السنوي',
-    year: '2023',
-    embedUrl: 'https://www.youtube.com/embed/9M0kLoRZNls?si=NQp5zgQQalt5FTaY',
-    thumbnailUrl: '/images/doctor-portrait.png',
-  },
+  // {
+  //   id: 'media-2',
+  //   title: 'محاضرة علمية: التقنيات الروبوتية في الجراحة العامة بجامعة الطائف',
+  //   event: 'الملتقى الطبي السنوي',
+  //   year: '2023',
+  //   embedUrl: 'https://www.youtube.com/embed/9M0kLoRZNls?si=NQp5zgQQalt5FTaY',
+  //   thumbnailUrl: '/images/doctor-portrait.png',
+  // },
 ];
 
 export const awardsData: AwardItem[] = [

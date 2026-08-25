@@ -14,6 +14,7 @@ import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata: Metadata = {
   title: 'تواصل معنا | د. عبدالله الصواط',
@@ -35,11 +36,11 @@ export default function ContactPage() {
         {/* Contact Info Cards */}
         <section className=" grid grid-cols-2 md:grid-cols-3 gap-4">
           {/* Address Card */}
-          <div className="bg-white col-span-2 sm:col-auto rounded-3xl px-4 py-3 border-slate-300/40 shadow-sm sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
-            <div className="w-12 h-12 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
-              <MapPin className="w-6 h-6" />
+          <div className="bg-white col-span-2 sm:col-auto rounded-xl px-4 py-5 border-slate-300/40 shadow-sm sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
+            <div className="sm:w-12 sm:h-12 w-10 h-10 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
+              <MapPin className="sm:w-6 sm:h-6 w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 text-base">عنوان العيادة</h3>
+            <h3 className="font-bold text-slate-900 text-sm sm:text-base">عنوان العيادة</h3>
             <p className="text-xs sm:text-sm text-slate-700 font-semibold">
               {doctorData.clinicName}
             </p>
@@ -49,16 +50,16 @@ export default function ContactPage() {
           </div>
 
           {/* Phone Card */}
-          <div className="bg-white rounded-3xl px-4 py-3 border-slate-300/40 shadow-sm border sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
-            <div className="w-12 h-12 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
-              <Phone className="w-6 h-6" />
+          <div className="bg-white rounded-xl px-4 py-5 border-slate-300/40 shadow-sm border sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
+            <div className="sm:w-12 sm:h-12 w-10 h-10 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
+              <Phone className="sm:w-6 sm:h-6 w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 text-base">
+            <h3 className="font-bold text-slate-900 text-sm sm:text-base">
               أرقام التواصل والحجز
             </h3>
             <a
               href={`tel:${doctorData.phoneRaw}`}
-              className="text-brand-700 font-bold text-xs sm:text-sm dir-ltr block text-right hover:text-brand-900 transition-colors"
+              className="text-xs sm:text-sm dir-ltr block text-right hover:text-brand-900 transition-colors"
             >
               للحجز: {doctorData.phoneDisplay}
             </a>
@@ -66,11 +67,11 @@ export default function ContactPage() {
           </div>
 
           {/* Email & Hours Card */}
-          <div className="bg-white rounded-3xl px-4 py-3 border border-slate-300/40 shadow-sm sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
-            <div className="w-12 h-12 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
-              <Mail className="w-6 h-6" />
+          <div className="bg-white rounded-xl px-4 py-5 border border-slate-300/40 shadow-sm sm:space-y-2 space-y-1 sm:block flex flex-col justify-center items-center">
+            <div className="sm:w-12 sm:h-12 w-10 h-10 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
+              <Mail className="sm:w-6 sm:h-6 w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 text-base">
+            <h3 className="font-bold text-slate-900 text-sm sm:text-base">
               البريد وساعات العمل
             </h3>
             <a
@@ -80,7 +81,7 @@ export default function ContactPage() {
               {doctorData.email}
             </a>
             <div className="flex items-center gap-1 text-[0.65rem] sm:text-xs text-brand font-bold pt-1 text-center sm:text-right">
-              <Clock className="w-4 h-4" />
+              {/* <Clock className="w-4 h-4" /> */}
               <span>{doctorData.workingHours}</span>
             </div>
           </div>
@@ -111,7 +112,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-accent-whatsapp/20 hover:bg-accent-whatsapp text-white p-3 rounded-xl transition-all border group border-accent-whatsapp/30"
                 >
-                  <MessageCircle className="w-5 h-5 text-accent-whatsapp group-hover:text-white" />
+                  <WhatsAppIcon className="w-5 h-5 text-accent-whatsapp group-hover:text-white" />
                   <span className="text-sm font-bold">
                     محادثة الواتساب المباشرة
                   </span>

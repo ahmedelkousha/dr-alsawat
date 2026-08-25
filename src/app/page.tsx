@@ -9,6 +9,7 @@ import ClinicLocationFooterBlock from '@/components/home/ClinicLocationFooterBlo
 import { EmergencyBanner, WhatsAppBanner } from '@/components/CTASection';
 import NewHero from '@/components/home/NewHero';
 import { Video } from 'lucide-react';
+import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 
 export default function HomePage() {
   return (
@@ -92,6 +93,8 @@ export default function HomePage() {
 
         {/* 11. Patient Testimonials */}
         <PatientTestimonialsSection />
+
+        <MedicalFeaturesSection />
 
         {/* 12. Location & Map Embed Block */}
         <ClinicLocationFooterBlock />
