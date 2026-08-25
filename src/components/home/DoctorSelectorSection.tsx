@@ -25,7 +25,7 @@ export default function DoctorSelectorSection() {
           <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none">
             <div className="relative overflow-hidden  bg-white">
               <Image
-                src="/images/alsawat-pic.png"
+                src="/images/alsawat-pic.webp"
                 alt={doctorData.name}
                 width={683}
                 height={941}

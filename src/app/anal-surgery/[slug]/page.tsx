@@ -235,7 +235,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
           <div className="lg:col-span-7">
             <ContactForm
               title={`ارسل استفسارك بخصوص ${data.title}`}
-              subtitle="سنتوصال معك بخصوص الخيارات العلاجية والجراحية المناسبة."
+              subtitle="سيتم استقبال استفسارك من قِبل الفريق الطبي بمجمع تداوي الجراحي الطبي وتنسيق زيارتك للعيادة."
             />
           </div>
 

@@ -2,7 +2,7 @@ export const rectalSurgeryContent = {
   hero: {
     title: 'جراحات المستقيم المتخصصة',
     subtitle: 'أحدث التقنيات الروبوتية والمناظير الدقيقة لجراحات أورام وهبوط المستقيم',
-    img: '/images/rectal1.jpeg',
+    img: '/images/rectal-5-2.webp',
   },
   indicationsSection: {
     title: 'دواعي جراحة المستقيم',

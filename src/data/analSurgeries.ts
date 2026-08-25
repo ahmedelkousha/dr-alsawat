@@ -5,7 +5,7 @@ export const analSurgeriesData: Record<string, AnalSurgeryCondition> = {
     slug: 'pilonidal-sinus',
     title: 'الناسور العصعصي',
     subtitle: 'Pilonidal Sinus',
-    img: '/images/anal-5-2.png',
+    img: '/images/anal-5-2.webp',
 
     description:
       'علاج متطور وجراحات حديثة بالليزر والمنظار للناسور العصعصي لضمان سرعة الشفاء وقلة الألم والحد من التكرار.',
@@ -44,7 +44,7 @@ export const analSurgeriesData: Record<string, AnalSurgeryCondition> = {
     slug: 'anal-fissure',
     title: 'الشرخ الشرجي',
     subtitle: 'Anal Fissure',
-    img: '/images/anal-5-2.png',
+    img: '/images/anal-5-2.webp',
 
     description:
       'تشخيص وعلاج الشرخ الشرجي الحاد والمزمن بالطرق المحافظة والجراحية المتقدمة وتقنية الشق الشرجي الجزئي لراحة فورية.',
@@ -83,7 +83,7 @@ export const analSurgeriesData: Record<string, AnalSurgeryCondition> = {
     slug: 'anal-fistula',
     title: 'النواسير الشرجية',
     subtitle: 'Anal Fistula',
-    img: '/images/anal-5-2.png',
+    img: '/images/anal-5-2.webp',
 
     description:
       'علاج جراحي دقيق ومتخصص للنواسير الشرجية البسيطة والمعقدة مع الحفاظ التام على التحكم بالعضلة الشرجية.',
@@ -122,7 +122,7 @@ export const analSurgeriesData: Record<string, AnalSurgeryCondition> = {
     slug: 'hemorrhoids',
     title: 'البواسير الشرجية',
     subtitle: 'Hemorrhoids',
-    img: '/images/anal-5-2.png',
+    img: '/images/anal-5-2.webp',
 
     description:
       'أحدث التقنيات الطبية لعلاج البواسير الداخلية والخارجية بالليزر والربط والاستئصال الدقيق لعودة سريعة للحياة الطبيعية.',

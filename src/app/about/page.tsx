@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <div className="relative overflow-hidden bg-white">
                   <div className="lg:hidden absolute bottom-0 h-20 lg:h-24 w-full bg-gradient-to-b from-transparent via-white/10 to-white" />
                   <Image
-                    src="/images/alsawat-pic1.jpeg"
+                    src="/images/alsawat-pic.jpeg"
                     alt={doctorData.name}
                     width={683}
                     height={941}

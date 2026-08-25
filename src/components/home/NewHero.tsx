@@ -26,7 +26,7 @@ export default function DoctorThomasHero() {
         <div className="w-full xl:h-full xl:col-span-5 absolute -bottom-20 flex xl:flex justify-center sm:justify-end items-end order-1 xl:order-1 xl:relative -z-10">
           <div className="relative  overflow-hidden flex items-end justify-center">
             <Image
-              src="/images/doc.png"
+              src="/images/doc.webp"
               alt={doctorData.name}
               width={2113}
             height={3661}

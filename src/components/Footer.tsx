@@ -7,22 +7,47 @@ import { doctorData } from '@/data/doctorData';
 import {
   Send,
   CheckCircle2,
+  AlertCircle,
   Twitter,
   Instagram,
   MapPin,
   Phone,
+  Loader2,
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
+    if (!email.trim()) return;
+
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setSubscribed(true);
+        setEmail('');
+      } else {
+        setError(data.message || 'حدث خطأ أثناء الاشتراك');
+      }
+    } catch (err) {
+      console.error('Subscription error:', err);
+      setError('حدث خطأ في الاتصال بالخادم');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -206,23 +231,42 @@ export default function Footer() {
                 <span>شكراً لاشتراكك! سيوصلك كل جديد قريباً.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  required
-                  placeholder="بريدك الإلكتروني"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-slate-900 border border-slate-800 text-white text-xs rounded-xl px-3 py-2.5 flex-1 focus:outline-none focus:border-brand"
-                />
-                <button
-                  type="submit"
-                  className="bg-accent-gold hover:bg-accent-goldHover text-slate-900 text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1 cursor-pointer"
-                >
-                  <span>الإشتراك</span>
-                  <Send className="w-3.5 h-3.5 scale-x-[-1]" />
-                </button>
-              </form>
+              <>
+                <form onSubmit={handleSubscribe} className="flex gap-2">
+                  <input
+                    type="email"
+                    required
+                    placeholder="بريدك الإلكتروني"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (error) setError(null);
+                    }}
+                    className="bg-slate-900 border border-slate-800 text-white text-xs rounded-xl px-3 py-2.5 flex-1 focus:outline-none focus:border-brand"
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="bg-accent-gold hover:bg-accent-goldHover disabled:opacity-50 text-slate-900 text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[85px]"
+                  >
+                    {loading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <>
+                        <span>الإشتراك</span>
+                        <Send className="w-3.5 h-3.5 scale-x-[-1]" />
+                      </>
+                    )}
+                  </button>
+                </form>
+
+                {error && (
+                  <div className="flex items-center gap-2 text-xs text-red-400 pt-1">
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
+              </>
             )}
 
             <div className="pt-2 space-y-1.5 text-xs text-slate-400">
