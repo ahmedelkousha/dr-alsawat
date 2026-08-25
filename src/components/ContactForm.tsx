@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
-import Button from "@/components/Button";
+import React, { useState } from 'react';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import Button from '@/components/Button';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { doctorData } from '@/data/doctorData';
 
 interface ContactFormProps {
   title?: string;
@@ -10,65 +12,79 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({
-  title = "ارسل لنا رسالتك",
-  subtitle = "تواصل مباشر مع عيادة د. عبدالله الصواط وسأرد عليك بأسرع وقت.",
+  title = 'ارسل لنا استفسارك',
+  subtitle = 'سيتم استقبال استفسارك من قِبل الفريق الطبي بمجمع تداوي الجراحي الطبي والتواصل معك فوراً لتنسيق موعدك في عيادة د. عبدالله الصواط.',
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
   });
 
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [status, setStatus] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
 
-    // Client-side quick check
-    if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) {
+    // Client-side validation
+    if (
+      !formData.name.trim() ||
+      !formData.phone.trim() ||
+      !formData.message.trim()
+    ) {
       setStatus({
-        type: "error",
-        message: "يرجى ملء جميع الحقول المطلوبة (الاسم الكامل، رقم الهاتف، والرسالة).",
+        type: 'error',
+        message:
+          'يرجى ملء جميع الحقول المطلوبة (الاسم الكامل، رقم الهاتف، وتفاصيل الاستفسار).',
       });
       setLoading(false);
       return;
     }
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const messageText = `السلام عليكم ورحمة الله وبركاته،
+
+أرغب في الاستفسار وتنسيق موعد لعيادة د. عبدالله الصواط بمجمع تداوي الجراحي الطبي:
+
+• الاسم الكامل: ${formData.name.trim()}
+• رقم الجوال: ${formData.phone.trim()}${formData.email.trim() ? `\n• البريد الإلكتروني: ${formData.email.trim()}` : ''}
+
+• تفاصيل الاستفسار:
+${formData.message.trim()}`;
+
+      const encodedText = encodeURIComponent(messageText);
+      const targetWhatsAppNumber = doctorData.whatsappNumber || '966920008515';
+      const whatsappUrl = `https://wa.me/${targetWhatsAppNumber}?text=${encodedText}`;
+
+      // Open WhatsApp link with prefilled message
+      window.open(whatsappUrl, '_blank');
+
+      setStatus({
+        type: 'success',
+        message:
+          'تم تجهيز الاستفسار وتحويلك لمحادثة الواتساب المباشرة مع مجمع تداوي الجراحي الطبي بنجاح!',
       });
 
-      const data = await res.json();
-
-      if (res.ok && data.success) {
-        setStatus({
-          type: "success",
-          message: data.message || "تم إرسال رسالتك بنجاح! سنتم المتابعة معك قريباً.",
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      } else {
-        setStatus({
-          type: "error",
-          message: data.message || "حدث خطأ أثناء إرسال النموذج. يرجى المحاولة لاحقاً.",
-        });
-      }
+      // Clear form
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch {
       setStatus({
-        type: "error",
-        message: "عذراً، تعذر الاتصال بالخادم. يرجى التحقق من الاتصال والمحاولة مجدداً.",
+        type: 'error',
+        message:
+          'حدث خطأ أثناء فتح الواتساب. يرجى استخدام أرقام التواصل المباشرة.',
       });
     } finally {
       setLoading(false);
@@ -78,21 +94,27 @@ export default function ContactForm({
   return (
     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-slate-100">
       <div className="mb-6 space-y-2">
-        <h3 className="text-lg sm:text-2xl font-bold text-slate-900 border-r-4 border-brand pr-3">
+        <h3
+          className={`text-lg sm:text-2xl font-bold text-slate-900 border-r-4 border-accent-whatsapp pr-3`}
+        >
           {title}
         </h3>
-        {subtitle && <p className="text-xs sm:text-sm text-slate-600">{subtitle}</p>}
+        {subtitle && (
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            {subtitle}
+          </p>
+        )}
       </div>
 
       {status && (
         <div
           className={`p-4 rounded-xl mb-6 flex items-start gap-3 text-sm ${
-            status.type === "success"
-              ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-              : "bg-rose-50 text-rose-800 border border-rose-200"
+            status.type === 'success'
+              ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+              : 'bg-rose-50 text-rose-800 border border-rose-200'
           }`}
         >
-          {status.type === "success" ? (
+          {status.type === 'success' ? (
             <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
           ) : (
             <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
@@ -105,7 +127,10 @@ export default function ContactForm({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Full Name */}
           <div>
-            <label htmlFor="name" className="block text-xs font-bold text-slate-700 mb-1.5">
+            <label
+              htmlFor="name"
+              className="block text-xs font-bold text-slate-700 mb-1.5"
+            >
               الاسم الكامل <span className="text-rose-500">*</span>
             </label>
             <input
@@ -116,13 +141,16 @@ export default function ContactForm({
               placeholder="مثال: عبدالله محمد"
               value={formData.name}
               onChange={handleChange}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all"
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg sm:px-4 sm:py-2.5 px-1.5 py-1.5 text-slate-800 text-sm focus:outline-none focus:ring-1 focus:ring-brand focus:bg-white transition-all"
             />
           </div>
 
           {/* Phone */}
           <div>
-            <label htmlFor="phone" className="block text-xs font-bold text-slate-700 mb-1.5">
+            <label
+              htmlFor="phone"
+              className="block text-xs font-bold text-slate-700 mb-1.5"
+            >
               رقم الهاتف / الجوال <span className="text-rose-500">*</span>
             </label>
             <input
@@ -133,14 +161,17 @@ export default function ContactForm({
               placeholder="05XXXXXXXX"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all dir-ltr text-right"
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg sm:px-4 sm:py-2.5 px-1.5 py-1.5 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all dir-ltr text-right"
             />
           </div>
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-xs font-bold text-slate-700 mb-1.5">
+          <label
+            htmlFor="email"
+            className="block text-xs font-bold text-slate-700 mb-1.5"
+          >
             البريد الإلكتروني (اختياري)
           </label>
           <input
@@ -150,37 +181,42 @@ export default function ContactForm({
             placeholder="example@domain.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all"
+            className="w-full bg-slate-50 border border-slate-200 rounded-lg sm:px-4 sm:py-2.5 px-1.5 py-1.5 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all"
           />
         </div>
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-xs font-bold text-slate-700 mb-1.5">
-            تفاصيل الاستفسار أو السبب <span className="text-rose-500">*</span>
+          <label
+            htmlFor="message"
+            className="block text-xs font-bold text-slate-700 mb-1.5"
+          >
+            تفاصيل الاستفسار أو الحالة <span className="text-rose-500">*</span>
           </label>
           <textarea
             id="message"
             name="message"
             required
             rows={4}
-            placeholder="اكتب استفسارك الطبي أو تفاصيل حالتك باختصار..."
+            placeholder="اكتب استفسارك أو تفاصيل حالتك لتنسيق الموعد..."
             value={formData.message}
             onChange={handleChange}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all resize-y"
+            className="w-full bg-slate-50 border border-slate-200 rounded-lg sm:px-4 sm:py-2.5 px-1.5 py-1.5 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:bg-white transition-all resize-y"
           />
         </div>
 
         <Button
           type="submit"
-          variant="primary"
-          size="md"
+          variant="whatsapp"
+          size="sm"
           fullWidth
           loading={loading}
-          icon={<Send className="w-4 h-4 scale-x-[-1]" />}
+          icon={<WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
           iconPosition="right"
         >
-          {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
+          {loading
+            ? 'جاري التحويل للواتساب...'
+            : 'إرسال عبر الواتساب إلى مجمع تداوي'}
         </Button>
       </form>
     </div>

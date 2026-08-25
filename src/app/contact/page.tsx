@@ -29,7 +29,7 @@ export default function ContactPage() {
       <PageHero
         title="تواصل معنا"
         subtitle="يسعدني التواصل معك والإجابة على كافة استفساراتك عبر قنوات التواصل المتعددة أو زيارة عيادتي بمجمع تداوي الجراحي بالطائف."
-        imgURL='images/contact-us-hero.png'
+        imgURL="images/contact-us-hero.webp"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
@@ -40,7 +40,9 @@ export default function ContactPage() {
             <div className="sm:w-12 sm:h-12 w-10 h-10 rounded-2xl bg-brand/20 text-brand flex items-center justify-center">
               <MapPin className="sm:w-6 sm:h-6 w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm sm:text-base">عنوان العيادة</h3>
+            <h3 className="font-bold text-slate-900 text-sm sm:text-base">
+              عنوان العيادة
+            </h3>
             <p className="text-xs sm:text-sm text-slate-700 font-semibold">
               {doctorData.clinicName}
             </p>
@@ -63,7 +65,9 @@ export default function ContactPage() {
             >
               للحجز: {doctorData.phoneDisplay}
             </a>
-            <p className="text-[0.65rem] sm:text-xs text-brand font-bold">متاح خلال ساعات عمل العيادة</p>
+            <p className="text-[0.65rem] sm:text-xs text-brand font-bold">
+              متاح خلال ساعات عمل العيادة
+            </p>
           </div>
 
           {/* Email & Hours Card */}
@@ -91,14 +95,14 @@ export default function ContactPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
             <ContactForm
-              title="ارسل رسالة مباشرة"
-              subtitle="يسعدني استقبال استفسارك وسأتابع معك شخصياً."
+              title="ارسل استفسارك لتنسيق الموعد"
+              subtitle="سيتم استقبال استفسارك فوراً من قِبل موظفي الاستقبال والفريق الطبي بمجمع تداوي الجراحي بالطائف وتنسيق زيارتك لعيادة د. عبدالله الصواط."
             />
           </div>
 
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-navy text-white rounded-3xl p-6 md:p-8 shadow-card space-y-4">
-              <h3 className="text-white! text-xl font-bold border-r-4 border-accent-gold pr-3">
+              <h3 className="text-white! text-lg sm:text-xl font-bold border-r-4 border-accent-gold pr-3">
                 تابعني على قنوات التواصل
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
@@ -106,7 +110,7 @@ export default function ContactPage() {
               </p>
 
               <div className="flex flex-col gap-3 pt-2">
-                <a
+                {/* <a
                   href={doctorData.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -114,8 +118,18 @@ export default function ContactPage() {
                 >
                   <WhatsAppIcon className="w-5 h-5 text-accent-whatsapp group-hover:text-white" />
                   <span className="text-sm font-bold">
-                    محادثة الواتساب المباشرة
+                    محادثة واتساب
                   </span>
+                </a> */}
+
+                <a
+                  href={doctorData.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-slate-800 hover:bg-[#e1306c] text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-900"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span className="text-xs sm:text-sm font-bold">إنستغرام</span>
                 </a>
 
                 <a
@@ -125,17 +139,7 @@ export default function ContactPage() {
                   className="flex items-center gap-3 bg-slate-800 hover:bg-[#1DA1F2] text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-700"
                 >
                   <Twitter className="w-5 h-5" />
-                  <span className="text-sm font-bold">منصة تويتر / X</span>
-                </a>
-
-                <a
-                  href={doctorData.socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-slate-800 hover:bg-[#e1306c] text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-900"
-                >
-                  <Instagram className="w-5 h-5" />
-                  <span className="text-sm font-bold">إنستغرام العيادة</span>
+                  <span className="text-xs sm:text-sm font-bold">تويتر / X</span>
                 </a>
               </div>
             </div>

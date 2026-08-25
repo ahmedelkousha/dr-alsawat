@@ -2,7 +2,7 @@ export const colonSurgeryContent = {
   hero: {
     title: 'جراحات القولون المتخصصة',
     subtitle: 'دليلك المختصر حول تشخيص وجراحات القولون بالمنظار والتقنيات الحديثة',
-    img: '/images/colon1.jpeg',
+    img: '/images/colon.webp',
   },
   indicationsSection: {
     title: 'دواعي جراحة القولون',

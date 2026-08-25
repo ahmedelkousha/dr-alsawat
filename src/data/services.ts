@@ -52,7 +52,7 @@ export const specialtyOverview = [
     subtitle: 'Colon Surgeries',
     description:
       'تشخيص وعلاج أورام القولون، الداء الرتجي، والتهابات الأمعاء المزمنة بالمنظار الجراحي المتقدم وتقنيات استئصال القولون الجزئي أو الكلي.',
-    image: '/images/colon1.jpeg',
+    image: '/images/colon.webp',
     link: '/colon-surgery',
     linkText: 'اقرأ أكثر',
   },
@@ -62,7 +62,7 @@ export const specialtyOverview = [
     subtitle: 'Rectal Surgeries',
     description:
       'جراحات استئصال أورام المستقيم مع الحفاظ على الأعضاء والوظائف الطبيعية باستخدام التقنيات الروبوتية والمناظير الدقيقة.',
-    image: '/images/rectal1.jpeg',
+    image: '/images/rectal.jpeg',
     link: '/rectal-surgery',
     linkText: 'اقرأ أكثر',
   },
@@ -72,7 +72,7 @@ export const specialtyOverview = [
     subtitle: 'Anal Region Surgeries',
     description:
       'علاج متقدم وشامل لأمراض المنطقة الشرجية بالطرق الجراحية والليزر والتقنيات حديثة التدخل طفيف التوغل.',
-    image: '/images/anal1.png',
+    image: '/images/anal.webp',
     link: '/anal-surgery/hemorrhoids',
     linkText: 'استكشف العمليات',
     subLinks: [

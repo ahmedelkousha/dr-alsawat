@@ -62,7 +62,7 @@ export default function Header() {
             <Link href="/" className="focus:outline-none inline-block">
               <div className="relative w-34 sm:w-46 md:w-57.5 h-10 sm:h-12 md:h-16 overflow-hidden">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt={doctorData.name}
                   fill
                   className="object-contain"
@@ -240,7 +240,7 @@ export default function Header() {
                 <div className="p-4 border-b border-slate-100 flex flex-row-reverse items-center justify-between bg-navy text-white">
                   <div className="relative w-44 h-12">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/logo.webp"
                       alt={doctorData.name}
                       fill
                       className="object-contain object-left"
