@@ -24,7 +24,7 @@ export default function AppointmentsPage() {
       icon: <Clock className="w-6 h-6 text-accent-gold" />,
       title: 'أوقات العمل المتاحة',
       description:
-        'نستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي كل أحد وثلاثاء من الساعة 6-8 مساءً.',
+        'نستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي كل أحد وثلاثاء من الساعة 5-8 مساءً.',
       buttonText: 'موقع العيادة',
       buttonHref: doctorData.clinicLocationURL,
       buttonIcon: <MapPin className="w-4 h-4 text-slate-900" />,

@@ -8,6 +8,7 @@ import WhatsAppBannerSection from '@/components/home/WhatsAppBannerSection';
 import PatientTestimonialsSection from '@/components/home/PatientTestimonialsSection';
 import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 import ClinicLocationFooterBlock from '@/components/home/ClinicLocationFooterBlock';
+import AwardsGallerySection from '@/components/about/AwardsGallerySection';
 
 export default function HomePage() {
   return (
@@ -28,10 +29,13 @@ export default function HomePage() {
         {/* 5. Media & TV Appearances */}
         <MediaAppearancesSection />
 
-        {/* 6. WhatsApp Consultation CTA Banner */}
+        {/* 6. Awards Gallery */}
+        <AwardsGallerySection />
+
+        {/* 7. WhatsApp Consultation CTA Banner */}
         <WhatsAppBannerSection />
 
-        {/* 7. Patient Testimonials */}
+        {/* 8. Patient Testimonials */}
         <PatientTestimonialsSection />
 
         {/* 8. Care Standards & Medical Features */}

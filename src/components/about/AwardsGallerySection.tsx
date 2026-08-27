@@ -7,29 +7,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { awardsData } from '@/data/achievements';
 import { AwardItem } from '@/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFlip } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, EffectFlip, EffectFade } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper';
+import { useResponsive } from "@/hooks/useResponsive";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-flip';
+import 'swiper/css/effect-fade';
 
 export default function AwardsGallerySection() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useResponsive();
   const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
+  
   // Escape key closes the lightbox
   useEffect(() => {
     if (!selectedAward) return;
@@ -79,10 +71,13 @@ export default function AwardsGallerySection() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          modules={[Autoplay, Pagination, Navigation, EffectFlip]}
-          effect={isMobile ? 'flip' : 'slide'}
+          modules={[Autoplay, Pagination, Navigation, EffectFade]}
+          effect={isMobile ? 'fade' : 'slide'}
+          fadeEffect={{
+            crossFade:true,
+          }}
           grabCursor={true}
-          speed={800}
+          speed={isMobile? 1800:1400}
           flipEffect={{
             slideShadows: false,
             limitRotation: true,
@@ -112,12 +107,12 @@ export default function AwardsGallerySection() {
           className="testimonials-swiper !pb-14 !pt-2 px-1"
         >
           {/* Side Shadow Overlay Gradients */}
-          <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/40 to-transparent z-10 pointer-events-none" />
           <div className="hidden sm:block absolute left-0 top-0 bottom-16 w-8 h-full bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
 
           {awardsData.map((award) => (
             <SwiperSlide key={award.id} className="!h-auto">
-              <div className="bg-white rounded-2xl pb-5 px-0 shadow-card border border-slate-100 space-y-3 text-center h-full flex flex-col justify-between hover:shadow-card-hover transition-all">
+              <div className="bg-navy rounded-2xl pb-0 px-0 shadow-card border border-slate-100 space-y-0 text-center h-full flex flex-col justify-between hover:shadow-card-hover transition-all">
                 <div
                   className="relative w-full h-80 sm:h-66 rounded-xl overflow-hidden bg-slate-900 cursor-pointer group/img"
                   onClick={() => setSelectedAward(award)}
@@ -133,8 +128,8 @@ export default function AwardsGallerySection() {
                     <span>تكبير الصورة</span>
                   </div>
                 </div>
-                <div className="space-y-1 mb-auto">
-                  <h3 className="font-bold text-slate-900 text-base leading-snug">
+                <div className="space-y-1 mb-auto bg-navy py-5 rounded-b-3xl">
+                  <h3 className="font-bold text-slate-200! text-base leading-snug">
                     {award.title}
                   </h3>
                   <p className="text-xs text-brand font-semibold">

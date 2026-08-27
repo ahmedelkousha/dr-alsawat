@@ -5,25 +5,16 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { patientTestimonials } from '@/data/testimonials';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFlip } from 'swiper/modules';
-
+import { Autoplay, Pagination, Navigation, EffectFlip, EffectFade } from 'swiper/modules';
+import { useResponsive } from '@/hooks/useResponsive';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-flip';
+import 'swiper/css/effect-fade';
 
 export default function PatientTestimonialsSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // 640px هو نقطة التحول لشاشات sm
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  
+const isMobile = useResponsive();
 
   return (
     <section className="space-y-6">
@@ -37,19 +28,16 @@ export default function PatientTestimonialsSection() {
 
       <div className="relative space-y-4 mx-auto w-full max-w-sm sm:max-w-none">
         <Swiper
-          key={isMobile ? 'mobile' : 'desktop'}
-          modules={[Autoplay, Pagination, Navigation, EffectFlip]}
-          effect={isMobile ? 'flip' : 'slide'}
+          key={isMobile? 'mobile' : 'desktop'}
+          modules={[Autoplay, Pagination, Navigation, EffectFade]}
+          effect={isMobile? 'slide' : 'slide'}
           grabCursor={true}
-          speed={800}
-          flipEffect={{
-            slideShadows: false,
-            limitRotation: true,
-          }}
+          speed={1000}
           slidesPerView={1}
+          spaceBetween={40}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 1800,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
