@@ -13,8 +13,8 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function FloatingHelpWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,7 +112,7 @@ export default function FloatingHelpWidget() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                    <WhatsAppIcon className="w-5 h-5 text-accent-whatsapp" />
+                    <FaWhatsapp className="w-5 h-5 text-accent-whatsapp" />
                   </div>
                   <div>
                     <span className="font-bold text-sm block">

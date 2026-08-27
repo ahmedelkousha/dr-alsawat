@@ -16,7 +16,6 @@ export default function PatientTestimonialsSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // التأكد من حجم الشاشة عند بدء تشغيل المكون
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640); // 640px هو نقطة التحول لشاشات sm
     };
@@ -31,21 +30,15 @@ export default function PatientTestimonialsSection() {
       <div className="flex items-center justify-between border-b border-slate-200 pb-4">
         <div className="flex items-center gap-2">
           <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
-           شهادات المرضى
+            شهادات المرضى
           </h2>
         </div>
       </div>
 
       <div className="relative space-y-4 mx-auto w-full max-w-sm sm:max-w-none">
-        {/* Side Shadow Overlay Gradients */}
-        <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
-        <div className="hidden sm:block absolute left-0 top-0 bottom-16 w-8 h-full bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
-
         <Swiper
-          // نقوم بإعادة بناء المكون عند تغير نوع الشاشة لضمان تطبيق التأثير بشكل صحيح
           key={isMobile ? 'mobile' : 'desktop'}
           modules={[Autoplay, Pagination, Navigation, EffectFlip]}
-          // تطبيق flip على الهاتف و slide على بقية الشاشات
           effect={isMobile ? 'flip' : 'slide'}
           grabCursor={true}
           speed={800}
@@ -77,6 +70,9 @@ export default function PatientTestimonialsSection() {
           }}
           className="testimonials-swiper !pb-14 !pt-2 px-1"
         >
+          {/* Side Shadow Overlay Gradients */}
+          <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute left-0 top-0 bottom-16 w-8 h-full bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
           {patientTestimonials.map((test) => (
             <SwiperSlide key={test.id} className="!h-auto">
               <TestimonialCard testimonial={test} />

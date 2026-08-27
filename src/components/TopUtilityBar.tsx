@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Clock, Phone, Mail, MapPin, Twitter, Instagram } from 'lucide-react';
+import { Clock, Phone, Mail, MapPin } from 'lucide-react';
+import { FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function TopUtilityBar() {
   return (
@@ -49,16 +49,16 @@ export default function TopUtilityBar() {
               className="p-1.5 rounded-full bg-accent-whatsapp/20 hover:bg-accent-whatsapp text-accent-whatsapp hover:text-white transition-all flex items-center justify-center"
               aria-label="WhatsApp"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5" />
+              <FaWhatsapp className="w-3.5 h-3.5" />
             </a>
             <a
               href={doctorData.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-full bg-slate-900 hover:bg-[#1DA1F2] text-slate-300 hover:text-white transition-all flex items-center justify-center"
-              aria-label="Twitter"
+              className="p-1.5 rounded-full bg-slate-900 hover:bg-black text-slate-300 hover:text-white transition-all flex items-center justify-center"
+              aria-label="X"
             >
-              <Twitter className="w-3 h-3" />
+              <FaXTwitter className="w-3.5 h-3.5" />
             </a>
             <a
               href={doctorData.socials.instagram}
@@ -67,7 +67,7 @@ export default function TopUtilityBar() {
               className="p-1.5 rounded-full bg-slate-900 hover:bg-[#e1306c] text-slate-300 hover:text-white transition-all flex items-center justify-center"
               aria-label="Instagram"
             >
-              <Instagram className="w-3 h-3" />
+              <FaInstagram className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

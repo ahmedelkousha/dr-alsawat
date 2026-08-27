@@ -8,9 +8,9 @@ import {
   ExternalLink,
   Globe,
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import MapEmbed from '@/components/MapEmbed';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 
@@ -39,13 +39,13 @@ export default function AppointmentsPage() {
       buttonIcon: <Phone className="w-4 h-4 text-slate-900" />,
     },
     {
-      icon: <WhatsAppIcon className="w-6 h-6 text-accent-whatsapp" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-accent-whatsapp" />,
       title: 'حجز فوري عبر الواتساب',
       description:
         'تواصل مع مجمع تداوي الجراحي لااختيار موعدك المناسب للحجز.',
       buttonText: 'تواصل عبر الواتساب',
       buttonHref: doctorData.whatsappUrl,
-      buttonIcon: <WhatsAppIcon className="w-4 h-4 text-accent-whatsapp" />,
+      buttonIcon: <FaWhatsapp className="w-4 h-4 text-accent-whatsapp" />,
       containerClassName:
         'bg-emerald-700/85 text-white rounded-3xl p-4 shadow-sm border border-brand/10 flex flex-col justify-between space-y-4',
       descriptionClassName: 'text-xs text-slate-200 leading-relaxed',

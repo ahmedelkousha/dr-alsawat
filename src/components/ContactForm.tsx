@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import Button from '@/components/Button';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { doctorData } from '@/data/doctorData';
 
 interface ContactFormProps {
@@ -211,7 +211,7 @@ ${formData.message.trim()}`;
           size="sm"
           fullWidth
           loading={loading}
-          icon={<WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
+          icon={<FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5" />}
           iconPosition="right"
         >
           {loading

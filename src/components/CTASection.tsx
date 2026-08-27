@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Siren, ArrowLeft, Calendar } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { doctorData } from "@/data/doctorData";
 import Button from "@/components/Button";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export function EmergencyBanner() {
   return (
@@ -50,7 +50,7 @@ export function WhatsAppBanner() {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-right">
           <div className="w-14 h-14 rounded-2xl bg-accent-whatsapp/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
-            <WhatsAppIcon className="w-8 h-8 text-accent-whatsapp" />
+            <FaWhatsapp className="w-8 h-8 text-accent-whatsapp" />
           </div>
           <div className="space-y-1">
             <h3 className="text-lg md:text-2xl font-bold text-slate-300!">
@@ -70,7 +70,7 @@ export function WhatsAppBanner() {
             size="md"
             fullWidth
             className="md:w-auto text-slate-900 bg-accent-whatsapp hover:bg-accent-whatsapp/80"
-            icon={<WhatsAppIcon className="w-5 h-5" />}
+            icon={<FaWhatsapp className="w-5 h-5" />}
             iconPosition="left"
           >
             <span className="flex items-center gap-2">
