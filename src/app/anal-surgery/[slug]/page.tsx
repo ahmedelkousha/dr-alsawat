@@ -46,7 +46,7 @@ export async function generateMetadata({
       title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
       description: data.description,
       url: `https://dralsawat.com/anal-surgery/${slug}`,
-      images: data.img ? [data.img] : [],
+      images: ['/images/og-image.png'],
     },
   };
 }
@@ -258,8 +258,8 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
                 حجز موعد استشارة
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                تستفبل العيادة المراجعين {doctorData.workingHours} بمجمع
-                تداوي الجراحي الطبي بالطائف.
+                تستفبل العيادة المراجعين {doctorData.workingHours} بمجمع تداوي
+                الجراحي الطبي بالطائف.
               </p>
               <Button
                 href="/appointments"
