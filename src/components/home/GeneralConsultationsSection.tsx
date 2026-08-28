@@ -37,7 +37,7 @@ export default function GeneralConsultationsSection() {
             size="sm"
             icon={<Calendar className="w-4 h-4 text-slate-900" />}
           >
-            حجز موعد استشارة جديدة
+            حجز موعد استشارة
           </Button>
         </div>
       </div>

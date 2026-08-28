@@ -100,22 +100,24 @@ export default function ColonSurgeryPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {colonSurgeryContent.specialtyDetailSection.subsections.map((sub, i) => (
-              <div
-                key={i}
-                className="bg-slate-50 rounded-2xl py-4 px-4 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
-              >
-                <h3 className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm sm:text-base">
-                  <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white flex items-center justify-center flex-shrink-0 font-extrabold text-xs">
-                    {i + 1}
-                  </span>{' '}
-                  {sub.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pr-7">
-                  {sub.text}
-                </p>
-              </div>
-            ))}
+            {colonSurgeryContent.specialtyDetailSection.subsections.map(
+              (sub, i) => (
+                <div
+                  key={i}
+                  className="bg-slate-50 rounded-2xl py-4 px-4 border border-slate-200/80 hover:border-brand-300 transition-colors space-y-2"
+                >
+                  <h3 className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm sm:text-base">
+                    <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-brand text-white flex items-center justify-center flex-shrink-0 font-extrabold text-xs">
+                      {i + 1}
+                    </span>{' '}
+                    {sub.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pr-7">
+                    {sub.text}
+                  </p>
+                </div>
+              )
+            )}
           </div>
         </section>
 
@@ -152,15 +154,17 @@ export default function ColonSurgeryPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {colonSurgeryContent.warningSignsSection.checklist.map((warn, i) => (
-              <div
-                key={i}
-                className="bg-white/90 rounded-xl py-3 px-3 border border-amber-200 flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-semibold shadow-sm"
-              >
-                <span className="w-2 h-2 rounded-full bg-rose-600 mt-1.5 flex-shrink-0" />
-                <span>{warn}</span>
-              </div>
-            ))}
+            {colonSurgeryContent.warningSignsSection.checklist.map(
+              (warn, i) => (
+                <div
+                  key={i}
+                  className="bg-white/90 rounded-xl py-3 px-3 border border-amber-200 flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-semibold shadow-sm"
+                >
+                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-1.5 flex-shrink-0" />
+                  <span>{warn}</span>
+                </div>
+              )
+            )}
           </div>
 
           <div className="bg-white rounded-2xl py-3 px-4 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
@@ -186,7 +190,7 @@ export default function ColonSurgeryPage() {
           <div className="lg:col-span-7">
             <ContactForm
               title="ارسل استفسارك حول جراحات القولون"
-              subtitle="سيتم استقبال استفسارك مباشرة من قِبل الفريق الطبي بمجمع تداوي الجراحي الطبي وتنسيق موعدك مع د. عبدالله الصواط."
+              subtitle="سيتم استقبال استفسارك وتحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتنسيق موعدك بالعيادة."
             />
           </div>
 
@@ -196,7 +200,7 @@ export default function ColonSurgeryPage() {
                 حجز موعد استشارة القولون
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                تستقبل العيادة المراجعين أيام {doctorData.workingHours} بمجمع
+                تستقبل العيادة المراجعين  {doctorData.workingHours} بمجمع
                 تداوي الجراحي الطبي بالطائف.
               </p>
               <Button

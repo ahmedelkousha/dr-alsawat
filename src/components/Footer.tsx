@@ -272,10 +272,10 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-accent-gold" />
                 <span>{doctorData.clinicAddress}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <Link href={`tel:${doctorData.phoneRaw}`} className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent-gold" />
                 <span>هاتف: {doctorData.phoneDisplay}</span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

@@ -15,8 +15,8 @@ export const doctorData = {
 
   phoneDisplay: '920008515',
   phoneRaw: '920008515',
-  email: 'DrAlsawat9189@gmail.com',
-  whatsappNumber: '966920008515',
+  email: 'dralsawat9189@gmail.com',
+  whatsappNumber: '966535479054',
   whatsappMessage: 'السلام عليكم، أرغب في الاستفسار عن المواعيد المتاحة لدى د. عبدالله الصواط',
   
   get whatsappUrl() {
@@ -82,7 +82,7 @@ export const doctorData = {
   whatsappBanner: {
     title: 'في حالة طلب استشارة أو السؤال',
     subtitle:
-      'تواصل مع مركز تداوي الجراحي عبر الواتساب للحصول على إجابات سريعة وتحديد موعد استشارتك في العيادة.',
+      'تواصل مباشرة مع د. عبدالله الصواط عبر الواتساب للحصول على إجابات سريعة وتحديد موعد استشارتك في العيادة.',
     ctaText: 'تواصل عبر الواتساب',
   },
 

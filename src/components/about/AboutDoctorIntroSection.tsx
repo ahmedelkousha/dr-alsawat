@@ -58,6 +58,7 @@ export default function AboutDoctorIntroSection() {
               icon={<FaWhatsapp className="w-4 h-4 text-emerald-400" />}
               href={doctorData.whatsappUrl}
               size="sm"
+              target="_blank"
               className="text-slate-100 bg-emerald-700 hover:bg-emerald-600"
             >
               الحجز عبر واتساب

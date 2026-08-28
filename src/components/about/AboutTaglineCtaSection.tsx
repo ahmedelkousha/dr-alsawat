@@ -12,7 +12,7 @@ export default function AboutTaglineCtaSection() {
         {doctorData.taglineContent}
       </h2>
       <div className="pt-2 flex justify-center gap-4">
-        <Button href="/appointments">حجز موعد استشارة</Button>
+        <Button size='sm' href="/appointments">حجز موعد استشارة</Button>
       </div>
     </section>
   );

@@ -235,7 +235,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
           <div className="lg:col-span-7">
             <ContactForm
               title={`ارسل استفسارك بخصوص ${data.title}`}
-              subtitle="سيتم استقبال استفسارك من قِبل الفريق الطبي بمجمع تداوي الجراحي الطبي وتنسيق زيارتك للعيادة."
+              subtitle="سيتم استقبال استفسارك وتحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتنسيق زيارتك للعيادة."
             />
           </div>
 
@@ -245,7 +245,7 @@ export default async function AnalSurgerySlugPage({ params }: PageProps) {
                 حجز موعد استشارة
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                تستفبل العيادة المراجعين أيام {doctorData.workingHours} بمجمع
+                تستفبل العيادة المراجعين {doctorData.workingHours} بمجمع
                 تداوي الجراحي الطبي بالطائف.
               </p>
               <Button

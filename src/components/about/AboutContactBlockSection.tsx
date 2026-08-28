@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 export default function AboutContactBlockSection() {
   return (
@@ -14,7 +15,7 @@ export default function AboutContactBlockSection() {
       <div className="lg:col-span-5 space-y-6">
         <div className="bg-navy/95 text-white rounded-2xl p-6 shadow-card space-y-4">
           <h3 className="text-white! text-xl font-bold border-r-4 border-accent-gold pr-3">
-            معلومات الاتصال المباشر
+            معلومات التواصل
           </h3>
           <div className="space-y-3 text-sm">
             <div className="flex items-start gap-3">
@@ -49,6 +50,20 @@ export default function AboutContactBlockSection() {
                   className="text-slate-300 text-xs hover:text-accent-gold"
                 >
                   {doctorData.email}
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <FaWhatsapp className="w-5 h-5 text-accent-gold flex-shrink-0 mt-1" />
+              <div>
+                <span className="font-bold block">واتساب:</span>
+                <a
+                  href={`${doctorData.whatsappUrl}`}
+                  target='_blank'
+                  className="text-slate-300 text-xs hover:text-accent-gold"
+                >
+                  {doctorData.whatsappNumber}
                 </a>
               </div>
             </div>

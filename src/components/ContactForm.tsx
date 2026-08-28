@@ -12,8 +12,8 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({
-  title = 'ارسل لنا استفسارك',
-  subtitle = 'سيتم استقبال استفسارك من قِبل الفريق الطبي بمجمع تداوي الجراحي الطبي والتواصل معك فوراً لتنسيق موعدك في عيادة د. عبدالله الصواط.',
+  title = 'ارسل استفسارك لـ د. عبدالله الصواط',
+  subtitle = 'سيتم استقبال استفسارك وتحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتنسيق زيارتك للعيادة.',
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: '',
@@ -57,7 +57,7 @@ export default function ContactForm({
     try {
       const messageText = `السلام عليكم ورحمة الله وبركاته،
 
-أرغب في الاستفسار وتنسيق موعد لعيادة د. عبدالله الصواط بمجمع تداوي الجراحي الطبي:
+أرغب في الاستفسار وتنسيق موعد لعيادة د. عبدالله الصواط:
 
 • الاسم الكامل: ${formData.name.trim()}
 • رقم الجوال: ${formData.phone.trim()}${formData.email.trim() ? `\n• البريد الإلكتروني: ${formData.email.trim()}` : ''}
@@ -66,7 +66,7 @@ export default function ContactForm({
 ${formData.message.trim()}`;
 
       const encodedText = encodeURIComponent(messageText);
-      const targetWhatsAppNumber = doctorData.whatsappNumber || '966920008515';
+      const targetWhatsAppNumber = doctorData.whatsappNumber || '966535479054';
       const whatsappUrl = `https://wa.me/${targetWhatsAppNumber}?text=${encodedText}`;
 
       // Open WhatsApp link with prefilled message
@@ -75,7 +75,7 @@ ${formData.message.trim()}`;
       setStatus({
         type: 'success',
         message:
-          'تم تجهيز الاستفسار وتحويلك لمحادثة الواتساب المباشرة مع مجمع تداوي الجراحي الطبي بنجاح!',
+          'تم تجهيز الاستفسار وتحويلك لمحادثة الواتساب مع د. عبدالله الصواط بنجاح!',
       });
 
       // Clear form
@@ -216,7 +216,7 @@ ${formData.message.trim()}`;
         >
           {loading
             ? 'جاري التحويل للواتساب...'
-            : 'إرسال عبر الواتساب إلى مجمع تداوي'}
+            : 'إرسال عبر الواتساب'}
         </Button>
       </form>
     </div>

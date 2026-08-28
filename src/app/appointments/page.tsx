@@ -42,7 +42,7 @@ export default function AppointmentsPage() {
       icon: <FaWhatsapp className="w-6 h-6 text-accent-whatsapp" />,
       title: 'حجز فوري عبر الواتساب',
       description:
-        'تواصل مع مجمع تداوي الجراحي لااختيار موعدك المناسب للحجز.',
+        'تواصل مباشرة مع د. عبدالله الصواط عبر الواتساب لاختيار موعدك المناسب للحجز.',
       buttonText: 'تواصل عبر الواتساب',
       buttonHref: doctorData.whatsappUrl,
       buttonIcon: <FaWhatsapp className="w-4 h-4 text-accent-whatsapp" />,
@@ -67,7 +67,7 @@ export default function AppointmentsPage() {
       {/* Page Hero Banner */}
       <PageHero
         title="حجز موعد بالعيادة"
-        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل مع مجمع تداوي الجراحي في الطائف عبر الواتساب، الاتصال، موقع المجمع الرسمي أو زيارة العيادة بالمجمع.`}
+        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل المباشر عبر الواتساب، أو الاتصال بالعيادة، أو عبر الموقع الإلكتروني.`}
         imgURL="/images/appointments-hero.jpeg"
       />
 
@@ -84,7 +84,7 @@ export default function AppointmentsPage() {
           <div className="lg:col-span-7">
             <ContactForm
               title="طلب موعد إلكتروني"
-              subtitle="عبئ البيانات وسيقوم موظفو الاستقبال بمجمع تداوي الجراحي بالطائف بتأكيد حجزك وتحويلك لمحادثة الواتساب المباشرة."
+              subtitle="عبئ البيانات وسيتم تحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتأكيد وتنسيق موعدك."
             />
           </div>
 

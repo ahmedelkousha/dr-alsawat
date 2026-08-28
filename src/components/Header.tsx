@@ -240,7 +240,7 @@ export default function Header() {
                 <div className="p-4 border-b border-slate-100 flex flex-row-reverse items-center justify-between bg-navy text-white">
                   <div className="relative w-44 h-12">
                     <Image
-                      src="/images/logo.webp"
+                      src="/images/logo-dark.png"
                       alt={doctorData.name}
                       fill
                       className="object-contain object-left"
