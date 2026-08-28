@@ -1,13 +1,6 @@
-'use client';
-
 import React from 'react';
-import {
-  Clock,
-  Phone,
-  MapPin,
-  ExternalLink,
-  Globe,
-} from 'lucide-react';
+import { Metadata } from 'next';
+import { Clock, Phone, MapPin, ExternalLink, Globe } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import MapEmbed from '@/components/MapEmbed';
@@ -17,6 +10,26 @@ import ContactForm from '@/components/ContactForm';
 import AppointmentQuickCard, {
   AppointmentQuickCardProps,
 } from '@/components/AppointmentQuickCard';
+
+export const metadata: Metadata = {
+  title: {absolute: 'حجز موعد بالعيادة | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم'} ,
+  description:
+    'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب، الاتصال الهاتفي، أو زيارة مجمع تداوي الجراحي بالطائف.',
+  keywords: [
+    'حجز موعد دكتور عبدالله الصواط',
+    'عيادة جراحة القولون بالطائف',
+    'حجز مجمع تداوي الجراحي الطائف',
+    'مواعيد عيادة القولون والمستقيم',
+    'دكتور بواسير وناسور الطائف',
+  ],
+  openGraph: {
+    title: 'حجز موعد بالعيادة | د. عبدالله الصواط',
+    description:
+      'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب أو الهاتف.',
+    url: 'https://dralsawat.com/appointments',
+    images: ['/images/og-image.png'],
+  },
+};
 
 export default function AppointmentsPage() {
   const quickCardsData: AppointmentQuickCardProps[] = [
@@ -62,8 +75,40 @@ export default function AppointmentsPage() {
     },
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalClinic',
+    name: `${doctorData.name} - ${doctorData.clinicName}`,
+    url: 'https://dralsawat.com/appointments',
+    image: 'https://dralsawat.com/images/appointments-hero.jpeg',
+    telephone: doctorData.phoneRaw,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'الطائف',
+      addressCountry: 'SA',
+      streetAddress: doctorData.clinicAddress,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Sunday', 'Tuesday'],
+        opens: '17:00',
+        closes: '20:00',
+      },
+    ],
+    physician: {
+      '@type': 'Physician',
+      name: doctorData.name,
+      jobTitle: doctorData.title,
+    },
+  };
+
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Page Hero Banner */}
       <PageHero
         title="حجز موعد بالعيادة"

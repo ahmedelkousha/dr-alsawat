@@ -13,7 +13,7 @@ export default function GeneralConsultationsSection() {
         loop
         muted
         playsInline
-        poster='/poster.png'
+        poster='/images/poster.png'
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-20 rounded-3xl pointer-events-none"
         src="/videos/colon-vid.mp4"
       />

@@ -35,6 +35,19 @@ export async function generateMetadata({
   return {
     title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
     description: data.description,
+    keywords: [
+      `علاج ${data.title} بالطائف`,
+      `عملية ${data.title} بالليزر`,
+      `أعراض ${data.title}`,
+      `أسباب ${data.title}`,
+      `دكتور ${data.title} الطائف`,
+    ],
+    openGraph: {
+      title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
+      description: data.description,
+      url: `https://dralsawat.com/anal-surgery/${slug}`,
+      images: data.img ? [data.img] : [],
+    },
   };
 }
 

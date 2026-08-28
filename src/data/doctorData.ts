@@ -17,6 +17,7 @@ export const doctorData = {
   phoneRaw: '920008515',
   email: 'dralsawat9189@gmail.com',
   whatsappNumber: '966535479054',
+  drNumber: '+966535479054',
   whatsappMessage: 'السلام عليكم، أرغب في الاستفسار عن المواعيد المتاحة لدى د. عبدالله الصواط',
   
   get whatsappUrl() {

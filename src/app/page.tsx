@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import NewHero from '@/components/home/NewHero';
 import DoctorSelectorSection from '@/components/home/DoctorSelectorSection';
 import SpecialtyOverviewSection from '@/components/home/SpecialtyOverviewSection';
@@ -9,10 +10,68 @@ import PatientTestimonialsSection from '@/components/home/PatientTestimonialsSec
 import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 import ClinicLocationFooterBlock from '@/components/home/ClinicLocationFooterBlock';
 import AwardsGallerySection from '@/components/about/AwardsGallerySection';
+import { doctorData } from '@/data/doctorData';
+
+export const metadata: Metadata = {
+  title: `${doctorData.name} | ${doctorData.title}`,
+
+  description: doctorData.subtitle,
+  keywords: [
+    'دكتور عبدالله الصواط',
+    'استشاري قولون ومستقيم بالطائف',
+    'رئيس قسم الجراحة بجامعة الطائف',
+    'جراحة عامة الطائف',
+    'علاج البواسير بالليزر',
+    'الناسور العصعصي',
+    'الشرخ الشرجي',
+    'مجمع تداوي الجراحي',
+  ],
+  openGraph: {
+    title: `${doctorData.name} | ${doctorData.title}`,
+    description: doctorData.subtitle,
+    url: 'https://dralsawat.com',
+    siteName: doctorData.name,
+    images: ['/images/og-image.png'],
+  },
+};
 
 export default function HomePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Surgeon',
+    medicalSpecialty: 'Colorectal Surgery',
+    name: doctorData.name,
+    jobTitle: doctorData.title,
+    description: doctorData.doctorBioSummary,
+    url: 'https://dralsawat.com',
+    image: 'https://dralsawat.com/images/alsawat-pic.jpeg',
+    telephone: doctorData.drNumber,
+    worksFor: {
+      '@type': 'MedicalOrganization',
+      name: doctorData.clinicName,
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'الطائف',
+      addressCountry: 'SA',
+      streetAddress: doctorData.clinicAddress,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Sunday', 'Tuesday'],
+        opens: '17:00',
+        closes: '20:00',
+      },
+    ],
+  };
+
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. Split Hero Section with Integrated Booking Request Card */}
       <NewHero />
 

@@ -9,10 +9,25 @@ import PatientTestimonialsSection from '@/components/home/PatientTestimonialsSec
 import AboutContactBlockSection from '@/components/about/AboutContactBlockSection';
 import AboutTaglineCtaSection from '@/components/about/AboutTaglineCtaSection';
 
+import { doctorData } from '@/data/doctorData';
+
 export const metadata: Metadata = {
-  title: 'نبذة تعريفية | د. عبدالله الصواط',
+  title: 'نبذة تعريفية',
   description:
     'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، رئيس قسم الجراحة بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
+  keywords: [
+    'دكتور عبدالله الصواط السيرة الذاتية',
+    'رئيس قسم الجراحة جامعة الطائف',
+    'الزمالة الكورية جراحة القولون',
+    'استشاري جراحة قولون ومستقيم بالطائف',
+  ],
+  openGraph: {
+    title: 'نبذة تعريفية | د. عبدالله الصواط',
+    description:
+      'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، رئيس قسم الجراحة بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
+    url: 'https://dralsawat.com/about',
+    images: ['/images/og-image.png'],
+  },
 };
 
 export default function AboutPage() {

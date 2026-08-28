@@ -1,13 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  MessageCircle,
-  Globe,
-} from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Globe } from 'lucide-react';
 import { FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
@@ -15,9 +8,25 @@ import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: 'تواصل معنا | د. عبدالله الصواط',
+  title: {
+    absolute:
+      'تواصل معنا | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم',
+  },
   description:
     'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
+  keywords: [
+    'تواصل مع دكتور عبدالله الصواط',
+    'عنوان عيادة الدكتور عبدالله الصواط بالطائف',
+    'رقم هاتف دكتور قولون الطائف',
+    'موقع مجمع تداوي الجراحي',
+  ],
+  openGraph: {
+    title: 'تواصل معنا | د. عبدالله الصواط',
+    description:
+      'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
+    url: 'https://dralsawat.com/contact',
+    images: ['/images/og-image.png'],
+  },
 };
 
 export default function ContactPage() {

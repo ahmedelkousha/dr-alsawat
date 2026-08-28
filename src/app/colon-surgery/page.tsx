@@ -15,9 +15,23 @@ import PageHero from '@/components/PageHero';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
-  title: 'جراحات القولون المتخصصة | د. عبدالله الصواط',
+  title: 'جراحات القولون',
   description:
-    'دليل طبي حول جراحات القولون بالمنظار، استئصال القولون، علاج أورام القولون والداء الرتجي وفغر القولون.',
+    'دليل طبي شامل حول جراحات القولون بالمنظار والروبوت، استئصال أورام القولون، علاج التهابات القولون والداء الرتجي بالطائف.',
+  keywords: [
+    'جراحة القولون بالمنظار الطائف',
+    'استئصال أورام القولون',
+    'دكتور قولون بالطائف',
+    'عملية القولون بالمنظار',
+    'الداء الرتجي والقولون',
+  ],
+  openGraph: {
+    title: 'جراحات القولون | د. عبدالله الصواط',
+    description:
+      'دليل طبي شامل حول جراحات القولون بالمنظار والروبوت، استئصال أورام القولون، علاج التهابات القولون والداء الرتجي بالطائف.',
+    url: 'https://dralsawat.com/colon-surgery',
+    images: ['/images/og-image.png'],
+  },
 };
 
 export default function ColonSurgeryPage() {
@@ -200,8 +214,8 @@ export default function ColonSurgeryPage() {
                 حجز موعد استشارة القولون
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                تستقبل العيادة المراجعين  {doctorData.workingHours} بمجمع
-                تداوي الجراحي الطبي بالطائف.
+                تستقبل العيادة المراجعين {doctorData.workingHours} بمجمع تداوي
+                الجراحي الطبي بالطائف.
               </p>
               <Button
                 href="/appointments"
