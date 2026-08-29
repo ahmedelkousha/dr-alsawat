@@ -27,7 +27,7 @@ export interface AchievementItem {
   title: string;
   publisher: string;
   date?: string;
-  summary: string;
+  summary?: string;
   imageUrl?: string;
   articleUrl?: string;
 }

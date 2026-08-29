@@ -8,13 +8,11 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
-  Twitter,
-  Instagram,
   MapPin,
   Phone,
   Loader2,
 } from 'lucide-react';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
@@ -86,16 +84,16 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-accent-whatsapp hover:text-white transition-all text-accent-whatsapp"
                 aria-label="WhatsApp"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <FaWhatsapp className="w-4 h-4" />
               </a>
               <a
                 href={doctorData.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all text-[#1DA1F2]"
-                aria-label="Twitter"
+                className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-black hover:text-white transition-all text-white"
+                aria-label="X"
               >
-                <Twitter className="w-4 h-4" />
+                <FaXTwitter className="w-4 h-4" />
               </a>
               <a
                 href={doctorData.socials.instagram}
@@ -104,7 +102,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-[#e1306c] hover:text-white transition-all text-[#e1306c]"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <FaInstagram className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -274,10 +272,10 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-accent-gold" />
                 <span>{doctorData.clinicAddress}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <Link href={`tel:${doctorData.phoneRaw}`} className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent-gold" />
                 <span>هاتف: {doctorData.phoneDisplay}</span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

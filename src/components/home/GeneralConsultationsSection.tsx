@@ -13,7 +13,7 @@ export default function GeneralConsultationsSection() {
         loop
         muted
         playsInline
-        poster='/poster.png'
+        poster='/images/poster.png'
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-20 rounded-3xl pointer-events-none"
         src="/videos/colon-vid.mp4"
       />
@@ -37,7 +37,7 @@ export default function GeneralConsultationsSection() {
             size="sm"
             icon={<Calendar className="w-4 h-4 text-slate-900" />}
           >
-            حجز موعد استشارة جديدة
+            حجز موعد استشارة
           </Button>
         </div>
       </div>

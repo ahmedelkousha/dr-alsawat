@@ -1,16 +1,9 @@
-'use client';
-
 import React from 'react';
-import {
-  Clock,
-  Phone,
-  MapPin,
-  ExternalLink,
-  Globe,
-} from 'lucide-react';
+import { Metadata } from 'next';
+import { Clock, Phone, MapPin, ExternalLink, Globe } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import MapEmbed from '@/components/MapEmbed';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 
@@ -18,13 +11,33 @@ import AppointmentQuickCard, {
   AppointmentQuickCardProps,
 } from '@/components/AppointmentQuickCard';
 
+export const metadata: Metadata = {
+  title: {absolute: 'حجز موعد بالعيادة | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم'} ,
+  description:
+    'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب، الاتصال الهاتفي، أو زيارة مجمع تداوي الجراحي بالطائف.',
+  keywords: [
+    'حجز موعد دكتور عبدالله الصواط',
+    'عيادة جراحة القولون بالطائف',
+    'حجز مجمع تداوي الجراحي الطائف',
+    'مواعيد عيادة القولون والمستقيم',
+    'دكتور بواسير وناسور الطائف',
+  ],
+  openGraph: {
+    title: 'حجز موعد بالعيادة | د. عبدالله الصواط',
+    description:
+      'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب أو الهاتف.',
+    url: 'https://dralsawat.com/appointments',
+    images: ['/images/og-image.png'],
+  },
+};
+
 export default function AppointmentsPage() {
   const quickCardsData: AppointmentQuickCardProps[] = [
     {
       icon: <Clock className="w-6 h-6 text-accent-gold" />,
       title: 'أوقات العمل المتاحة',
       description:
-        'نستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي كل أحد وثلاثاء من الساعة 6-8 مساءً.',
+        'نستقبل المراجعين للاستشارات والكشوفات بمجمع تداوي الجراحي كل أحد وثلاثاء من الساعة 5-8 مساءً.',
       buttonText: 'موقع العيادة',
       buttonHref: doctorData.clinicLocationURL,
       buttonIcon: <MapPin className="w-4 h-4 text-slate-900" />,
@@ -39,13 +52,13 @@ export default function AppointmentsPage() {
       buttonIcon: <Phone className="w-4 h-4 text-slate-900" />,
     },
     {
-      icon: <WhatsAppIcon className="w-6 h-6 text-accent-whatsapp" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-accent-whatsapp" />,
       title: 'حجز فوري عبر الواتساب',
       description:
-        'تواصل مع مجمع تداوي الجراحي لااختيار موعدك المناسب للحجز.',
+        'تواصل مباشرة مع د. عبدالله الصواط عبر الواتساب لاختيار موعدك المناسب للحجز.',
       buttonText: 'تواصل عبر الواتساب',
       buttonHref: doctorData.whatsappUrl,
-      buttonIcon: <WhatsAppIcon className="w-4 h-4 text-accent-whatsapp" />,
+      buttonIcon: <FaWhatsapp className="w-4 h-4 text-accent-whatsapp" />,
       containerClassName:
         'bg-emerald-700/85 text-white rounded-3xl p-4 shadow-sm border border-brand/10 flex flex-col justify-between space-y-4',
       descriptionClassName: 'text-xs text-slate-200 leading-relaxed',
@@ -62,12 +75,44 @@ export default function AppointmentsPage() {
     },
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalClinic',
+    name: `${doctorData.name} - ${doctorData.clinicName}`,
+    url: 'https://dralsawat.com/appointments',
+    image: 'https://dralsawat.com/images/appointments-hero.jpeg',
+    telephone: doctorData.phoneRaw,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'الطائف',
+      addressCountry: 'SA',
+      streetAddress: doctorData.clinicAddress,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Sunday', 'Tuesday'],
+        opens: '17:00',
+        closes: '20:00',
+      },
+    ],
+    physician: {
+      '@type': 'Physician',
+      name: doctorData.name,
+      jobTitle: doctorData.title,
+    },
+  };
+
   return (
     <div className="space-y-12 md:space-y-20 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Page Hero Banner */}
       <PageHero
         title="حجز موعد بالعيادة"
-        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل مع مجمع تداوي الجراحي في الطائف عبر الواتساب، الاتصال، موقع المجمع الرسمي أو زيارة العيادة بالمجمع.`}
+        subtitle={`احجز موعد استشارتك مع ${doctorData.name} بسهولة وسرعة من خلال التواصل المباشر عبر الواتساب، أو الاتصال بالعيادة، أو عبر الموقع الإلكتروني.`}
         imgURL="/images/appointments-hero.jpeg"
       />
 
@@ -84,7 +129,7 @@ export default function AppointmentsPage() {
           <div className="lg:col-span-7">
             <ContactForm
               title="طلب موعد إلكتروني"
-              subtitle="عبئ البيانات وسيقوم موظفو الاستقبال بمجمع تداوي الجراحي بالطائف بتأكيد حجزك وتحويلك لمحادثة الواتساب المباشرة."
+              subtitle="عبئ البيانات وسيتم تحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتأكيد وتنسيق موعدك."
             />
           </div>
 

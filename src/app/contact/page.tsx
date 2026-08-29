@@ -1,25 +1,32 @@
 import React from 'react';
 import { Metadata } from 'next';
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  MessageCircle,
-  Twitter,
-  Instagram,
-  Globe,
-} from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Globe } from 'lucide-react';
+import { FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata: Metadata = {
-  title: 'تواصل معنا | د. عبدالله الصواط',
+  title: {
+    absolute:
+      'تواصل معنا | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم',
+  },
   description:
     'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
+  keywords: [
+    'تواصل مع دكتور عبدالله الصواط',
+    'عنوان عيادة الدكتور عبدالله الصواط بالطائف',
+    'رقم هاتف دكتور قولون الطائف',
+    'موقع مجمع تداوي الجراحي',
+  ],
+  openGraph: {
+    title: 'تواصل معنا | د. عبدالله الصواط',
+    description:
+      'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
+    url: 'https://dralsawat.com/contact',
+    images: ['/images/og-image.png'],
+  },
 };
 
 export default function ContactPage() {
@@ -96,7 +103,7 @@ export default function ContactPage() {
           <div className="lg:col-span-7">
             <ContactForm
               title="ارسل استفسارك لتنسيق الموعد"
-              subtitle="سيتم استقبال استفسارك فوراً من قِبل موظفي الاستقبال والفريق الطبي بمجمع تداوي الجراحي بالطائف وتنسيق زيارتك لعيادة د. عبدالله الصواط."
+              subtitle="سيتم استقبال استفسارك فوراً وتحويلك لمحادثة الواتساب مع د. عبدالله الصواط لتنسيق زيارتك للعيادة."
             />
           </div>
 
@@ -116,7 +123,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-accent-whatsapp/20 hover:bg-accent-whatsapp text-white p-3 rounded-xl transition-all border group border-accent-whatsapp/30"
                 >
-                  <WhatsAppIcon className="w-5 h-5 text-accent-whatsapp group-hover:text-white" />
+                  <FaWhatsapp className="w-5 h-5 text-accent-whatsapp group-hover:text-white" />
                   <span className="text-sm font-bold">
                     محادثة واتساب
                   </span>
@@ -128,7 +135,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-slate-800 hover:bg-[#e1306c] text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-900"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <FaInstagram className="w-5 h-5" />
                   <span className="text-xs sm:text-sm font-bold">إنستغرام</span>
                 </a>
 
@@ -136,10 +143,10 @@ export default function ContactPage() {
                   href={doctorData.socials.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-slate-800 hover:bg-[#1DA1F2] text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-700"
+                  className="flex items-center gap-3 bg-slate-800 hover:bg-black text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-700"
                 >
-                  <Twitter className="w-5 h-5" />
-                  <span className="text-xs sm:text-sm font-bold">تويتر / X</span>
+                  <FaXTwitter className="w-5 h-5" />
+                  <span className="text-xs sm:text-sm font-bold">منصة X</span>
                 </a>
               </div>
             </div>

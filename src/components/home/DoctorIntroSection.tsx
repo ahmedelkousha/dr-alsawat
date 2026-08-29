@@ -14,7 +14,7 @@ import { doctorData } from '@/data/doctorData';
 import Button from '@/components/Button';
 import TypingParagraph from '@/components/TypingParagraph';
 
-export default function DoctorSelectorSection() {
+export default function DoctorIntroSection() {
   return (
     <section className="bg-white rounded-3xl p-6 pb-0 md:p-10 md:pb-0 lg:p-12 lg:pb-0 shadow-card border border-slate-100 overflow-hidden relative">
       {/* Background Subtle Accent Glow */}
