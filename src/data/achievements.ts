@@ -3,34 +3,48 @@ import { AchievementItem, MediaAppearance, AwardItem } from '@/types';
 export const achievementsData: AchievementItem[] = [
   {
     id: 'ach-1',
-    title: 'مشاركة أكاديمية في المؤتمر الدولي لجراحات القولون والمستقيم',
-    publisher: 'مجلة الجراحة السعودية',
-    date: '2024',
-    summary:
-      'تقديم ورقة علمية حول أحدث تقنيات المنظار الجراحي والروبوت في جراحة القولون والمستقيم الحافظة للأعضاء.',
-    imageUrl: '/images/logo-dark.jpg',
-    articleUrl: 'https://example.com/article1',
+    title:
+      'لأول مرة على مستوى المحافظة.. إصلاح فتق المستقيم لمريضة بـ"تخصصي الطائف"',
+    publisher: 'صحيفة سبق الإخبارية',
+    date: '2022',
+    imageUrl: '/images/articles/sabq.png',
+    articleUrl: 'https://sabq.org/article/HI8Xj8y',
   },
   {
     id: 'ach-2',
-    title: 'إدخال تقنيات الليزر الحديثة في علاج أمراض المنطقة الشرجية بالطائف',
-    publisher: 'صحيفة الرياض الطبية',
-    date: '2023',
-    summary:
-      'تقرير صحفي يسلط الضوء على نتاجات إدخال تقنية SiLaC و FiLaC في علاج الناسور والبواسير بدون ألم.',
-    imageUrl: '/images/logo-dark.jpg',
-    articleUrl: 'https://example.com/article2',
+    title: 'سعودي يفوز بجائزة أفضل بحث أورام بمؤتمر سيؤول الدولي',
+    publisher: '‏صحيفة أول سعوديـ/ـة',
+    date: '2021',
+    imageUrl: '/images/articles/awl-saudi.png',
+    articleUrl: 'https://www.first1saudi.net/14169.html',
   },
+  
   {
     id: 'ach-3',
-    title: 'نشر دراسة متميزة حول جراحات القولون بالمنظار بالزمالة الكورية',
-    publisher: 'المجلة الطبية الأكاديمية',
+    title: 'استئصال ورم لمفاوي نادر في الأمعاء لمريض ثلاثيني بـ "تخصصي الطائف',
+    publisher: 'صحيفة سبق الإخبارية',
     date: '2022',
-    summary:
-      'نشر بحث علمي متخصص بالتعاون مع المركز الطبي الجامعي في كوريا الجنوبية حول سلامة الجراحات طفيفة التوغل.',
-    imageUrl: '/images/logo-dark.jpg',
-    articleUrl: 'https://example.com/article3',
+    imageUrl: '/images/articles/sabq.png',
+    articleUrl: 'https://sabq.org/article/UYWPOXa',
   },
+  {
+    id: 'ach-4',
+    title:
+      'مريض خمسيني يتعافى ويغادر تخصصي الطائف خلال ٤٨ ساعة كان يعاني من إنسداد بالأمعاء',
+    publisher: 'صحيفة نبض الإخبارية',
+    date: '2024',
+    imageUrl: '/images/articles/nabd.png',
+    articleUrl: 'https://nabdapp.com/t/130917558',
+  },
+  {
+    id: 'ach-5',
+    title: 'فريق جراحي سعودي يجري عملية لقولون مريض سبعيني بـ"تخصصي الطائف"',
+    publisher: 'صحيفة سبق الإخبارية',
+    date: '2023',
+    imageUrl: '/images/articles/sabq.png',
+    articleUrl: 'https://sabq.org/article/CfssOHO',
+  },
+  
 ];
 
 export const mediaAppearancesData: MediaAppearance[] = [
@@ -81,7 +95,7 @@ export const awardsData: AwardItem[] = [
     year: '2022',
     imageUrl: '/images/awards/4.webp',
   },
-    {
+  {
     id: 'award-5',
     title: 'شهادة شكر وتقدير للتميز في الخدمات الصحية',
     organization: 'تجمع الطائف الصحي',

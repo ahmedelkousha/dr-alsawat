@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import NewHero from '@/components/home/NewHero';
-import DoctorSelectorSection from '@/components/home/DoctorSelectorSection';
+import HeroSection from '@/components/home/HeroSection';
+import DoctorIntroSection from '@/components/home/DoctorIntroSection';
 import SpecialtyOverviewSection from '@/components/home/SpecialtyOverviewSection';
 import GeneralConsultationsSection from '@/components/home/GeneralConsultationsSection';
 import MediaAppearancesSection from '@/components/home/MediaAppearancesSection';
@@ -11,6 +11,7 @@ import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 import ClinicLocationFooterBlock from '@/components/home/ClinicLocationFooterBlock';
 import AwardsGallerySection from '@/components/about/AwardsGallerySection';
 import { doctorData } from '@/data/doctorData';
+import MedicalNewsSection from '@/components/home/MedicalNewsSection';
 
 export const metadata: Metadata = {
   title: `${doctorData.name} | ${doctorData.title}`,
@@ -72,12 +73,13 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
       {/* 1. Split Hero Section with Integrated Booking Request Card */}
-      <NewHero />
+      <HeroSection />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
         {/* 2. Doctor Selector Strip */}
-        <DoctorSelectorSection />
+        <DoctorIntroSection />
 
         {/* 3. Specialty Overview */}
         <SpecialtyOverviewSection />

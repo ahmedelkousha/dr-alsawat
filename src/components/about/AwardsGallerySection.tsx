@@ -77,11 +77,7 @@ export default function AwardsGallerySection() {
             crossFade:true,
           }}
           grabCursor={true}
-          speed={isMobile? 1800:1400}
-          flipEffect={{
-            slideShadows: false,
-            limitRotation: true,
-          }}
+          speed={isMobile? 1400:1500}
           slidesPerView={1}
           loop={true}
           autoplay={{
@@ -104,7 +100,7 @@ export default function AwardsGallerySection() {
               spaceBetween: 24,
             },
           }}
-          className="testimonials-swiper !pb-14 !pt-2 px-1"
+          className="awards-swiper !pb-14 !pt-2 px-1"
         >
           {/* Side Shadow Overlay Gradients */}
           <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/40 to-transparent z-10 pointer-events-none" />
@@ -112,9 +108,9 @@ export default function AwardsGallerySection() {
 
           {awardsData.map((award) => (
             <SwiperSlide key={award.id} className="!h-auto">
-              <div className="bg-navy rounded-2xl pb-0 px-0 shadow-card border border-slate-100 space-y-0 text-center h-full flex flex-col justify-between hover:shadow-card-hover transition-all">
+              <div className="pb-0 px-0 shadow-card rounded-3xl space-y-0 text-center h-auto flex flex-col justify-between hover:shadow-card-hover transition-all">
                 <div
-                  className="relative w-full h-80 sm:h-66 rounded-xl overflow-hidden bg-slate-900 cursor-pointer group/img"
+                  className="relative w-full h-60 sm:h-66 rounded-t-3xl overflow-hidden cursor-pointer group/img"
                   onClick={() => setSelectedAward(award)}
                 >
                   <Image

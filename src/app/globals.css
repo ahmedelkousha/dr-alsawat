@@ -110,14 +110,18 @@ button {
   animation: slideFromRight 0.3s ease-out forwards;
 }
 
-/* Swiper Custom Styling for Testimonials Carousel */
-.testimonials-swiper .swiper-pagination-bullet {
+/* Swiper Custom Styling for Carousels */
+.testimonials-swiper .swiper-pagination-bullet,
+.achievements-swiper .swiper-pagination-bullet,
+.awards-swiper .swiper-pagination-bullet {
   background: var(--color-brand, #f3b844);
   opacity: 0.35;
   transition: all 0.3s ease;
 }
 
-.testimonials-swiper .swiper-pagination-bullet-active {
+.testimonials-swiper .swiper-pagination-bullet-active,
+.achievements-swiper .swiper-pagination-bullet-active,
+.awards-swiper .swiper-pagination-bullet-active {
   background: var(--color-brand, #f3b844);
   opacity: 1;
   width: 22px;

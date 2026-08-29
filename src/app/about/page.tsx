@@ -47,7 +47,7 @@ export default function AboutPage() {
         <MedicalFeaturesSection />
 
         {/* Achievements & Press Mentions */}
-        {/* <AchievementsPressSection /> */}
+        <AchievementsPressSection />
 
         {/* Patient Testimonials */}
         <PatientTestimonialsSection />
