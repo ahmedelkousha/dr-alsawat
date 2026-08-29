@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Physician',
+    '@type': ['Physician', 'Person'],
     medicalSpecialty: 'Surgical',
     name: doctorData.name,
     jobTitle: doctorData.title,
