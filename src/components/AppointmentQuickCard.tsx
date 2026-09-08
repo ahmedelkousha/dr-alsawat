@@ -16,6 +16,7 @@ export interface AppointmentQuickCardProps {
   subtitleClassName?: string;
   descriptionClassName?: string;
   buttonClassName?: string;
+  target?: string;
 }
 
 export default function AppointmentQuickCard({
@@ -31,6 +32,7 @@ export default function AppointmentQuickCard({
   subtitleClassName = 'text-slate-700 font-bold text-sm',
   descriptionClassName = 'text-xs text-slate-500 leading-relaxed',
   buttonClassName,
+  target
 }: AppointmentQuickCardProps) {
   return (
     <div className={containerClassName}>
@@ -48,6 +50,7 @@ export default function AppointmentQuickCard({
       <Button
         href={buttonHref}
         icon={buttonIcon}
+        target={target}
         fullWidth
         size="sm"
         className={buttonClassName}

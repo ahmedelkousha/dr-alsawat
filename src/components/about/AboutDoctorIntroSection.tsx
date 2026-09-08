@@ -56,7 +56,7 @@ export default function AboutDoctorIntroSection() {
 
             <Button
               icon={<FaWhatsapp className="w-4 h-4 text-emerald-400" />}
-              href={doctorData.whatsappUrl}
+              href={doctorData.whatsappClinicUrl}
               size="sm"
               target="_blank"
               className="text-slate-100 bg-emerald-700 hover:bg-emerald-600"

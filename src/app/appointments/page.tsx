@@ -41,6 +41,7 @@ export default function AppointmentsPage() {
       buttonText: 'موقع العيادة',
       buttonHref: doctorData.clinicLocationURL,
       buttonIcon: <MapPin className="w-4 h-4 text-slate-900" />,
+      target: '_blank',
     },
     {
       icon: <Phone className="w-6 h-6 text-accent-gold" />,
@@ -55,14 +56,15 @@ export default function AppointmentsPage() {
       icon: <FaWhatsapp className="w-6 h-6 text-accent-whatsapp" />,
       title: 'حجز فوري عبر الواتساب',
       description:
-        'تواصل مباشرة مع د. عبدالله الصواط عبر الواتساب لاختيار موعدك المناسب للحجز.',
+        'تواصل مباشرة مع مجمع تداوي الجراحي عبر الواتساب لاختيار موعدك المناسب للحجز.',
       buttonText: 'تواصل عبر الواتساب',
-      buttonHref: doctorData.whatsappUrl,
+      buttonHref: doctorData.whatsappClinicUrl,
       buttonIcon: <FaWhatsapp className="w-4 h-4 text-accent-whatsapp" />,
       containerClassName:
         'bg-emerald-700/85 text-white rounded-3xl p-4 shadow-sm border border-brand/10 flex flex-col justify-between space-y-4',
       descriptionClassName: 'text-xs text-slate-200 leading-relaxed',
       buttonClassName: 'bg-white/85 hover:bg-emerald-200',
+      target: '_blank',
     },
     {
       icon: <Globe className="w-6 h-6 text-accent-gold" />,
@@ -72,6 +74,7 @@ export default function AppointmentsPage() {
       buttonText: 'الحجز من خلال موقع مجمع',
       buttonHref: doctorData.bookingUrl,
       buttonIcon: <ExternalLink className="w-4 h-4" />,
+      target: '_blank',
     },
   ];
 

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { GoogleTagManager } from '@next/third-parties/google';
 import './globals.css';
-import TopUtilityBar from '@/components/TopUtilityBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
@@ -60,8 +60,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang="ar" dir="rtl">
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className="font-cairo flex flex-col justify-between bg-slate-50 text-slate-800 antialiased">
         <div className="rounded-full">
           <Header />

@@ -15,6 +15,7 @@ export const doctorData = {
 
   phoneDisplay: '920008515',
   phoneRaw: '920008515',
+  whatsappClinic:'966543442624',
   email: 'dralsawat9189@gmail.com',
   whatsappNumber: '966535479054',
   drNumber: '+966535479054',
@@ -22,6 +23,9 @@ export const doctorData = {
   
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappMessage)}`;
+  },
+  get whatsappClinicUrl() {
+    return `https://wa.me/${this.whatsappClinic}?text=${encodeURIComponent(this.whatsappMessage)}`;
   },
   bookingUrl: 'https://shorturl.at/pwXNr',
 

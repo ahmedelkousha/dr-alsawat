@@ -5,6 +5,7 @@ import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa6';
 import Button from '@/components/Button';
 import { doctorData } from '@/data/doctorData';
+import { trackGTMEvent, trackConversion } from '@/lib/gtm';
 
 interface ContactFormProps {
   title?: string;
@@ -71,6 +72,14 @@ ${formData.message.trim()}`;
 
       // Open WhatsApp link with prefilled message
       window.open(whatsappUrl, '_blank');
+
+      // Track GTM Conversion & Event
+      trackGTMEvent({
+        event: 'form_submission',
+        form_name: 'contact_whatsapp_form',
+        method: 'whatsapp',
+      });
+      trackConversion('whatsapp_inquiry', 'Contact Form');
 
       setStatus({
         type: 'success',
