@@ -41,3 +41,5 @@ next-env.d.ts
 .parcel-cache/
 .gemini/
 .agents/
+
+.htaccess

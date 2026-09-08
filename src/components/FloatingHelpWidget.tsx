@@ -15,6 +15,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
+import { trackConversion, trackGTMEvent } from '@/lib/gtm';
 
 export default function FloatingHelpWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,13 @@ export default function FloatingHelpWidget() {
                 href={doctorData.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackConversion(
+                    'online_booking_click',
+                    'Floating Help Widget'
+                  );
+                }}
                 className="flex items-center justify-between md:p-3.5 p-1.5 rounded-2xl bg-white hover:bg-brand/5 border border-slate-200/80 hover:border-brand/70 text-slate-800 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
@@ -107,7 +114,10 @@ export default function FloatingHelpWidget() {
                 href={doctorData.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackConversion('whatsapp_click', 'Floating Help Widget');
+                }}
                 className="flex items-center justify-between md:p-3.5 p-1.5 rounded-2xl bg-white hover:bg-emerald-50/50 border border-slate-200/80 hover:border-emerald-300 text-slate-800 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
@@ -129,7 +139,10 @@ export default function FloatingHelpWidget() {
               {/* Option 3: Phone Direct Booking */}
               <a
                 href={`tel:${doctorData.phoneRaw}`}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackConversion('phone_call_click', 'Floating Help Widget');
+                }}
                 className="flex items-center justify-between md:p-3.5 p-1.5 rounded-2xl bg-white hover:bg-brand/5 border hover:border-brand/70 border-slate-200/80 text-slate-800 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">

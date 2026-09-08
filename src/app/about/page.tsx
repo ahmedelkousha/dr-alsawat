@@ -9,8 +9,6 @@ import PatientTestimonialsSection from '@/components/home/PatientTestimonialsSec
 import AboutContactBlockSection from '@/components/about/AboutContactBlockSection';
 import AboutTaglineCtaSection from '@/components/about/AboutTaglineCtaSection';
 
-import { doctorData } from '@/data/doctorData';
-
 export const metadata: Metadata = {
   title: 'نبذة تعريفية',
   description:
