@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     url: 'https://dralsawat.com/contact',
     images: ['/images/og-image.png'],
   },
+  alternates: {
+    canonical: 'https://dralsawat.com/contact',
+  },
 };
 
 export default function ContactPage() {

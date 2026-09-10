@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { GoogleTagManager } from '@next/third-parties/google';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
-import FloatingHelpWidget from '@/components/FloatingHelpWidget';
+import QueryProvider from '@/components/providers/QueryProvider';
+import ConditionalLayout from '@/components/ConditionalLayout';
 import { doctorData } from '@/data/doctorData';
 
 export const viewport: Viewport = {
@@ -65,15 +63,10 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
-      <body className="font-cairo flex flex-col justify-between bg-slate-50 text-slate-800 antialiased">
-        <div className="rounded-full">
-          <Header />
-
-          <main>{children}</main>
-        </div>
-        <Footer />
-        <BackToTop />
-        <FloatingHelpWidget />
+      <body className="font-cairo flex flex-col justify-between bg-slate-50 text-slate-800 antialiased min-h-screen">
+        <QueryProvider>
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </QueryProvider>
       </body>
     </html>
   );

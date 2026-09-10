@@ -139,6 +139,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blogs"
+                  className="hover:text-accent-gold transition-colors"
+                >
+                  المدونة والمقالات الطبية
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/appointments"
                   className="hover:text-accent-gold transition-colors"
                 >

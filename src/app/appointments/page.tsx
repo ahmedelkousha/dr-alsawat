@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     url: 'https://dralsawat.com/appointments',
     images: ['/images/og-image.png'],
   },
+  alternates: {
+    canonical: 'https://dralsawat.com/appointments',
+  },
 };
 
 export default function AppointmentsPage() {

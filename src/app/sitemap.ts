@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getPublishedBlogs } from '@/lib/blogService';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://dralsawat.com';
 
   const analSurgeries = [
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/colon-surgery',
     '/rectal-surgery',
+    '/blogs',
   ];
 
   const staticPages = routes.map((route) => ({
@@ -26,12 +28,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  const dynamicPages = analSurgeries.map((slug) => ({
+  const surgeryPages = analSurgeries.map((slug) => ({
     url: `${baseUrl}/anal-surgery/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
 
-  return [...staticPages, ...dynamicPages];
+  // Dynamically fetch all published blog posts from Firebase
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const publishedBlogs = await getPublishedBlogs();
+    blogPages = publishedBlogs.map((post) => ({
+      url: `${baseUrl}/blogs/${encodeURIComponent(post.slug)}`,
+      lastModified: new Date(post.updatedAt || post.publishedAt || post.createdAt),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }));
+  } catch (error) {
+    console.error('Failed to generate sitemap for dynamic blogs:', error);
+  }
+
+  return [...staticPages, ...surgeryPages, ...blogPages];
 }

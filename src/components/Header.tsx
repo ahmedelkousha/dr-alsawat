@@ -31,6 +31,7 @@ export const navItems: NavItem[] = [
       { title: 'البواسير الشرجية', href: '/anal-surgery/hemorrhoids' },
     ],
   },
+  { title: 'المدونة', href: '/blogs' },
   { title: 'الحجز', href: '/appointments' },
   { title: 'تواصل معنا', href: '/contact' },
 ];
@@ -56,7 +57,7 @@ export default function Header() {
       <header
         className={`z-40 bg-white/95 backdrop-blur-md shadow-sm ${isHomePage ? 'rounded-b-[12px]' : 'rounded-xl'}`}
       >
-        <div className="max-w-[110rem] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 md:py-1.5">
+        <div className="max-w-[110rem] mx-auto px-4 sm:px-6 lg:px-4 py-2.5 md:py-1.5">
           <div className="flex xl:flex-row flex-row-reverse items-center justify-between">
             {/* Logo */}
             <Link href="/" className="focus:outline-none inline-block">
@@ -72,7 +73,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation from Array */}
-            <nav className="hidden xl:flex items-center gap-1 xl:gap-2 mx-auto">
+            <nav className="hidden xl:flex items-center gap-1 mx-auto">
               {navItems.map((item) => {
                 if (item.children) {
                   return (
@@ -174,7 +175,7 @@ export default function Header() {
               {/* Header Action Button (Desktop) */}
               <div className="flex items-center gap-3">
                 <Button
-                  className="2xl:text-sm text-xs hidden sm:inline-flex bg-[#09153f]"
+                  className="2xl:text-sm sm:text-xs hidden sm:inline-flex bg-[#09153f]"
                   href="/appointments"
                   variant="navy"
                   size="md"
