@@ -11,7 +11,6 @@ import MedicalFeaturesSection from '@/components/home/MedicalFeaturesSection';
 import ClinicLocationFooterBlock from '@/components/home/ClinicLocationFooterBlock';
 import AwardsGallerySection from '@/components/about/AwardsGallerySection';
 import { doctorData } from '@/data/doctorData';
-import MedicalNewsSection from '@/components/home/MedicalNewsSection';
 
 export const metadata: Metadata = {
   title: `${doctorData.name} | ${doctorData.title}`,
@@ -33,6 +32,9 @@ export const metadata: Metadata = {
     url: 'https://dralsawat.com',
     siteName: doctorData.name,
     images: ['/images/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://dralsawat.com',
   },
 };
 

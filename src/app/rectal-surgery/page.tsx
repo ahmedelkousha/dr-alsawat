@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     url: 'https://dralsawat.com/rectal-surgery',
     images: ['/images/og-image.png'],
   },
+  alternates: {
+    canonical: 'https://dralsawat.com/rectal-surgery',
+  },
 };
 
 export default function RectalSurgeryPage() {

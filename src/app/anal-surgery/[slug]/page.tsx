@@ -48,6 +48,9 @@ export async function generateMetadata({
       url: `https://dralsawat.com/anal-surgery/${slug}`,
       images: ['/images/og-image.png'],
     },
+    alternates: {
+      canonical: `https://dralsawat.com/anal-surgery/${slug}`,
+    },
   };
 }
 

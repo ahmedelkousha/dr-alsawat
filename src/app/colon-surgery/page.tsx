@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     url: 'https://dralsawat.com/colon-surgery',
     images: ['/images/og-image.png'],
   },
+  alternates: {
+    canonical: 'https://dralsawat.com/colon-surgery',
+  },
 };
 
 export default function ColonSurgeryPage() {

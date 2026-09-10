@@ -68,3 +68,34 @@ export interface NewsItem {
   category: string;
   imageUrl?: string;
 }
+
+export interface BlogPost {
+  id?: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string; // HTML string from TipTap
+  coverImage: string; // Cloudinary URL
+  coverImageAlt: string;
+  category: string;
+  tags: string[];
+  author: string;
+  publishedAt: string | null; // ISO date string
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+  isPublished: boolean;
+  metaTitle?: string;
+  metaDescription?: string;
+  readingTime?: number; // In minutes
+  relatedServiceSlug?: string;
+}
+
+export const BLOG_CATEGORIES = [
+  'جراحات الشرج والليزر',
+  'جراحات القولون والمستقيم',
+  'أورام الجهاز الهضمي والمنظار',
+  'نصائح طبية ووقائية',
+  'أحدث التقنيات الجراحية',
+] as const;
+
+export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
