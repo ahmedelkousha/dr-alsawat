@@ -24,14 +24,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPages = routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-09-14'),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1.0 : 0.8,
   }));
 
   const surgeryPages = analSurgeries.map((slug) => ({
     url: `${baseUrl}/anal-surgery/${slug}`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-09-14'),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
