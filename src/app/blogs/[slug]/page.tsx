@@ -3,12 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  Calendar,
-  Clock,
-  ChevronLeft,
-  ShieldCheck,
-} from 'lucide-react';
+import { Calendar, Clock, ChevronLeft, ShieldCheck } from 'lucide-react';
 import { getBlogBySlug } from '@/lib/blogService';
 import { getOptimizedImageUrl } from '@/lib/cloudinary';
 import { doctorData } from '@/data/doctorData';
@@ -152,96 +147,98 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
           </span>
         </nav>
 
-        {/* Article Header */}
-        <header className="space-y-4 bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-slate-100">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 text-xs font-bold rounded-full bg-brand/10 text-brand border border-brand/20">
-              {post.category}
-            </span>
-            {post.readingTime && (
-              <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
-                <Clock className="w-3.5 h-3.5 text-brand" />
-                {post.readingTime} دقيقة قراءة
+        <div className="flex flex-col lg:flex-row sm:gap-4 h-auto">
+          {/* Article Header */}
+          <header className="space-y-4 bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-slate-100 h-auto">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="px-3 py-1 text-xs font-bold rounded-full bg-brand/10 text-brand border border-brand/20">
+                {post.category}
               </span>
-            )}
-            {formattedDate && (
-              <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
-                <Calendar className="w-3.5 h-3.5 text-brand" />
-                {formattedDate}
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-            {post.title}
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-            {post.excerpt}
-          </p>
-
-          {/* Author Badge & Medical Review Notice */}
-          <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full overflow-hidden relative border-2 border-brand shrink-0">
-                <Image
-                  src="/images/alsawat-pic.jpeg"
-                  alt={doctorData.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                  <span>{doctorData.name}</span>
-                  <ShieldCheck className="w-4 h-4 text-brand" />
-                </div>
-                <div className="text-xs text-slate-500">
-                  استشاري جراحة القولون والمستقيم
-                </div>
-              </div>
+              {post.readingTime && (
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
+                  <Clock className="w-3.5 h-3.5 text-brand" />
+                  {post.readingTime} دقيقة قراءة
+                </span>
+              )}
+              {formattedDate && (
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
+                  <Calendar className="w-3.5 h-3.5 text-brand" />
+                  {formattedDate}
+                </span>
+              )}
             </div>
 
-            {/* Social Share Buttons */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-slate-400 ml-1">
-                مشاركة:
-              </span>
-              <a
-                href={`https://wa.me/?text=${encodeURIComponent(`${post.title}\n${postUrl}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-accent-whatsapp/10 text-accent-whatsapp hover:bg-accent-whatsapp hover:text-white transition-colors text-xs font-bold flex items-center gap-1"
-                title="مشاركة عبر واتساب"
-              >
-                واتساب
-              </a>
-              <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(postUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors text-xs font-bold"
-                title="مشاركة عبر X"
-              >
-                منصة X
-              </a>
-            </div>
-          </div>
-        </header>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+              {post.title}
+            </h1>
 
-        {/* Cover Image */}
-        {post.coverImage && (
-          <div className="relative h-64 sm:h-96 w-full rounded-3xl overflow-hidden shadow-card border border-slate-100 bg-slate-100">
-            <Image
-              src={getOptimizedImageUrl(post.coverImage, { width: 1200 })}
-              alt={post.coverImageAlt || post.title}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 896px"
-            />
-          </div>
-        )}
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              {post.excerpt}
+            </p>
+
+            {/* Author Badge & Medical Review Notice */}
+            <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full overflow-hidden relative border-2 border-brand shrink-0">
+                  <Image
+                    src="/images/alsawat-pic.jpeg"
+                    alt={doctorData.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                    <span>{doctorData.name}</span>
+                    <ShieldCheck className="w-4 h-4 text-brand" />
+                  </div>
+                  <div className="text-xs text-slate-500">
+                    استشاري جراحة القولون والمستقيم
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Share Buttons */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold text-slate-400 ml-1">
+                  مشاركة:
+                </span>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${post.title}\n${postUrl}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl bg-accent-whatsapp/10 text-accent-whatsapp hover:bg-accent-whatsapp hover:text-white transition-colors text-xs font-bold flex items-center gap-1"
+                  title="مشاركة عبر واتساب"
+                >
+                  واتساب
+                </a>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(postUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors text-xs font-bold"
+                  title="مشاركة عبر X"
+                >
+                  منصة X
+                </a>
+              </div>
+            </div>
+          </header>
+
+          {/* Cover Image */}
+          {post.coverImage && (
+            <div className="relative rounded-3xl overflow-hidden shadow-card border border-slate-100 bg-slate-100 aspect-1200/630">
+              <Image
+                src={getOptimizedImageUrl(post.coverImage, { width: 1200 })}
+                alt={post.coverImageAlt || post.title}
+                priority
+                width={1200}
+                height={630}
+                className="object-cover h-full"
+              />
+            </div>
+          )}
+        </div>
 
         {/* Article Body Card */}
         <div className="bg-white rounded-3xl p-6 sm:p-12 shadow-card border border-slate-100">
