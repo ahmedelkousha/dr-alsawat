@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     title: 'جراحات المستقيم | د. عبدالله الصواط',
     description:
       'دليل طبي متكامل حول جراحات المستقيم بالروبوت والمنظار، استئصال أورام المستقيم الحافظة للعضلات، وعلاج هبوط المستقيم بالطائف.',
-    url: 'https://dralsawat.com/rectal-surgery',
+    url: 'https://www.dralsawat.com/rectal-surgery',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://dralsawat.com/rectal-surgery',
+    canonical: 'https://www.dralsawat.com/rectal-surgery',
   },
 };
 

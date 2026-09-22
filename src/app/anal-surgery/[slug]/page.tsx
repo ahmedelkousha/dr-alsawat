@@ -45,11 +45,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
       description: data.description,
-      url: `https://dralsawat.com/anal-surgery/${slug}`,
+      url: `https://www.dralsawat.com/anal-surgery/${slug}`,
       images: ['/images/og-image.png'],
     },
     alternates: {
-      canonical: `https://dralsawat.com/anal-surgery/${slug}`,
+      canonical: `https://www.dralsawat.com/anal-surgery/${slug}`,
     },
   };
 }

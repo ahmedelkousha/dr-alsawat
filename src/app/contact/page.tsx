@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     title: 'تواصل معنا | د. عبدالله الصواط',
     description:
       'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
-    url: 'https://dralsawat.com/contact',
+    url: 'https://www.dralsawat.com/contact',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://dralsawat.com/contact',
+    canonical: 'https://www.dralsawat.com/contact',
   },
 };
 

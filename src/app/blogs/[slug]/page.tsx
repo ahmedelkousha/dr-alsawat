@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   const title = post.metaTitle || `${post.title} | ${doctorData.name}`;
   const description = post.metaDescription || post.excerpt;
-  const canonicalUrl = `https://dralsawat.com/blogs/${encodeURIComponent(post.slug)}`;
+  const canonicalUrl = `https://www.dralsawat.com/blogs/${encodeURIComponent(post.slug)}`;
 
   return {
     title,
@@ -83,7 +83,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       })
     : '';
 
-  const postUrl = `https://dralsawat.com/blogs/${encodeURIComponent(post.slug)}`;
+  const postUrl = `https://www.dralsawat.com/blogs/${encodeURIComponent(post.slug)}`;
 
   // Medical Schema.org structured data
   const jsonLd = {
@@ -99,7 +99,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       '@type': 'Physician',
       name: doctorData.name,
       jobTitle: doctorData.title,
-      url: 'https://dralsawat.com',
+      url: 'https://www.dralsawat.com',
     },
     reviewedBy: {
       '@type': 'Physician',
@@ -111,7 +111,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       name: doctorData.clinicName,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://dralsawat.com/images/logo.webp',
+        url: 'https://www.dralsawat.com/images/logo.webp',
       },
     },
     mainEntityOfPage: {
