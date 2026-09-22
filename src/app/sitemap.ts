@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 import { getPublishedBlogs } from '@/lib/blogService';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://dralsawat.com';
+  const baseUrl = 'https://www.dralsawat.com';
 
   const analSurgeries = [
     'pilonidal-sinus',

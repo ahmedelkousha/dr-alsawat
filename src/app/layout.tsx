@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dralsawat.com'),
+  metadataBase: new URL('https://www.dralsawat.com'),
   alternates: {
     canonical: '/',
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${doctorData.name} | ${doctorData.title}`,
     description: doctorData.subtitle,
-    url: 'https://dralsawat.com',
+    url: 'https://www.dralsawat.com',
     siteName: doctorData.name,
     locale: 'ar_SA',
     type: 'website',

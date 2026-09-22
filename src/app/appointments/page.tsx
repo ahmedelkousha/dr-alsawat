@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     title: 'حجز موعد بالعيادة | د. عبدالله الصواط',
     description:
       'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب أو الهاتف.',
-    url: 'https://dralsawat.com/appointments',
+    url: 'https://www.dralsawat.com/appointments',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://dralsawat.com/appointments',
+    canonical: 'https://www.dralsawat.com/appointments',
   },
 };
 
@@ -85,8 +85,8 @@ export default function AppointmentsPage() {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
     name: `${doctorData.name} - ${doctorData.clinicName}`,
-    url: 'https://dralsawat.com/appointments',
-    image: 'https://dralsawat.com/images/appointments-hero.jpeg',
+    url: 'https://www.dralsawat.com/appointments',
+    image: 'https://www.dralsawat.com/images/appointments-hero.jpeg',
     telephone: doctorData.phoneRaw,
     address: {
       '@type': 'PostalAddress',

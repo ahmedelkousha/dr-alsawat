@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${doctorData.name} | ${doctorData.title}`,
     description: doctorData.subtitle,
-    url: 'https://dralsawat.com',
+    url: 'https://www.dralsawat.com',
     siteName: doctorData.name,
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://dralsawat.com',
+    canonical: 'https://www.dralsawat.com',
   },
 };
 
@@ -46,8 +46,8 @@ export default function HomePage() {
     name: doctorData.name,
     jobTitle: doctorData.title,
     description: doctorData.doctorBioSummary,
-    url: 'https://dralsawat.com',
-    image: 'https://dralsawat.com/images/alsawat-pic.jpeg',
+    url: 'https://www.dralsawat.com',
+    image: 'https://www.dralsawat.com/images/alsawat-pic.jpeg',
     telephone: doctorData.drNumber,
     worksFor: {
       '@type': 'MedicalOrganization',

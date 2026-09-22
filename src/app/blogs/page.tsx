@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description:
     'مقالات طبية وإرشادات صحية موثوقة في جراحة القولون والمستقيم وعلاج أمراض الشرج بالليزر بقلم د. عبدالله الصواط.',
   alternates: {
-    canonical: 'https://dralsawat.com/blogs',
+    canonical: 'https://www.dralsawat.com/blogs',
   },
   openGraph: {
     title: `المدونة الطبية | ${doctorData.name}`,
     description:
       'مقالات طبية وإرشادات صحية موثوقة في جراحة القولون والمستقيم وعلاج أمراض الشرج بالليزر.',
-    url: 'https://dralsawat.com/blogs',
+    url: 'https://www.dralsawat.com/blogs',
     siteName: doctorData.name,
     images: ['/images/og-image.png'],
   },
