@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star, Quote, MapPin } from "lucide-react";
+import { Star, Quote, MapPin, Calculator, Calendar } from "lucide-react";
 import { Testimonial } from "@/types";
 
 interface TestimonialCardProps {
@@ -37,19 +37,21 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
       {/* Author Details */}
       <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-        <div>
+        <div className="flex flex-row justify-between w-full">
           <h4 className="font-bold text-slate-900 text-sm">{testimonial.name}</h4>
           <div className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
-            <MapPin className="w-3 h-3 text-brand" />
-            <span>{testimonial.location}</span>
+            <Calendar className="w-3 h-3 text-brand" />
+            <span>{testimonial?.date}</span>
           </div>
         </div>
-        {/* {testimonial.procedure && (
-          <span className="text-[11px] font-semibold bg-[#070e2e]/93 text-brand px-2.5 py-1 rounded-full border border-brand/20">
+        
+      </div>
+      {testimonial.procedure && (<div className="flex flex-col sm:flex-row justify-end items-center gap-2 text-xs text-slate-500">
+          <span className="text-xs text-slate-500">زيارة المريض من أجل</span>
+          <span className="text-[12px] font-medium bg-[#070e2e]/90 text-brand px-2.5 py-1 rounded-full border border-brand/20">
             {testimonial.procedure}
           </span>
-        )} */}
-      </div>
+       </div> )}
     </div>
   );
 }

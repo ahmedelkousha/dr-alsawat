@@ -1,89 +1,122 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { Loader2, ChevronDown, ChevronUp } from 'lucide-react';
 import { patientTestimonials } from '@/data/testimonials';
 import TestimonialCard from '@/components/TestimonialCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFlip, EffectFade } from 'swiper/modules';
-import { useResponsive } from '@/hooks/useResponsive';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
+import type { Testimonial } from '@/types';
+
+const INITIAL_VISIBLE_COUNT = 3;
 
 export default function PatientTestimonialsSection() {
-  
-const isMobile = useResponsive();
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [visibleCount, setVisibleCount] = useState<number>(
+    INITIAL_VISIBLE_COUNT
+  );
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/reviews')
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch reviews');
+        return res.json();
+      })
+      .then((data) => {
+        if (
+          data.success &&
+          Array.isArray(data.testimonials) &&
+          data.testimonials.length > 0
+        ) {
+          setTestimonials(data.testimonials);
+        } else {
+          setTestimonials(patientTestimonials);
+        }
+      })
+      .catch((err) => {
+        console.warn('API error, falling back to static testimonials:', err);
+        setTestimonials(patientTestimonials);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => {
+      if (prev + 3 > testimonials.length) {
+        return testimonials.length;
+      }
+      return prev + 3;
+    });
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(INITIAL_VISIBLE_COUNT);
+  };
 
   return (
-    <section className="space-y-6">
+    <section id="reviews" className="space-y-6 scroll-mt-40">
       <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-slate-900">
             شهادات المرضى
           </h2>
         </div>
       </div>
 
-      <div className="relative space-y-4 mx-auto w-full max-w-sm sm:max-w-none">
-        <Swiper
-          key={isMobile? 'mobile' : 'desktop'}
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
-          effect={isMobile? 'slide' : 'slide'}
-          grabCursor={true}
-          speed={1000}
-          slidesPerView={1}
-          spaceBetween={40}
-          loop={true}
-          autoplay={{
-            delay: 1800,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-          }}
-          pagination={{ clickable: true, dynamicBullets: false }}
-          navigation={{
-            prevEl: '.custom-testimonial-prev',
-            nextEl: '.custom-testimonial-next',
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-            },
-          }}
-          className="testimonials-swiper !pb-14 !pt-2 px-1"
-        >
-          {/* Side Shadow Overlay Gradients */}
-          <div className="hidden sm:block absolute right-0 top-0 bottom-16 w-8 h-full bg-gradient-to-l from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
-          <div className="hidden sm:block absolute left-0 top-0 bottom-16 w-8 h-full bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent z-10 pointer-events-none" />
-          {patientTestimonials.map((test) => (
-            <SwiperSlide key={test.id} className="!h-auto">
-              <TestimonialCard testimonial={test} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="space-y-6">
+        {isLoading ? (
+          <div className="flex items-center justify-center py-20 min-h-[220px]">
+            <Loader2 className="w-8 h-8 animate-spin text-brand" />
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5 sm:gap-6">
+              {testimonials.slice(0, visibleCount).map((test) => (
+                <div key={test.id} className="h-fit">
+                  <TestimonialCard testimonial={test} />
+                </div>
+              ))}
+            </div>
 
-        <div className="flex items-center justify-center gap-10 md:gap-20 pt-0 z-20 relative">
-          <button
-            type="button"
-            aria-label="السابق"
-            className="custom-testimonial-prev w-10 h-10 rounded-full bg-navy border border-slate-200 shadow-md flex items-center justify-center text-white hover:bg-brand hover:text-slate-900 transition-all cursor-pointer active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="التالي"
-            className="custom-testimonial-next w-10 h-10 rounded-full bg-navy border border-slate-200 shadow-md flex items-center justify-center text-white hover:bg-brand hover:text-slate-900 transition-all cursor-pointer active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-        </div>
+            {/* Show More / Show Less Controls */}
+            <div className="flex items-center justify-center gap-3 pt-2">
+              {visibleCount < testimonials.length ? (
+                <button
+                  type="button"
+                  onClick={handleShowMore}
+                  className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand text-navy text-sm font-semibold hover:bg-brand hover:text-slate-900 transition-all duration-300 shadow-md active:scale-95 cursor-pointer"
+                >
+                  <span className="text-xs absolute top-[120%] left-1/2 -translate-x-1/2 w-full">
+                    {' '}
+                    {visibleCount} من أصل {testimonials.length}
+                  </span>
+                  <span>عرض المزيد</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              ) : testimonials.length > INITIAL_VISIBLE_COUNT ? (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    await handleShowLess();
+                    await document.getElementById('reviews')?.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                  }}
+                  className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-200 bg-white text-slate-700 text-xs sm:text-sm font-semibold hover:bg-slate-50 transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+                >
+                  <span className="text-xs absolute top-[120%] left-1/2 -translate-x-1/2 w-full">
+                    {' '}
+                    {visibleCount} من أصل {testimonials.length}
+                  </span>
+
+                  <span>عرض أقل</span>
+                  <ChevronUp className="w-4 h-4" />
+                </button>
+              ) : null}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
