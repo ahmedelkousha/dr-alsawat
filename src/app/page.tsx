@@ -83,28 +83,28 @@ export default function HomePage() {
         {/* 2. Doctor Selector Strip */}
         <DoctorIntroSection />
 
-        {/* 3. Specialty Overview */}
-        <SpecialtyOverviewSection />
-
-        {/* 4. General Consultations Section */}
-        <GeneralConsultationsSection />
-
-        {/* 5. Media & TV Appearances */}
-        <MediaAppearancesSection />
-
-        {/* 6. Awards Gallery */}
-        <AwardsGallerySection />
-
-        {/* 7. WhatsApp Consultation CTA Banner */}
-        <WhatsAppBannerSection />
-
-        {/* 8. Patient Testimonials */}
+        {/* 3. Patient Testimonials */}
         <PatientTestimonialsSection />
 
-        {/* 8. Care Standards & Medical Features */}
+        {/* 4. Specialty Overview */}
+        <SpecialtyOverviewSection />
+
+        {/* 5. General Consultations Section */}
+        <GeneralConsultationsSection />
+
+        {/* 6. Media & TV Appearances */}
+        <MediaAppearancesSection />
+
+        {/* 7. Awards Gallery */}
+        <AwardsGallerySection />
+
+        {/* 8. WhatsApp Consultation CTA Banner */}
+        <WhatsAppBannerSection />
+
+        {/* 9. Care Standards & Medical Features */}
         <MedicalFeaturesSection />
 
-        {/* 9. Location & Map Embed Block */}
+        {/* 10. Location & Map Embed Block */}
         <ClinicLocationFooterBlock />
       </div>
     </div>

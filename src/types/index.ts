@@ -53,11 +53,13 @@ export interface AwardItem {
 export interface Testimonial {
   id: string;
   name: string;
-  location: string;
+  location?: string;
   rating: number;
   comment: string;
   procedure?: string;
+  procedures?: string[];
   date?: string;
+  verified?: boolean;
 }
 
 export interface NewsItem {
