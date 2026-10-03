@@ -25,19 +25,37 @@ export async function GET() {
     const results = data.result || [];
 
     const testimonials = results
-      .filter((r: any) => r.text && r.text.trim().length > 0 && r.text.trim().length < 480)
+      .filter((r: any) => r.text && r.text.trim().length > 0)
       .map((r: any) => {
-        const firstKeyword = r.rating?.reasonKeywords?.[0];
-        const procedure = firstKeyword?.fullName?.ar || undefined;
+        const procedures = (r.rating?.reasonKeywords || [])
+          .map((k: any) => k.fullName?.ar || k.name)
+          .filter(Boolean);
+        const procedure = procedures[0] || undefined;
+
+        let formattedDate = r.createdAt?.split('T')[0] || '';
+        try {
+          if (r.createdAt) {
+            const dateObj = new Date(r.createdAt);
+            formattedDate = new Intl.DateTimeFormat('ar-SA', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric',
+            }).format(dateObj);
+          }
+        } catch {
+          // fallback to ISO date string
+        }
 
         return {
           id: String(r.id),
-          name: 'مريض موثوق به',
+          name: 'مريض موثق',
           location: 'تقييم موثق عبر Doctify',
-          rating: r.rating?.overallExperience || 5,
+          rating: Number(r.averageRating ?? r.rating?.overallExperience ?? 5),
           comment: r.text.trim(),
           procedure,
-          date: r.createdAt.split("T")[0],
+          procedures: procedures.length > 0 ? procedures : undefined,
+          date: formattedDate,
+          verified: true,
         };
       });
 
