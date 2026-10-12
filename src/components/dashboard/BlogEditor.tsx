@@ -119,7 +119,7 @@ export default function BlogEditor({ initialData, onClose }: BlogEditorProps) {
             category,
             relatedServiceSlug,
             tags,
-            metaTitle: metaTitle || `${title} | ${doctorData.name}`,
+            metaTitle: metaTitle || title,
             metaDescription: metaDescription || excerpt,
             isPublished,
           },
@@ -139,7 +139,7 @@ export default function BlogEditor({ initialData, onClose }: BlogEditorProps) {
           author: doctorData.name,
           publishedAt: isPublished ? new Date().toISOString() : null,
           isPublished,
-          metaTitle: metaTitle || `${title} | ${doctorData.name}`,
+          metaTitle: metaTitle || title,
           metaDescription: metaDescription || excerpt,
         });
         setSuccess('تم نشر المقال بنجاح!');

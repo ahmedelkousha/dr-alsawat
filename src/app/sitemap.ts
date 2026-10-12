@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blogs/${encodeURIComponent(post.slug)}`,
       lastModified: new Date(post.updatedAt || post.publishedAt || post.createdAt),
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: 0.9,
     }));
   } catch (error) {
     console.error('Failed to generate sitemap for dynamic blogs:', error);

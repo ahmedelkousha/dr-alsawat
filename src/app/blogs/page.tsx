@@ -5,20 +5,20 @@ import BlogListingClient from '@/components/blog/BlogListingClient';
 import { getPublishedBlogs } from '@/lib/blogService';
 import { doctorData } from '@/data/doctorData';
 
-export const revalidate = 60; // ISR fallback every 60 seconds
+export const revalidate = 86400; // ISR fallback every 24 hours
 
 export const metadata: Metadata = {
-  title: `المدونة الطبية والجراحية | ${doctorData.name}`,
+  title: 'المدونة الطبية والجراحية',
   description:
     'مقالات طبية وإرشادات صحية موثوقة في جراحة القولون والمستقيم وعلاج أمراض الشرج بالليزر بقلم د. عبدالله الصواط.',
   alternates: {
-    canonical: 'https://www.dralsawat.com/blogs',
+    canonical: '/blogs',
   },
   openGraph: {
-    title: `المدونة الطبية | ${doctorData.name}`,
+    title: `المدونة الطبية | د. عبدالله الصواط`,
     description:
       'مقالات طبية وإرشادات صحية موثوقة في جراحة القولون والمستقيم وعلاج أمراض الشرج بالليزر.',
-    url: 'https://www.dralsawat.com/blogs',
+    url: '/blogs',
     siteName: doctorData.name,
     images: ['/images/og-image.png'],
   },

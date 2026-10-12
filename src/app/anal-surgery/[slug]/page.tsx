@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!data) return { title: 'الصفحة غير موجودة' };
 
   return {
-    title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
+    title: `${data.title}`,
     description: data.description,
     keywords: [
       `علاج ${data.title} بالطائف`,
@@ -45,11 +45,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${data.title} (${data.subtitle}) | د. عبدالله الصواط`,
       description: data.description,
-      url: `https://www.dralsawat.com/anal-surgery/${slug}`,
+      url: `/anal-surgery/${slug}`,
       images: ['/images/og-image.png'],
     },
     alternates: {
-      canonical: `https://www.dralsawat.com/anal-surgery/${slug}`,
+      canonical: `/anal-surgery/${slug}`,
     },
   };
 }

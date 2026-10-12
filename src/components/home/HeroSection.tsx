@@ -17,10 +17,9 @@ export default function Hero() {
             <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-white font-bold tracking-wide leading-snug xl:leading-relaxed mb-4 sm:mb-6 xl:mb-10">
               والقادة تصنع جيلاً من الجراحين
             </span>
-            <span className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-3xl  text-white/90 font-medium tracking-wide flex sm:justify-start justify-center gap-0.5">
-              د.
-              <span className="text-white font-medium">عبدالله الصواط</span>
-            </span>
+            <h1 className="text-base text-white! font-medium! sm:text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-3xl tracking-wide flex sm:justify-start justify-center gap-0.5">
+              د. عبدالله الصواط
+            </h1>
           </div>
         </div>
 
