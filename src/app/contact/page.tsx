@@ -8,10 +8,7 @@ import MapEmbed from '@/components/MapEmbed';
 import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: {
-    absolute:
-      'تواصل معنا | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم',
-  },
+  title: 'تواصل معنا',
   description:
     'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
   keywords: [
@@ -24,11 +21,11 @@ export const metadata: Metadata = {
     title: 'تواصل معنا | د. عبدالله الصواط',
     description:
       'معلومات الاتصال، موقع مجمع تداوي الجراحي الطبي بالطائف، وأرقام التواصل المباشرة مع عيادة د. عبدالله الصواط.',
-    url: 'https://www.dralsawat.com/contact',
+    url: '/contact',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.dralsawat.com/contact',
+    canonical: '/contact',
   },
 };
 
@@ -39,7 +36,7 @@ export default function ContactPage() {
       <PageHero
         title="تواصل معنا"
         subtitle="يسعدني التواصل معك والإجابة على كافة استفساراتك عبر قنوات التواصل المتعددة أو زيارة عيادتي بمجمع تداوي الجراحي بالطائف."
-        imgURL="images/contact-us-hero.webp"
+        imgURL="/images/contact-us-hero.webp"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">

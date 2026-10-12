@@ -12,7 +12,7 @@ import AppointmentQuickCard, {
 } from '@/components/AppointmentQuickCard';
 
 export const metadata: Metadata = {
-  title: {absolute: 'حجز موعد بالعيادة | د. عبدالله الصواط - استشاري جراحة القولون والمستقيم'} ,
+  title: 'حجز موعد بالعيادة',
   description:
     'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب، الاتصال الهاتفي، أو زيارة مجمع تداوي الجراحي بالطائف.',
   keywords: [
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     title: 'حجز موعد بالعيادة | د. عبدالله الصواط',
     description:
       'احجز موعد استشارتك الجراحية مع د. عبدالله الصواط في مجمع تداوي الجراحي بالطائف بسهولة عبر الواتساب أو الهاتف.',
-    url: 'https://www.dralsawat.com/appointments',
+    url: '/appointments',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.dralsawat.com/appointments',
+    canonical: '/appointments',
   },
 };
 

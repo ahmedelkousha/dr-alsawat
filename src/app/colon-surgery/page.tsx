@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     title: 'جراحات القولون | د. عبدالله الصواط',
     description:
       'دليل طبي شامل حول جراحات القولون بالمنظار والروبوت، استئصال أورام القولون، علاج التهابات القولون والداء الرتجي بالطائف.',
-    url: 'https://www.dralsawat.com/colon-surgery',
+    url: '/colon-surgery',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.dralsawat.com/colon-surgery',
+    canonical: '/colon-surgery',
   },
 };
 

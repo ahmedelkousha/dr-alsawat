@@ -30,10 +30,10 @@ export default function AboutDoctorIntroSection() {
         {/* Left in RTL: Doctor Introduction Text Box */}
         <div className="lg:col-span-7 space-y-6 text-right order-2 lg:order-1">
           <div className="space-y-3">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
               تعرّف على{' '}
               <span className="text-brand">{doctorData.name}</span>
-            </h2>
+            </h1>
 
             <p className="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed">
               {doctorData.subtitle}

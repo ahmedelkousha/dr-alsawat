@@ -10,7 +10,7 @@ import { doctorData } from '@/data/doctorData';
 import TableOfContents from '@/components/blog/TableOfContents';
 import RelatedServiceCard from '@/components/blog/RelatedServiceCard';
 
-export const revalidate = 60; // ISR fallback every 60 seconds
+export const revalidate = 86400; // ISR fallback every 24 hours
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,17 +25,19 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: 'المقال غير موجود | د. عبدالله الصواط',
+      title: 'المقال غير موجود',
       description: 'عفواً، لم نتمكن من العثور على المقال المطلوب.',
     };
   }
 
-  const title = post.metaTitle || `${post.title} | ${doctorData.name}`;
+  const title = post.metaTitle || post.title;
   const description = post.metaDescription || post.excerpt;
-  const canonicalUrl = `https://www.dralsawat.com/blogs/${encodeURIComponent(post.slug)}`;
+  const canonicalUrl = `/blogs/${encodeURIComponent(post.slug)}`;
 
   return {
-    title,
+    title: {
+      absolute: title
+    },
     description,
     alternates: {
       canonical: canonicalUrl,

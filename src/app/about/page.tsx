@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     title: 'نبذة تعريفية | د. عبدالله الصواط',
     description:
       'المؤهلات والإنجازات الأكاديمية والمهنية للاستشاري د. عبدالله الصواط، رئيس قسم الجراحة بجامعة الطائف والزميل الكوري لجراحة القولون والمستقيم.',
-    url: 'https://www.dralsawat.com/about',
+    url: '/about',
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.dralsawat.com/about',
+    canonical: '/about',
   },
 };
 

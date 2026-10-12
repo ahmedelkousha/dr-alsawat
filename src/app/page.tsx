@@ -13,7 +13,7 @@ import AwardsGallerySection from '@/components/about/AwardsGallerySection';
 import { doctorData } from '@/data/doctorData';
 
 export const metadata: Metadata = {
-  title: `${doctorData.name} | ${doctorData.title}`,
+  title: { absolute: `${doctorData.name} | ${doctorData.title}` },
 
   description: doctorData.subtitle,
   keywords: [
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${doctorData.name} | ${doctorData.title}`,
     description: doctorData.subtitle,
-    url: 'https://www.dralsawat.com',
+    url: '/',
     siteName: doctorData.name,
     images: ['/images/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.dralsawat.com',
+    canonical: '/',
   },
 };
 

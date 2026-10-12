@@ -7,6 +7,10 @@ import Button from '@/components/Button';
 export const metadata: Metadata = {
   title: '404 - الصفحة غير موجودة | د. عبدالله الصواط',
   description: 'عفواً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function NotFound() {
@@ -32,7 +36,8 @@ export default function NotFound() {
             الصفحة غير موجودة
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            عفواً، الصفحة التي تحاول الوصول إليها غير موجودة أو قد تم نقلها. يمكنك العودة للصفحة الرئيسية أو الانتقال لحجز موعد.
+            عفواً، الصفحة التي تحاول الوصول إليها غير موجودة أو قد تم نقلها.
+            يمكنك العودة للصفحة الرئيسية أو الانتقال لحجز موعد.
           </p>
         </div>
 
@@ -59,19 +64,31 @@ export default function NotFound() {
 
         {/* Simple Navigation Links */}
         <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-slate-600">
-          <Link href="/about" className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl">
+          <Link
+            href="/about"
+            className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl"
+          >
             نبذة عن الدكتور
           </Link>
           {/* <span className="text-slate-300">•</span> */}
-          <Link href="/colon-surgery" className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl">
+          <Link
+            href="/colon-surgery"
+            className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl"
+          >
             جراحات القولون
           </Link>
           {/* <span className="text-slate-300">•</span> */}
-          <Link href="/rectal-surgery" className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl">
+          <Link
+            href="/rectal-surgery"
+            className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl"
+          >
             جراحات المستقيم
           </Link>
           {/* <span className="text-slate-300">•</span> */}
-          <Link href="/contact" className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl">
+          <Link
+            href="/contact"
+            className="hover:text-brand transition-colors bg-slate-100 text-navy p-3 rounded-xl"
+          >
             تواصل معنا
           </Link>
         </div>
