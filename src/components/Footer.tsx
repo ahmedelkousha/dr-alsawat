@@ -12,7 +12,7 @@ import {
   Phone,
   Loader2,
 } from 'lucide-react';
-import { FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram, FaWhatsapp, FaXTwitter, FaTiktok } from 'react-icons/fa6';
 
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
@@ -87,13 +87,13 @@ export default function Footer() {
                 <FaWhatsapp className="w-4 h-4" />
               </a>
               <a
-                href={doctorData.socials.twitter}
+                href={doctorData.socials.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-black hover:text-white transition-all text-white"
-                aria-label="X"
+                aria-label="TikTok"
               >
-                <FaXTwitter className="w-4 h-4" />
+                <FaTiktok className="w-4 h-4" />
               </a>
               <a
                 href={doctorData.socials.instagram}
@@ -103,6 +103,16 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <FaInstagram className="w-4 h-4" />
+              </a>
+
+              <a
+                href={doctorData.socials.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-black hover:text-white transition-all text-white"
+                aria-label="X"
+              >
+                <FaXTwitter className="w-4 h-4" />
               </a>
             </div>
           </div>
