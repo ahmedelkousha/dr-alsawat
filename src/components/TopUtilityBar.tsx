@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Clock, Phone, Mail, MapPin } from 'lucide-react';
-import { FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram, FaWhatsapp, FaXTwitter, FaTiktok } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 
 export default function TopUtilityBar() {
@@ -52,15 +52,15 @@ export default function TopUtilityBar() {
               <FaWhatsapp className="w-3.5 h-3.5" />
             </a>
             <a
-              href={doctorData.socials.twitter}
+              href={doctorData.socials.tiktok}
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 rounded-full bg-slate-900 hover:bg-black text-slate-300 hover:text-white transition-all flex items-center justify-center"
-              aria-label="X"
+              aria-label="TikTok"
             >
-              <FaXTwitter className="w-3.5 h-3.5" />
+              <FaTiktok className="w-3.5 h-3.5" />
             </a>
-            <a
+             <a
               href={doctorData.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
@@ -69,6 +69,18 @@ export default function TopUtilityBar() {
             >
               <FaInstagram className="w-3.5 h-3.5" />
             </a>
+            <a
+              href={doctorData.socials.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-full bg-slate-900 hover:bg-black text-slate-300 hover:text-white transition-all flex items-center justify-center"
+              aria-label="X"
+            >
+              <FaXTwitter className="w-3.5 h-3.5" />
+            </a>
+             
+           
+           
           </div>
         </div>
       </div>

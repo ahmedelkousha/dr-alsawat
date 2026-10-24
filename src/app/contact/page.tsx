@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Globe } from 'lucide-react';
-import { FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
+import { FaInstagram, FaXTwitter, FaWhatsapp, FaTiktok } from 'react-icons/fa6';
 import { doctorData } from '@/data/doctorData';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
@@ -139,6 +139,16 @@ export default function ContactPage() {
                   <span className="text-xs sm:text-sm font-bold">إنستغرام</span>
                 </a>
 
+<a
+                  href={doctorData.socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-slate-800 hover:bg-black text-slate-300 hover:text-white p-3 rounded-xl transition-all border border-slate-700"
+                >
+                  <FaTiktok className="w-5 h-5" />
+                  <span className="text-xs sm:text-sm font-bold">تيك توك</span>
+                </a>
+
                 <a
                   href={doctorData.socials.twitter}
                   target="_blank"
@@ -148,6 +158,8 @@ export default function ContactPage() {
                   <FaXTwitter className="w-5 h-5" />
                   <span className="text-xs sm:text-sm font-bold">منصة X</span>
                 </a>
+
+                
               </div>
             </div>
 

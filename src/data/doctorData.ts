@@ -41,6 +41,7 @@ export const doctorData = {
     },
     twitter: 'https://x.com/DrAlSawat',
     instagram: 'https://www.instagram.com/DRALSAWAT',
+    tiktok: 'https://www.tiktok.com/@dralsawat?_r=1&_t=ZS-9AoBjJx6n5i',
   },
 
   credentials: [
