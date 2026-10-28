@@ -5,7 +5,7 @@ import BlogListingClient from '@/components/blog/BlogListingClient';
 import { getPublishedBlogs } from '@/lib/blogService';
 import { doctorData } from '@/data/doctorData';
 
-export const revalidate = 86400; // ISR fallback every 24 hours
+export const revalidate = 3600; // ISR fallback every 24 hours
 
 export const metadata: Metadata = {
   title: 'المدونة الطبية والجراحية',
