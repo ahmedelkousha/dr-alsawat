@@ -88,7 +88,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             ))}
           </div>
           <a
-            href="https://www.doctify.com/en-sa/specialist/abdullah-alsalwat"
+            href="https://www.doctify.com/en-sa/specialist/abdullah-alsawat"
             target="_blank"
             title="صفحة الدكتور عبدالله الصواط على Doctify"
             rel="noopener noreferrer"
