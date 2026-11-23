@@ -86,7 +86,7 @@ export default function PatientTestimonialsSection() {
               </div>
 
               <a
-                href="https://www.doctify.com/en-sa/specialist/abdullah-alsalwat"
+                href="https://www.doctify.com/en-sa/specialist/abdullah-alsawat"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-col items-end"
@@ -111,7 +111,7 @@ export default function PatientTestimonialsSection() {
             )}
 
             <a
-              href="https://www.doctify.com/en-sa/specialist/abdullah-alsalwat/reviews"
+              href="https://www.doctify.com/en-sa/specialist/abdullah-alsawat/reviews"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full gap-1 py-2.5 px-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-medium text-slate-700 transition-colors mt-2"
